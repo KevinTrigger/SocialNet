@@ -12,9 +12,7 @@ export const Navbar: FC = ({ className }: NavbarProps) => {
   return (
     <div className={classNames(cl.Navbar, {}, [className])}>
       <div className={cl.links}>
-        <AppLink to={RoutePath.main} className={cl.mainLink}>
-          Home
-        </AppLink>
+        <AppLink to={RoutePath.main}>Home</AppLink>
         <AppLink to={RoutePath.about}>About page</AppLink>
       </div>
     </div>

@@ -1,0 +1,28 @@
+.Sidebar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(100vh - var(--navbar-height));
+  width: var(--sidebar-width);
+  background-color: var(--inverted-bg-color);
+  transition: var(--sidebar-animate);
+}
+
+.collapsed {
+  width: var(--sidebar-collapsed-width);
+  transition: var(--sidebar-animate);
+}
+
+.switchers {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lang {
+  color: black;
+}
