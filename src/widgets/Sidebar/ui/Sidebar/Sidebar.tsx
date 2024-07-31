@@ -24,7 +24,7 @@ const Sidebar: FC = ({ className }: SidebarProps) => {
       <button onClick={onToggle}>toggle</button>
       <div className={cl.switchers}>
         <ThemeSwitcher />
-        <LangSwitcher  />
+        <LangSwitcher className={cl.lang} />
       </div>
     </div>
   );

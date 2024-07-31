@@ -1,4 +1,3 @@
-import { FC } from "react";
 import { classNames } from "shared/lib/classNames";
 import cl from "./LangSwitcher.module.scss";
 import { useTranslation } from "react-i18next";
@@ -8,7 +7,7 @@ interface LangSwitcherProps {
   className?: string;
 }
 
-const LangSwitcher: FC = ({ className }: LangSwitcherProps) => {
+const LangSwitcher = ({ className }: LangSwitcherProps) => {
   const { t, i18n } = useTranslation();
 
   const toggleLang = async () => {
