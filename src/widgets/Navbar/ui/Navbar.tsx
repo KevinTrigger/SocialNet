@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { classNames } from "shared/lib/classNames";
+import { classNames } from "shared/lib/classNames/classNames";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import cl from "./Navbar.module.scss";
 import AppLink from "shared/ui/AppLink/AppLink";
