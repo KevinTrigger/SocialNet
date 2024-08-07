@@ -1,5 +1,11 @@
 {
   "Testing translate": "Тестовый перевод",
   "Translate": "Перевод",
-  "Язык": "English"
+  "Язык": "English",
+  "Что-то пошло не так...": "Something went wrong...",
+  "Перезагрузить страницу": "Reboot a page",
+  "Расскрыть": "Uncover",
+  "Скрыть": "Hide",
+  "Главная": "Main",
+  "О сайте": "About page"
 }
