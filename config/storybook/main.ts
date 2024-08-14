@@ -33,7 +33,15 @@ const config: StorybookConfig = {
 
     const mergedConfig = mergeConfig(config, userConfig?.config ?? {});
 
-    return mergeConfig(mergedConfig, {});
+    return mergeConfig(mergedConfig, {
+      css: {
+        preprocessorOptions: {
+          scss: {
+            additionalData: `@import "@/app/styles/index.scss";`
+          }
+        }
+      }
+    });
   },
 };
 export default config;
