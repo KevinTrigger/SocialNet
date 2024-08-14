@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@shared/lib/classNames/classNames";
 import cl from "./NotFoundPage.module.scss";
 import { useTranslation } from "react-i18next";
 

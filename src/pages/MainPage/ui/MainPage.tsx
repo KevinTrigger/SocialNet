@@ -1,4 +1,5 @@
 import { BugButton } from "app/providers/ErrorBoundary";
+import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 
 const MainPage = () => {
@@ -8,6 +9,7 @@ const MainPage = () => {
     <>
       <div>{t("Главная страница")}</div>
       <BugButton />
+      <div className={classNames("da", {}, [])}></div>
     </>
   );
 };
