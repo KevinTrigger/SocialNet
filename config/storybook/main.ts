@@ -1,4 +1,7 @@
 import type { StorybookConfig } from "@storybook/react-vite";
+import path from "path";
+import { mergeConfig, loadConfigFromFile, ConfigEnv } from "vite";
+
 
 const config: StorybookConfig = {
   stories: [
@@ -18,14 +21,19 @@ const config: StorybookConfig = {
     name: "@storybook/react-vite",
     options: {},
   },
-  async viteFinal(config) {
-    const { mergeConfig } = await import('vite');
+  async viteFinal(config, { configType }) {
+    const configEnv: ConfigEnv = {
+      mode: configType === 'PRODUCTION' ? 'production' : 'development',
+      command: 'serve',
+    }
+    const userConfig = await loadConfigFromFile(
+      configEnv,
+      path.resolve(__dirname, "../../vite.config.ts")
+    );
 
-    return mergeConfig(config, {
-      optimizeDeps: {
-        include: ['storybook-dark-mode'],
-      },
-    });
+    const mergedConfig = mergeConfig(config, userConfig?.config ?? {});
+
+    return mergeConfig(mergedConfig, {});
   },
 };
 export default config;
