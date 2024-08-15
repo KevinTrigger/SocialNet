@@ -1,8 +1,10 @@
-import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Button, { ButtonTheme } from "./Button";
 import { fn } from "@storybook/test";
 import 'app/styles/index.scss';
+import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "app/providers/ThemeProvider";
+
 
 const meta: Meta<typeof Button> = {
   title: 'ui/Button',
@@ -22,14 +24,14 @@ export const Clear: Story = {
   args: {
     theme: ButtonTheme.CLEAR,
     children: 'TestChildren'
-  }
+  },
 }
 
 export const Secondary: Story = {
   args: {
     theme: ButtonTheme.SECONDARY,
     children: "TestChildrenSecondary"
-  }
+  },
 }
 
 export const Outline: Story = {
@@ -37,7 +39,12 @@ export const Outline: Story = {
     theme: ButtonTheme.OUTLINE,
     children: "TestChildrenOutline"
   },
-  // decorators: [(Story) => (
-  //   <div style={{padding: '200px', backgroundColor: '#000'}}><Story /></div>
-  // )]
+}
+
+export const OutlineDark: Story = {
+  args: {
+    theme: ButtonTheme.OUTLINE,
+    children: "TestChildrenOutline"
+  },
+  decorators: [ThemeDecorator(Theme.DARK)]
 }

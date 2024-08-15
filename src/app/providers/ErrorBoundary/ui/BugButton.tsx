@@ -1,4 +1,4 @@
-import Button from "shared/ui/Button/Button";
+import Button, { ButtonTheme } from "shared/ui/Button/Button";
 import { FC, useEffect, useState } from "react";
 
 // КОМПОНЕНТ ДЛЯ ТЕСТИРОВАНИЯ ErrorBoundary
@@ -14,7 +14,7 @@ const BugButton: FC = () => {
     }
   }, [error]);
 
-  return <Button onClick={onThrowError}>throw error</Button>;
+  return <Button theme={ButtonTheme.OUTLINE} onClick={onThrowError}>throw error</Button>;
 };
 
 export default BugButton;
