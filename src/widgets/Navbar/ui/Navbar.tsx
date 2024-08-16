@@ -9,7 +9,7 @@ interface NavbarProps {
   className?: string;
 }
 
-export const Navbar: FC = ({ className }: NavbarProps) => {
+const Navbar: FC = ({ className }: NavbarProps) => {
 
   const {t} = useTranslation('translation');
 
@@ -22,3 +22,5 @@ export const Navbar: FC = ({ className }: NavbarProps) => {
     </div>
   );
 };
+
+export default Navbar;
