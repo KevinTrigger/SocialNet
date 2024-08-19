@@ -1,5 +1,5 @@
 name: linting, testing, building
-run-name: ${{ github.actor }} is testing...🚀
+run-name: ${{ github.actor }} in testing...🚀
 on: 
   push:
     branches: [ main ]
@@ -22,16 +22,21 @@ jobs:
         run: npm install
       - name: build project
         run: npm run build
+        if: always()
       - name: linting typescript
         run: npm run lint:ts
+        if: always()
       - name: linting css
         run: npm run lint:scss
+        if: always()
       - name: unit testing
         run: npm run test:unit
+        if: always()
       - name: build storybook
         run: npm run storybook:build
-      # - name: screenshot testing diffrence aprove
-        # run: npm run test:ui:ok
+        if: always()
       # - name: screenshot testing
       #   run: npm run test:ui:ci
+      #   if: always()
+
 
