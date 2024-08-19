@@ -1,5 +1,5 @@
 name: linting, testing, building
-run-name: ${{ github.actor }} is testing...🚀
+run-name: ${{ github.actor }} in testing...🚀
 on: 
   push:
     branches: [ main ]
