@@ -44,22 +44,18 @@ const Sidebar: FC = ({ className }: SidebarProps) => {
         {collapsed ? ">" : "<"}
       </Button>
       <div className={cl.items}>
-        <div>
-          <AppLink
-            to={RoutePath.main}
-            theme={AppLinkTheme.SECONDARY}
-            className={cl.item}
-          >
-            <MainIcon className={cl.icon} />
-            <span className={cl.link}>{t("Главная")}</span>
-          </AppLink>
-        </div>
-        <div>
-          <AppLink to={RoutePath.about} className={cl.item}>
-            <AboutIcon className={cl.icon} />
-            <span className={cl.link}>{t("О сайте")}</span>
-          </AppLink>
-        </div>
+        <AppLink
+          to={RoutePath.main}
+          theme={AppLinkTheme.SECONDARY}
+          className={cl.item}
+        >
+          <MainIcon className={cl.icon} />
+          <span className={cl.link}>{t("Главная")}</span>
+        </AppLink>
+        <AppLink to={RoutePath.about} className={cl.item}>
+          <AboutIcon className={cl.icon} />
+          <span className={cl.link}>{t("О сайте")}</span>
+        </AppLink>
       </div>
       <div className={cl.switchers}>
         <ThemeSwitcher />

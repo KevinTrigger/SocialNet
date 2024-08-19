@@ -12,10 +12,10 @@ describe("Testing a button", () => {
   test("with add theme", () => {
     const value = "Test";
     const testingElement = (
-      <Button theme={ButtonTheme.SECONDARY}>{value}</Button>
+      <Button theme={ButtonTheme.BACKGROUND}>{value}</Button>
     );
     render(testingElement);
-    expect(screen.getByText(value)).toHaveClass("secondary");
+    expect(screen.getByText(value)).toHaveClass("background");
   });
 
   test("with add theme & added children prop", () => {

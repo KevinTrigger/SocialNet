@@ -1,7 +1,18 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn, StoryObj } from "@storybook/react";
 import Sidebar from "./Sidebar";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "app/providers/ThemeProvider";
+import { I18nextProvider } from "react-i18next";
+import { MemoryRouter } from "react-router-dom";
+import i18nForTests from "shared/config/i18n/i18nForTests";
+
+const withProviders = (Story: StoryFn) => (
+  <MemoryRouter>
+    <I18nextProvider i18n={i18nForTests}>
+      <Story />
+    </I18nextProvider>
+  </MemoryRouter>
+);
 
 const meta: Meta<typeof Sidebar> = {
   title: "widget/Sidebar",
@@ -9,6 +20,7 @@ const meta: Meta<typeof Sidebar> = {
   argTypes: {
     backgroundColor: { control: "color" },
   },
+  decorators: [withProviders],
 };
 
 export default meta;
