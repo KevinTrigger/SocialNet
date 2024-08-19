@@ -10,15 +10,11 @@ interface NavbarProps {
 }
 
 const Navbar: FC = ({ className }: NavbarProps) => {
-
-  const {t} = useTranslation('translation');
+  const { t } = useTranslation("translation");
 
   return (
     <div className={classNames(cl.Navbar, {}, [className])}>
-      <div className={cl.links}>
-        <AppLink to={RoutePath.main}>{t('Главная')}</AppLink>
-        <AppLink to={RoutePath.about}>{t('О сайте')}</AppLink>
-      </div>
+      <div className={cl.links}>/</div>
     </div>
   );
 };
