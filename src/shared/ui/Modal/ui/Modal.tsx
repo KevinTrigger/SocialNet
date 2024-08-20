@@ -10,6 +10,7 @@ import {
 import { classNames } from "shared/lib/classNames/classNames";
 import cl from "./Modal.module.scss";
 import { Portal } from "shared/ui/Portal";
+import { useTheme } from "app/providers/ThemeProvider";
 
 interface ModalProps {
   className?: string;
@@ -25,6 +26,7 @@ const Modal: FC<ModalProps> = (props) => {
 
   const [isClosing, setIsClosing] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
+  const { theme } = useTheme();
 
   const mods: Record<string, boolean> = {
     [cl.opened]: !!isOpen,

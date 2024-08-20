@@ -6,17 +6,28 @@ interface UseThemeResult {
   theme: Theme;
 }
 
-export function useTheme(): UseThemeResult {
-  const { theme, setTheme } = useContext(ThemeContext);
+export const useTheme = (): UseThemeResult => {
+  const { theme = Theme.LIGHT, setTheme } = useContext(ThemeContext);
+  
+  let newTheme: Theme;
 
-  const toggleTheme = () => {
-    const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
-    setTheme?.(newTheme);
-    localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
-  };
-
-  return {
-    theme: theme || Theme.LIGHT,
-    toggleTheme
+  switch (theme) {
+    case Theme.DARK:
+      newTheme = Theme.LIGHT;
+      break;
+    case Theme.LIGHT:
+      newTheme = Theme.DARK;
+      break;
+    default:
+      newTheme = Theme.LIGHT;
   }
+  
+  const toggleTheme = () => {
+    setTheme?.(newTheme);
+  };
+  
+  localStorage.setItem(LOCAL_STORAGE_THEME_KEY, theme);
+  document.body.className = theme;
+  
+  return { theme, toggleTheme }
 }
