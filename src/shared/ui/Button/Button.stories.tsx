@@ -32,7 +32,7 @@ export const ClearInverted: Story = {
   },
 };
 
-export const Outline: Story = {
+export const OutlineSizeL: Story = {
   args: {
     theme: ButtonTheme.OUTLINE,
     children: "Text",
