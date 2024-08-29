@@ -11,12 +11,12 @@ interface LoginFormProps {
 
 export const LoginForm: FC<LoginFormProps> = (props) => {
   const { className } = props;
-  const { t } = useTranslation("");
+  const { t } = useTranslation("translation");
 
   return (
     <div className={classNames(cl.LoginForm, {}, [className])}>
-      <Input className={cl.input} placeholder="login" />
-      <Input className={cl.input} placeholder="password" />
+      <Input className={cl.input} placeholder={t("Введите логин")} autoFocus />
+      <Input className={cl.input} placeholder={t("Введите пароль")} />
       <Button className={cl.loginBtn}>{t("Войти")}</Button>
     </div>
   );

@@ -1,4 +1,11 @@
-import { ChangeEvent, FC, InputHTMLAttributes } from "react";
+import {
+  ChangeEvent,
+  FC,
+  InputHTMLAttributes,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import cl from "./Input.module.scss";
 
@@ -18,6 +25,7 @@ interface InputProps extends HTMLInputProps {
   value?: string;
   onChange?: (value: string) => void;
   type?: string;
+  autoFocus?: boolean;
 }
 
 export const Input: FC<InputProps> = (props) => {
@@ -27,21 +35,41 @@ export const Input: FC<InputProps> = (props) => {
     onChange,
     type = "text",
     placeholder,
+    autoFocus = false,
     ...otherProps
   } = props;
+
+  const [isFocused, setIsFocused] = useState(false);
+  const ref = useRef<HTMLInputElement>(null);
 
   const handleChangeValue = (e: ChangeEvent<HTMLInputElement>) => {
     onChange?.(e.target.value);
   };
 
+  const onFocus = () => {
+    setIsFocused(true);
+  };
+
+  const onBlur = () => {
+    setIsFocused(false);
+  };
+
+  useEffect(() => {
+    if (autoFocus) {
+      setIsFocused(true);
+      ref.current?.focus();
+    }
+  }, [autoFocus]);
+
   return (
     <div className={classNames(cl.InputWrapper, {}, [className])}>
       {!placeholder || (
-        <div className={cl.inputPlaceholder}>
-          {`${placeholder}>`}
-        </div>
+        <div className={cl.inputPlaceholder}>{`${placeholder}>`}</div>
       )}
       <input
+        ref={ref}
+        onFocus={onFocus}
+        onBlur={onBlur}
         className={cl.input}
         type={type}
         value={value}
