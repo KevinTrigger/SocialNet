@@ -1,18 +1,22 @@
 name: linting, testing, building
-run-name: ${{ github.actor }} in testing...🚀
-on: 
+run-name: ${{ github.actor }} is testing...🚀
+on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 jobs:
   pipeline:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ../frontend
     strategy:
       matrix:
         node-version: [20]
-    
-    steps: 
+
+    steps:
       - uses: actions/checkout@v2
       - name: Staring Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
@@ -38,5 +42,3 @@ jobs:
       # - name: screenshot testing
       #   run: npm run test:ui:ci
       #   if: always()
-
-
