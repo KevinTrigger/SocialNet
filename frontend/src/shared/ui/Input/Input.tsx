@@ -39,7 +39,7 @@ export const Input: FC<InputProps> = (props) => {
     ...otherProps
   } = props;
 
-  const [isFocused, setIsFocused] = useState(false);
+  const [, setIsFocused] = useState(false);
   const ref = useRef<HTMLInputElement>(null);
 
   const handleChangeValue = (e: ChangeEvent<HTMLInputElement>) => {
