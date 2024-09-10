@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { RouterDecorator } from "../../../config/storybook/RouteDecorator/RouterDecorator";
 import Loader from "./Loader";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "app/providers/ThemeProvider";
@@ -7,8 +6,6 @@ import { Theme } from "app/providers/ThemeProvider";
 const meta: Meta<typeof Loader> = {
   title: "ui/Loader",
   component: Loader,
-  argTypes: {},
-  decorators: [RouterDecorator]
 };
 
 export default meta;

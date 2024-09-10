@@ -9,12 +9,6 @@ import {
 import { classNames } from "shared/lib/classNames/classNames";
 import cl from "./Input.module.scss";
 
-export enum InputTheme {
-  CLEAR = "clear",
-  CLEAR_INVERTED = "clearInverted",
-  OUTLINE = "outline",
-}
-
 type HTMLInputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
   "onChange" | "value"
@@ -24,7 +18,6 @@ interface InputProps extends HTMLInputProps {
   className?: string;
   value?: string;
   onChange?: (value: string) => void;
-  type?: string;
   autoFocus?: boolean;
 }
 

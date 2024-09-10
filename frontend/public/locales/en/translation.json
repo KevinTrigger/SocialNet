@@ -7,9 +7,11 @@
   "Расскрыть": "Uncover",
   "Скрыть": "Hide",
   "Главная": "Main",
-  "О сайте": "About page",
+  "О сайте": "About",
   "Короткое название": "En",
   "Войти": "Login",
   "Введите логин": "Enter login",
-  "Введите пароль": "Enter password"
+  "Введите пароль": "Enter password",
+  "Введена несуществующая комбинация логина и пароля": "A non-existent login and password combination has been entered.",
+  "Авторизация": "Authorization"
 }

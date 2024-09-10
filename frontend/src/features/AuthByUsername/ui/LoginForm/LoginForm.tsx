@@ -6,8 +6,11 @@ import Button, { ButtonTheme } from "shared/ui/Button/Button";
 import { Input } from "shared/ui/Input/Input";
 import { useDispatch, useSelector } from "react-redux";
 import { loginActions } from "../../model/slice/loginSlice";
-import { getLoginState } from "../../model/selectors/getLoginState/getLoginState";
 import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
+import { getLoginUsername } from "features/AuthByUsername/model/selectors/getLoginUsername/getLoginUsername";
+import { getLoginPassword } from "features/AuthByUsername/model/selectors/getLoginPassword/getLoginPassword";
+import { getLoginError } from "features/AuthByUsername/model/selectors/getLoginError/getLoginError";
+import { Text, TextTheme } from "shared/ui/Text/Text";
 
 interface LoginFormProps {
   className?: string;
@@ -18,7 +21,9 @@ export const LoginForm: FC<LoginFormProps> = memo((props) => {
   const { t } = useTranslation("translation");
 
   const dispatch = useDispatch();
-  const { username, password, isLoading, error } = useSelector(getLoginState);
+  const username = useSelector(getLoginUsername);
+  const password = useSelector(getLoginPassword);
+  const error = useSelector(getLoginError);
 
   const onChangeUsername = useCallback(
     (value: string) => {
@@ -34,12 +39,16 @@ export const LoginForm: FC<LoginFormProps> = memo((props) => {
     [dispatch]
   );
 
-  const onLoginClick = useCallback(() => {
-    // dispatch(loginByUsername({ username, password }));
-}, [dispatch, password, username]);
+  const onLoginClick = useCallback(async () => {
+    // разобраться какой значение передать в диспатч
+    // @ts-ignore
+    dispatch(loginByUsername({ username, password }));
+  }, [dispatch, password, username]);
 
   return (
     <div className={classNames(cl.LoginForm, {}, [className])}>
+      <Text title={t("Авторизация")} />
+      {error && <Text theme={TextTheme.ERROR} text={error} />}
       <Input
         className={cl.input}
         placeholder={t("Введите логин")}

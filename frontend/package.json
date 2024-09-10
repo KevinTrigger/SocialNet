@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "dev:server": "node ./json-server/index.js",
     "build": "tsc -b && vite build",
     "lint:ts": "eslint . --ext ts,tsx",
     "lint:ts:fix": "eslint . --ext ts,tsx --fix",
