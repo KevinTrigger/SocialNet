@@ -12,11 +12,11 @@ import { getLoginPassword } from "features/AuthByUsername/model/selectors/getLog
 import { getLoginError } from "features/AuthByUsername/model/selectors/getLoginError/getLoginError";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 
-interface LoginFormProps {
+export interface LoginFormProps {
   className?: string;
 }
 
-export const LoginForm: FC<LoginFormProps> = memo((props) => {
+const LoginForm: FC<LoginFormProps> = memo((props) => {
   const { className } = props;
   const { t } = useTranslation("translation");
 
@@ -72,3 +72,5 @@ export const LoginForm: FC<LoginFormProps> = memo((props) => {
     </div>
   );
 });
+
+export default LoginForm;

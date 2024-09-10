@@ -8,7 +8,7 @@ import svgr from "vite-plugin-svgr";
 export default defineConfig({
   plugins: [react(), svgr(), tsconfigPaths(),  visualizer({
     template: "treemap", // or sunburst
-    open: false,
+    open: true,
     gzipSize: true,
     brotliSize: true,
     filename: "analyse.html", // will be saved in project's root
