@@ -12,26 +12,26 @@ export default meta;
 
 type Story = StoryObj<typeof Text>;
 
-export const Light: Story = {
+export const LightNormal: Story = {
   args: {
     title: "Я заголовок",
     text: "Я обычный текст",
   },
 };
 
-export const LightOnlyTitle: Story = {
+export const LightNormalOnlyTitle: Story = {
   args: {
     title: "Заголовок без текста",
   },
 };
 
-export const LightOnlyText: Story = {
+export const LightNormalOnlyText: Story = {
   args: {
     text: "Текст без заголовка",
   },
 };
 
-export const Dark: Story = {
+export const DarkNormal: Story = {
   args: {
     title: "Я заголовок",
     text: "Я обычный текст",
@@ -39,14 +39,14 @@ export const Dark: Story = {
   decorators: [ThemeDecorator(Theme.DARK)],
 };
 
-export const DarkOnlyTitle: Story = {
+export const DarkNormalOnlyTitle: Story = {
   args: {
     title: "Заголовок без текста",
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
 
-export const DarkOnlyText: Story = {
+export const DarkNormalOnlyText: Story = {
   args: {
     text: "Текст без заголовка",
   },

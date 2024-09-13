@@ -22,11 +22,58 @@ export default meta;
 
 type Story = StoryObj<typeof LoginForm>;
 
-export const Light: Story = {
-  args: {},
+export const Light: Story = {};
+
+export const LightWithError: Story = {
+  decorators: [
+    StoreDecorator({
+      loginForm: {
+        username: "admin",
+        password: "123",
+        error: "Неверная комбинация логина и пароля",
+      },
+    }),
+  ],
+};
+
+export const LightWithLoading: Story = {
+  decorators: [
+    StoreDecorator({
+      loginForm: {
+        username: "admin",
+        password: "123",
+        isLoading: true,
+      },
+    }),
+  ],
 };
 
 export const Dark: Story = {
-  args: {},
   decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const DarkWithError: Story = {
+  decorators: [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+      loginForm: {
+        username: "admin",
+        password: "123",
+        error: "Неверная комбинация логина и пароля",
+      },
+    }),
+  ],
+};
+
+export const DarkWithLoading: Story = {
+  decorators: [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+      loginForm: {
+        username: "admin",
+        password: "123",
+        isLoading: true,
+      },
+    }),
+  ],
 };

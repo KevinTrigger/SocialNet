@@ -34,7 +34,7 @@ const Navbar: FC = ({ className }: NavbarProps) => {
   if (authData) {
     return (
       <div className={classNames(cl.Navbar, {}, [className])}>
-        <Text theme={TextTheme.NORMAL} text={authData.username}/>
+        <Text theme={TextTheme.NORMAL} text={authData.username} />
         <Button
           theme={ButtonTheme.CLEAR_INVERTED}
           className={cl.links}
@@ -55,7 +55,9 @@ const Navbar: FC = ({ className }: NavbarProps) => {
       >
         {t("Войти")}
       </Button>
-      <LoginModal isAuth={isAuthModal} onClose={onCloseModal} />
+      {isAuthModal && (
+        <LoginModal isAuth={isAuthModal} onClose={onCloseModal} />
+      )}
     </div>
   );
 };
