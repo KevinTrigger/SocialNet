@@ -1,1 +1,0 @@
-import{j as n}from"./ThemeDecorator-BxjAAGLH.js";import{u as a}from"./useTranslation-DegO0IwE.js";import"./index-CTjT7uj6.js";const e=()=>{const{t}=a("main");return n.jsx(n.Fragment,{children:n.jsx("div",{children:t("Главная страница")})})};e.__docgenInfo={description:"",methods:[],displayName:"MainPage"};export{e as default};

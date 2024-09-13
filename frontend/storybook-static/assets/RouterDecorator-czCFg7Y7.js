@@ -1,1 +1,0 @@
-import{j as o}from"./ThemeDecorator-BxjAAGLH.js";import{B as e}from"./index-mhvpqa7m.js";const t=r=>o.jsx(e,{children:o.jsx(r,{})});t.__docgenInfo={description:"",methods:[],displayName:"RouterDecorator"};export{t as R};

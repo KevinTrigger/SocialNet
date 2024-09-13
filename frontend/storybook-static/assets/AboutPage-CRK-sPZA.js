@@ -1,0 +1,1 @@
+import{j as t}from"./ThemeDecorator-BJS90HNQ.js";import{u as s}from"./useTranslation-DegO0IwE.js";import"./index-CTjT7uj6.js";const e=()=>{const{t:o}=s("about");return t.jsx("div",{children:o("О сайте")})};e.__docgenInfo={description:"",methods:[],displayName:"AboutPage"};export{e as default};

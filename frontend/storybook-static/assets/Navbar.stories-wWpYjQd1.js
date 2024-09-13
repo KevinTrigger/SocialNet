@@ -1,6 +1,0 @@
-import{j as s,T as l,a as g}from"./ThemeDecorator-BxjAAGLH.js";import"./index-CTjT7uj6.js";import{c as u}from"./classNames-DgDD4s-s.js";import{R as N}from"./RouterDecorator-czCFg7Y7.js";import"./index-mhvpqa7m.js";import"./index-CYM-y3Gt.js";const h="_Navbar_1wwhx_1",_="_links_1wwhx_10",e={Navbar:h,links:_},p=({className:d})=>s.jsx("div",{className:u(e.Navbar,{},[d]),children:s.jsx("div",{className:e.links,children:"/"})});p.__docgenInfo={description:"",methods:[],displayName:"Navbar",props:{className:{required:!1,tsType:{name:"string"},description:""}}};const f={title:"widget/Navbar",component:p,argTypes:{backgroundColor:{control:"color"}},decorators:[N]},r={args:{}},a={args:{},decorators:[l(g.DARK)]};var o,t,c;r.parameters={...r.parameters,docs:{...(o=r.parameters)==null?void 0:o.docs,source:{originalSource:`{
-  args: {}
-}`,...(c=(t=r.parameters)==null?void 0:t.docs)==null?void 0:c.source}}};var n,m,i;a.parameters={...a.parameters,docs:{...(n=a.parameters)==null?void 0:n.docs,source:{originalSource:`{
-  args: {},
-  decorators: [ThemeDecorator(Theme.DARK)]
-}`,...(i=(m=a.parameters)==null?void 0:m.docs)==null?void 0:i.source}}};const w=["Light","Dark"];export{a as Dark,r as Light,w as __namedExportsOrder,f as default};

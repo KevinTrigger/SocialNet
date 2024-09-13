@@ -1,0 +1,1 @@
+import{j as t}from"./ThemeDecorator-BJS90HNQ.js";import{u as a}from"./useTranslation-DegO0IwE.js";import"./index-CTjT7uj6.js";const i=()=>{const{t:o}=a("main");return t.jsx("div",{children:o("Главная страница")})};i.__docgenInfo={description:"",methods:[],displayName:"MainPage"};export{i as default};
