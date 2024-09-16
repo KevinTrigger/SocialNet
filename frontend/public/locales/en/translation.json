@@ -14,5 +14,7 @@
   "Введите пароль": "Enter password",
   "Введена несуществующая комбинация логина и пароля": "A non-existent login and password combination has been entered.",
   "Авторизация": "Authorization",
-  "Ошибка": "Error"
+  "Ошибка": "Error",
+  "Профиль": "Profile",
+  "Страница профиля": "Profile page"
 }

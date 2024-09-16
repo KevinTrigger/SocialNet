@@ -7,7 +7,8 @@ describe('getLoginError.test', () => {
       loginForm: {
         username: 'admin',
         password: '123',
-        error: 'error'
+        error: 'error',
+        isLoading: false
       }
     }
    expect(getLoginError(state as StateSchema)).toEqual('error');

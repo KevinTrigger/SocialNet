@@ -1,14 +1,11 @@
-import { FC, useState } from "react";
+import { FC, useMemo, useState } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import cl from "./Sidebar.module.scss";
 import { LangSwitcher } from "shared/ui/LangSwitcher";
 import { ThemeSwitcher } from "shared/ui/ThemeSwitcher";
 import Button, { ButtonSize, ButtonTheme } from "shared/ui/Button/Button";
-import AppLink, { AppLinkTheme } from "shared/ui/AppLink/AppLink";
-import { RoutePath } from "shared/config/routeConfig/routeConfig";
-import { useTranslation } from "react-i18next";
-import AboutIcon from "shared/assets/icons/about.svg?react";
-import MainIcon from "shared/assets/icons/main.svg?react";
+import { SidebarItemList } from "../../model/items";
+import SidebarItem from "../SidebarItem/SidebarItem";
 
 interface SidebarProps {
   className?: string;
@@ -21,7 +18,13 @@ const Sidebar: FC = ({ className }: SidebarProps) => {
     setCollapsed((prev) => !prev);
   };
 
-  const { t } = useTranslation("translation");
+  const getSidebarItems = useMemo(
+    () =>
+      SidebarItemList.map((item) => (
+        <SidebarItem collapsed={collapsed} item={item} key={item.path} />
+      )),
+    [collapsed]
+  );
 
   const mods = {
     [cl.collapsed]: collapsed,
@@ -43,20 +46,7 @@ const Sidebar: FC = ({ className }: SidebarProps) => {
       >
         {collapsed ? ">" : "<"}
       </Button>
-      <div className={cl.items}>
-        <AppLink
-          to={RoutePath.main}
-          theme={AppLinkTheme.SECONDARY}
-          className={cl.item}
-        >
-          <MainIcon className={cl.icon} />
-          <span className={cl.link}>{t("Главная")}</span>
-        </AppLink>
-        <AppLink to={RoutePath.about} className={cl.item}>
-          <AboutIcon className={cl.icon} />
-          <span className={cl.link}>{t("О сайте")}</span>
-        </AppLink>
-      </div>
+      <div className={cl.items}>{getSidebarItems}</div>
       <div className={cl.switchers}>
         <ThemeSwitcher />
         <LangSwitcher className={cl.lang} isShort={collapsed} />

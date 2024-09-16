@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { memo } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import cl from "./Text.module.scss";
 
@@ -14,7 +14,7 @@ interface TextProps {
   theme?: TextTheme;
 }
 
-export const Text: FC<TextProps> = (props) => {
+export const Text = memo((props: TextProps) => {
   const { className, text, title, theme = TextTheme.NORMAL } = props;
 
   const mods: Record<string, boolean> = {
@@ -27,4 +27,4 @@ export const Text: FC<TextProps> = (props) => {
       {text && <p className={cl.text}>{text}</p>}
     </div>
   );
-};
+});

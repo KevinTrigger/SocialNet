@@ -1,10 +1,9 @@
-import { FC, memo, useCallback } from "react";
+import { memo, useCallback } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
-import cl from "./LoginForm.module.scss";
 import Button, { ButtonTheme } from "shared/ui/Button/Button";
 import { Input } from "shared/ui/Input/Input";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { loginActions, loginReducer } from "../../model/slice/loginSlice";
 import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
 import { getLoginUsername } from "features/AuthByUsername/model/selectors/getLoginUsername/getLoginUsername";
@@ -15,20 +14,23 @@ import {
   DynamicModuleLoader,
   ReducersList,
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import cl from "./LoginForm.module.scss";
 
 export interface LoginFormProps {
   className?: string;
+  onSuccess: () => void;
 }
 
 const initialReducers: ReducersList = {
   loginForm: loginReducer,
 };
 
-const LoginForm: FC<LoginFormProps> = memo((props) => {
-  const { className } = props;
+const LoginForm = (props: LoginFormProps) => {
+  const { className, onSuccess } = props;
   const { t } = useTranslation("translation");
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const username = useSelector(getLoginUsername);
   const password = useSelector(getLoginPassword);
   const error = useSelector(getLoginError);
@@ -48,10 +50,9 @@ const LoginForm: FC<LoginFormProps> = memo((props) => {
   );
 
   const onLoginClick = useCallback(async () => {
-    // разобраться какое значение передать в диспатч
-    // @ts-ignore
-    dispatch(loginByUsername({ username, password }));
-  }, [dispatch, password, username]);
+    const response = await dispatch(loginByUsername({ username, password }));
+    if (response.meta.requestStatus === "fulfilled") onSuccess();
+  }, [onSuccess, dispatch, password, username]);
 
   return (
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
@@ -81,6 +82,6 @@ const LoginForm: FC<LoginFormProps> = memo((props) => {
       </div>
     </DynamicModuleLoader>
   );
-});
+};
 
-export default LoginForm;
+export default memo(LoginForm);

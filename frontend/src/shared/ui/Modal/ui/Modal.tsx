@@ -1,5 +1,4 @@
 import {
-  FC,
   MouseEvent,
   ReactNode,
   useCallback,
@@ -22,7 +21,7 @@ interface ModalProps {
 
 const ANIMATION_DELAY = 300;
 
-const Modal: FC<ModalProps> = (props) => {
+const Modal = (props: ModalProps) => {
   const { children, className, isOpen, onClose, lazy } = props;
 
   const [isClosing, setIsClosing] = useState(false);
@@ -74,7 +73,7 @@ const Modal: FC<ModalProps> = (props) => {
     if (isOpen) {
       setIsMounted(true);
     }
-  }, [isOpen])
+  }, [isOpen]);
 
   if (lazy && !isMounted) {
     return null;
@@ -82,7 +81,9 @@ const Modal: FC<ModalProps> = (props) => {
 
   return (
     <Portal>
-      <div className={classNames(cl.Modal, mods, [className, theme, 'app_modal'])}>
+      <div
+        className={classNames(cl.Modal, mods, [className, theme, "app_modal"])}
+      >
         <div className={cl.overlay} onClick={closeHandler}>
           <div className={cl.content} onClick={onContentClick}>
             {children}

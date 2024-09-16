@@ -1,19 +1,19 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Theme } from "app/providers/ThemeProvider";
-import MainPage from "./MainPage";
+import ProfilePage from "./ProfilePage";
 import { RouterDecorator } from "../../../shared/config/storybook/RouteDecorator/RouterDecorator";
 import { ThemeDecorator } from "../../../shared/config/storybook/ThemeDecorator/ThemeDecorator";
 
-const meta: Meta<typeof MainPage> = {
-  title: "pages/MainPage",
-  component: MainPage,
+const meta: Meta<typeof ProfilePage> = {
+  title: "pages/ProfilePage",
+  component: ProfilePage,
   argTypes: {},
   decorators: [RouterDecorator],
 };
 
 export default meta;
 
-type Story = StoryObj<typeof MainPage>;
+type Story = StoryObj<typeof ProfilePage>;
 
 export const Light: Story = {
   args: {},
