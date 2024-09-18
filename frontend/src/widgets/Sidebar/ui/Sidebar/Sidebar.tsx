@@ -1,4 +1,4 @@
-import { FC, useMemo, useState } from "react";
+import { FC, memo, useMemo, useState } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import cl from "./Sidebar.module.scss";
 import { LangSwitcher } from "shared/ui/LangSwitcher";
@@ -55,4 +55,4 @@ const Sidebar: FC = ({ className }: SidebarProps) => {
   );
 };
 
-export default Sidebar;
+export default memo(Sidebar);

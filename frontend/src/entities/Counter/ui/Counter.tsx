@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { counterActions } from "../model/slice/counterSlice";
 import { getCounterValue } from "../model/selectors/getCounterValue/getCounterValue";
@@ -8,7 +8,7 @@ interface CounterProps {
   className?: string;
 }
 
-export const Counter: FC<CounterProps> = () => {
+export const Counter: FC<CounterProps> = memo(() => {
   const dispatch = useDispatch();
   const counterValue = useSelector(getCounterValue);
 
@@ -27,4 +27,4 @@ export const Counter: FC<CounterProps> = () => {
       <Button data-testid="decrement-btn" onClick={decrement}>---</Button>
     </div>
   );
-};
+});

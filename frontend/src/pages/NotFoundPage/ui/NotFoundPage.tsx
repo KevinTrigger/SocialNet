@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import cl from "./NotFoundPage.module.scss";
 import { useTranslation } from "react-i18next";
@@ -17,4 +17,4 @@ const NotFoundPage: FC<NotFoundPageProps> = ({ className }) => {
   );
 };
 
-export default NotFoundPage;
+export default memo(NotFoundPage);
