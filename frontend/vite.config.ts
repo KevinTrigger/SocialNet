@@ -16,4 +16,14 @@ export default defineConfig({
   server: {
     port: 3000,
   },
+  css: {
+    preprocessorOptions: {
+      less: {
+        math: 'parens-division',
+      },
+      scss: {
+        api: 'modern-compiler', // or "modern", "legacy"
+      },
+    },
+  },
 })
