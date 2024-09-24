@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames, Mods } from "shared/lib/classNames/classNames";
 import cl from "./Text.module.scss";
 
 export enum TextTheme {
@@ -17,7 +17,7 @@ interface TextProps {
 export const Text = memo((props: TextProps) => {
   const { className, text, title, theme = TextTheme.NORMAL } = props;
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [cl[theme ?? ""]]: true,
   };
 

@@ -29,5 +29,8 @@ export const useTheme = (): UseThemeResult => {
   localStorage.setItem(LOCAL_STORAGE_THEME_KEY, theme);
   document.body.className = theme;
   
-  return { theme, toggleTheme }
+  return { 
+    theme: theme || Theme.LIGHT, 
+    toggleTheme 
+  }
 }

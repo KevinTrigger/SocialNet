@@ -10,6 +10,7 @@
   "О сайте": "About",
   "Короткое название": "En",
   "Войти": "Login",
+  "Выйти": "Logout",
   "Введите логин": "Enter login",
   "Введите пароль": "Enter password",
   "Введена несуществующая комбинация логина и пароля": "A non-existent login and password combination has been entered.",

@@ -1,19 +1,19 @@
 import { ButtonHTMLAttributes, FC, memo } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames, Mods } from "shared/lib/classNames/classNames";
 import cl from "./Button.module.scss";
 
 export enum ButtonTheme {
   CLEAR = "clear",
-  CLEAR_INVERTED = 'clearInverted',
+  CLEAR_INVERTED = "clearInverted",
   OUTLINE = "outline",
   BACKGROUND = "background",
   BACKGROUND_INVERTED = "backgroundInverted",
 }
 
 export enum ButtonSize {
-  M = 'size_m',
-  L = 'size_l',
-  XL = 'size_xl'
+  M = "size_m",
+  L = "size_l",
+  XL = "size_xl",
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -26,21 +26,21 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Button: FC<ButtonProps> = (props) => {
-  const { 
-    className, 
-    theme, 
-    children, 
-    disabled, 
+  const {
+    className,
+    theme = ButtonTheme.OUTLINE,
+    children,
+    disabled,
     square,
     size = ButtonSize.M,
-    ...other 
+    ...other
   } = props;
 
-  const mods: Record<string, boolean> = {
-    [cl[theme ?? ""]]: true,
+  const mods: Mods = {
+    [cl[theme]]: true,
     [cl.disabled]: !!disabled,
     [cl.square]: !!square,
-    [cl[size]]: true
+    [cl[size]]: true,
   };
 
   return (

@@ -28,8 +28,6 @@ export const LightWithError: Story = {
   decorators: [
     StoreDecorator({
       loginForm: {
-        username: "admin",
-        password: "123",
         error: "Неверная комбинация логина и пароля",
       },
     }),
@@ -40,8 +38,6 @@ export const LightWithLoading: Story = {
   decorators: [
     StoreDecorator({
       loginForm: {
-        username: "admin",
-        password: "123",
         isLoading: true,
       },
     }),
@@ -57,8 +53,6 @@ export const DarkWithError: Story = {
     ThemeDecorator(Theme.DARK),
     StoreDecorator({
       loginForm: {
-        username: "admin",
-        password: "123",
         error: "Неверная комбинация логина и пароля",
       },
     }),
@@ -70,8 +64,6 @@ export const DarkWithLoading: Story = {
     ThemeDecorator(Theme.DARK),
     StoreDecorator({
       loginForm: {
-        username: "admin",
-        password: "123",
         isLoading: true,
       },
     }),

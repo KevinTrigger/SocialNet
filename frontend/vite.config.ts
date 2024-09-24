@@ -1,18 +1,18 @@
 import { defineConfig, PluginOption } from 'vite'
 import { visualizer } from "rollup-plugin-visualizer";
 import react from '@vitejs/plugin-react'
+import EnvironmentPlugin from "vite-plugin-environment"
 import tsconfigPaths from 'vite-tsconfig-paths';
 import svgr from "vite-plugin-svgr";
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), svgr(), tsconfigPaths(),  visualizer({
+  plugins: [react(), svgr(), EnvironmentPlugin('all'), tsconfigPaths(),  visualizer({
     template: "treemap", // or sunburst
     open: true,
     gzipSize: true,
     brotliSize: true,
     filename: "analyse.html", // will be saved in project's root
-  }) as PluginOption,],
+  }) as PluginOption],
   server: {
     port: 3000,
   },
