@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import cl from "./ProfileCard.module.scss";
@@ -17,6 +17,10 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
   const { t } = useTranslation("profile");
 
   const data = useSelector(getProfileData);
+
+  useEffect(() => {
+    console.log(data);
+  }, [data])
 
   return (
     <div className={classNames(cl.ProfileCard, {}, [className])}>
