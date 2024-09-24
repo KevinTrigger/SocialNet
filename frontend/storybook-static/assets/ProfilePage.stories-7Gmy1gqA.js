@@ -1,0 +1,6 @@
+import{T as i,a as c}from"./ThemeDecorator-DOb0kzc_.js";import"./index-BP8_t0zE.js";import d from"./ProfilePage-HYDdrRlF.js";import{R as n}from"./RouterDecorator-DTQIMn4G.js";import{S as g}from"./StoreDecorator-BLmZqaTD.js";import"./jsx-runtime-CexXSJP5.js";import"./classNames-DgDD4s-s.js";import"./DynamicModuleLoader-BOK7KfhV.js";import"./useAppDispatch-CcAwMes1.js";import"./i18next-DXJLt4wh.js";import"./Text-Df7vFD9l.js";import"./Button-DFlArtjJ.js";import"./Input-DIdXN3MZ.js";import"./useTranslation-B2QVmqVC.js";import"./index-DJkmxc1E.js";import"./index-8HAOCAKB.js";import"./index-BhfaPLzF.js";const E={title:"pages/ProfilePage",component:d,argTypes:{},decorators:[n,g({profile:{data:void 0,isLoading:!1,readonly:!0}})]},r={args:{}},o={args:{},decorators:[i(c.DARK)]};var e,a,t;r.parameters={...r.parameters,docs:{...(e=r.parameters)==null?void 0:e.docs,source:{originalSource:`{
+  args: {}
+}`,...(t=(a=r.parameters)==null?void 0:a.docs)==null?void 0:t.source}}};var s,m,p;o.parameters={...o.parameters,docs:{...(s=o.parameters)==null?void 0:s.docs,source:{originalSource:`{
+  args: {},
+  decorators: [ThemeDecorator(Theme.DARK)]
+}`,...(p=(m=o.parameters)==null?void 0:m.docs)==null?void 0:p.source}}};const O=["Light","Dark"];export{o as Dark,r as Light,O as __namedExportsOrder,E as default};

@@ -1,38 +1,51 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
-import { useTranslation } from "react-i18next";
 import cl from "./ProfileCard.module.scss";
-import { useSelector } from "react-redux";
-import { getProfileData } from "entities/Profile/model/selectors/getProfileData/getProfileData";
-import { Text } from "shared/ui/Text/Text";
-import Button, { ButtonTheme } from "shared/ui/Button/Button";
+import { Text, TextAlign, TextTheme } from "shared/ui/Text/Text";
 import { Input } from "shared/ui/Input/Input";
+import { Profile } from "../../model/types/profile";
+import { Loader } from "shared/ui/Loader";
 
 interface ProfileCardProps {
   className?: string;
+  data?: Profile;
+  isLoading?: boolean;
+  error?: string;
 }
 
 export const ProfileCard: FC<ProfileCardProps> = (props) => {
-  const { className } = props;
-  const { t } = useTranslation("profile");
+  const { className, data, isLoading, error } = props;
 
-  const data = useSelector(getProfileData);
+  if (isLoading) {
+    return (
+      <div
+        className={classNames(cl.ProfileCard, { [cl.loading]: true }, [
+          className,
+        ])}
+      >
+        <Loader />
+      </div>
+    );
+  }
 
-  useEffect(() => {
-    console.log(data);
-  }, [data])
+  if (error) {
+    return (
+      <div className={classNames(cl.ProfileCard, {}, [className, cl.error])}>
+        <Text
+          theme={TextTheme.ERROR}
+          align={TextAlign.CENTER}
+          title="Произошла ошибка при загрузке файлов"
+          text="Попробуйте перезагрузить страницу"
+        />
+      </div>
+    );
+  }
 
   return (
     <div className={classNames(cl.ProfileCard, {}, [className])}>
-      <div className={cl.header}>
-        <Text title={t("Профиль")} />
-        <Button theme={ButtonTheme.OUTLINE} className={cl.editBtn}>
-          {t("Редактировать")}
-        </Button>
-      </div>
       <div className={cl.data}>
         <Input
-          value={data?.username}
+          value={data?.lastname}
           placeholder="Ваше имя"
           className={cl.input}
         />
