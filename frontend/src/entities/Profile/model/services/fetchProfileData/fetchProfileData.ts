@@ -4,16 +4,14 @@ import { t } from "i18next";
 import { ThunkConfig } from "app/providers/StoreProvider";
 
 export const fetchProfileData = createAsyncThunk<Profile, void, ThunkConfig<string>>(
-  'profile/getProfileData',
-  async (_, thunkAPI) => {
-    const { extra, rejectWithValue } = thunkAPI;
+  'profile/fetchProfileData',
+  async (_, thunkApi) => {
+    const { extra, rejectWithValue } = thunkApi;
       
     try { 
           const response = await extra.api.get<Profile>('/profile');
-          console.log(response.data, ' func is success data')
           return response.data;
       } catch (e) {
-          console.log(e);
           return rejectWithValue(t('Ошибка'));
       }
   },

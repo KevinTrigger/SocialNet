@@ -6,8 +6,7 @@
       "password": "123"
     }
   ],
-  "profile": [
-    {
+  "profile": {
       "firstname": "Sergey",
       "lastname": "Konovalov",
       "age": 22,
@@ -16,6 +15,5 @@
       "city": "Yekaterinburg",
       "username": "admin",
       "avatar": "https://img.pikbest.com/wp/202345/male-avatar-image-in-the-circle_9588978.jpg!sw800"
-    }
-  ]
+  }
 }

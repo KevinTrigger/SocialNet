@@ -1,4 +1,4 @@
-import { FC, memo, useEffect } from "react";
+import { FC, useEffect } from "react";
 import {
   DynamicModuleLoader,
   ReducersList,
@@ -25,12 +25,9 @@ interface ProfilePageProps {
 
 const ProfilePage: FC<ProfilePageProps> = () => {
   const dispatch = useAppDispatch();
-
   const data = useSelector(getProfileData);
   const isLoading = useSelector(getProfileIsLoading);
   const error = useSelector(getProfileError);
-
-  console.log(data, ' data')
 
   useEffect(() => {
     dispatch(fetchProfileData());
@@ -44,4 +41,4 @@ const ProfilePage: FC<ProfilePageProps> = () => {
   );
 };
 
-export default memo(ProfilePage);
+export default ProfilePage;
