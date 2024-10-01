@@ -1,20 +1,46 @@
 import { FC } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames, Mods } from "shared/lib/classNames/classNames";
 import { Text, TextAlign, TextTheme } from "shared/ui/Text/Text";
 import { Input } from "shared/ui/Input/Input";
 import { Profile } from "../../model/types/profile";
 import { Loader } from "shared/ui/Loader";
 import cl from "./ProfileCard.module.scss";
+import { Avatar, AvatarSize } from "shared/ui/Avatar/Avatar";
+import { Currency, CurrencySelect } from "entities/Currency";
+import { Country, CountrySelect } from "entities/Country";
 
 interface ProfileCardProps {
   className?: string;
   data?: Profile;
   isLoading?: boolean;
   error?: string;
+  readonly?: boolean;
+  onChangeFirstname?: (value?: string) => void;
+  onChangeLastname?: (value?: string) => void;
+  onChangeAge?: (value?: string) => void;
+  onChangeCity?: (value?: string) => void;
+  onChangeCountry?: (value?: Country) => void;
+  onChangeCurrency?: (value: Currency) => void;
+  onChangeAvatar?: (value?: string) => void;
+  onChangeUsername?: (value?: string) => void;
 }
 
 export const ProfileCard: FC<ProfileCardProps> = (props) => {
-  const { className, data, isLoading, error } = props;
+  const {
+    className,
+    data,
+    isLoading,
+    error,
+    readonly,
+    onChangeFirstname,
+    onChangeLastname,
+    onChangeAge,
+    onChangeCity,
+    onChangeCountry,
+    onChangeCurrency,
+    onChangeAvatar,
+    onChangeUsername,
+  } = props;
 
   if (isLoading) {
     return (
@@ -41,24 +67,79 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
     );
   }
 
+  const mods: Mods = {
+    [cl.editing]: !readonly,
+  };
+
   return (
-    <div className={classNames(cl.ProfileCard, {}, [className])}>
+    <div className={classNames(cl.ProfileCard, mods, [className])}>
       <div className={cl.data}>
-        <img src={data?.avatar} alt="Avatar" width={150} height={120} />
-        <Input value={data?.firstname} placeholder="Имя" className={cl.input} />
+        {data?.avatar && (
+          <div className={cl.avatarWrap}>
+            <Avatar
+              src={data?.avatar}
+              size={AvatarSize.XL}
+              rounded
+              alt="Изображение пользователя"
+            />
+          </div>
+        )}
+
+        <Input
+          value={data?.avatar}
+          placeholder="Ссылка на аватар"
+          className={cl.input}
+          onChange={onChangeAvatar}
+          readonly={readonly}
+        />
+        <Input
+          value={data?.username}
+          placeholder="Никнейм"
+          className={cl.input}
+          onChange={onChangeUsername}
+          readonly={readonly}
+        />
+        <Input
+          value={data?.firstname}
+          placeholder="Имя"
+          className={cl.input}
+          onChange={onChangeFirstname}
+          readonly={readonly}
+        />
         <Input
           value={data?.lastname}
           placeholder="Фамилия"
           className={cl.input}
+          onChange={onChangeLastname}
+          readonly={readonly}
         />
         <Input
-          value={`${data?.age}`}
+          value={data?.age}
           placeholder="Возраст"
           className={cl.input}
+          onChange={onChangeAge}
+          readonly={readonly}
+          isNumber
         />
-        <Input value={data?.country} placeholder="Страна" className={cl.input} />
-        <Input value={data?.city} placeholder="Город" className={cl.input} />
-        <Input value={data?.currency} placeholder="Валюта" className={cl.input} />
+        <CountrySelect
+          value={data?.country}
+          className={cl.input}
+          onChange={onChangeCountry}
+          readonly={readonly}
+        />
+        <Input
+          value={data?.city}
+          placeholder="Город"
+          className={cl.input}
+          onChange={onChangeCity}
+          readonly={readonly}
+        />
+        <CurrencySelect
+          value={data?.currency}
+          onChange={onChangeCurrency}
+          className={cl.input}
+          readonly={readonly}
+        />
       </div>
     </div>
   );

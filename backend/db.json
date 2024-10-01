@@ -7,13 +7,13 @@
     }
   ],
   "profile": {
-      "firstname": "Sergey",
-      "lastname": "Konovalov",
-      "age": 22,
-      "currency": "RUB",
-      "country": "Russia",
-      "city": "Yekaterinburg",
-      "username": "admin",
-      "avatar": "https://img.pikbest.com/wp/202345/male-avatar-image-in-the-circle_9588978.jpg!sw800"
+    "firstname": "Sergey",
+    "lastname": "Konovalov",
+    "age": 22,
+    "currency": "EUR",
+    "country": "Belarus",
+    "city": "Yekaterinburg",
+    "username": "admin",
+    "avatar": "https://www.svgrepo.com/show/27220/avatar.svg"
   }
 }

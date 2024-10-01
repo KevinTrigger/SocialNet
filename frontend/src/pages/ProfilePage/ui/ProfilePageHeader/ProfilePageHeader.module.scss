@@ -1,8 +1,13 @@
 .ProfilePageHeader {
   display: flex;
+  justify-content: space-between;
   margin-top: 20px;
 }
 
 .editBtn {
   margin-left: auto;
+}
+
+.cancelBtn {
+  margin-right: 20px;
 }

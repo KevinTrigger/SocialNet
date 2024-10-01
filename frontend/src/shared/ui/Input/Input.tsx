@@ -12,14 +12,16 @@ import cl from "./Input.module.scss";
 
 type HTMLInputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
-  "onChange" | "value"
+  "onChange" | "value" | "readonly"
 >;
 
 interface InputProps extends HTMLInputProps {
   className?: string;
-  value?: string;
+  value?: string | number;
   onChange?: (value: string) => void;
   autoFocus?: boolean;
+  readonly?: boolean;
+  isNumber?: boolean;
 }
 
 export const Input: FC<InputProps> = memo((props) => {
@@ -27,13 +29,15 @@ export const Input: FC<InputProps> = memo((props) => {
     className,
     value,
     onChange,
-    type = "text",
+    isNumber,
+    type = isNumber ? "number" : "text",
     placeholder,
     autoFocus = false,
+    readonly,
     ...otherProps
   } = props;
 
-  const [, setIsFocused] = useState(false);
+  const [_, setIsFocused] = useState(false);
   const ref = useRef<HTMLInputElement>(null);
 
   const handleChangeValue = (e: ChangeEvent<HTMLInputElement>) => {
@@ -61,6 +65,7 @@ export const Input: FC<InputProps> = memo((props) => {
         <div className={cl.inputPlaceholder}>{`${placeholder}>`}</div>
       )}
       <input
+        readOnly={readonly}
         ref={ref}
         onFocus={onFocus}
         onBlur={onBlur}

@@ -1,0 +1,1 @@
+import{j as t}from"./jsx-runtime-CexXSJP5.js";import{r}from"./index-BP8_t0zE.js";import{u as s}from"./useTranslation-B2QVmqVC.js";const o=()=>{const{t:a}=s("main");return t.jsx("div",{children:a("Главная страница")})},m=r.memo(o);o.__docgenInfo={description:"",methods:[],displayName:"MainPage"};export{m as default};
