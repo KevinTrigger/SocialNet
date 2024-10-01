@@ -52,7 +52,6 @@ const Modal = (props: ModalProps) => {
   const handleEscape = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        console.log(e.key);
         closeHandler();
       }
     },

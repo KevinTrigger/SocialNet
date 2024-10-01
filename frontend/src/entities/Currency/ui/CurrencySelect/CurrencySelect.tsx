@@ -2,6 +2,7 @@ import { FC, useCallback } from "react";
 import { Currency } from "../../model/types/currency";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Select } from "shared/ui/Select/Select";
+import { useTranslation } from "react-i18next";
 
 interface CurrencySelectProps {
   className?: string;
@@ -13,6 +14,8 @@ interface CurrencySelectProps {
 export const CurrencySelect: FC<CurrencySelectProps> = (props) => {
   const { className, value, onChange, readonly } = props;
 
+  const { t } = useTranslation("profile");
+
   const onChangeHandler = useCallback(
     (value: string) => {
       onChange?.(value as Currency);
@@ -20,7 +23,6 @@ export const CurrencySelect: FC<CurrencySelectProps> = (props) => {
     [onChange]
   );
 
-  // Преобразование из перечисления в массив валют
   const currencyList = Object.values(Currency).map((currency) => ({
     content: currency,
     value: currency,
@@ -33,7 +35,7 @@ export const CurrencySelect: FC<CurrencySelectProps> = (props) => {
       options={currencyList}
       value={value}
       onChange={onChangeHandler}
-      label={"Валюта"}
+      label={t("Валюта")}
     />
   );
 };

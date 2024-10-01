@@ -8,6 +8,7 @@ import cl from "./ProfileCard.module.scss";
 import { Avatar, AvatarSize } from "shared/ui/Avatar/Avatar";
 import { Currency, CurrencySelect } from "entities/Currency";
 import { Country, CountrySelect } from "entities/Country";
+import { useTranslation } from "react-i18next";
 
 interface ProfileCardProps {
   className?: string;
@@ -42,6 +43,8 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
     onChangeUsername,
   } = props;
 
+  const { t } = useTranslation("profile");
+
   if (isLoading) {
     return (
       <div
@@ -60,8 +63,8 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
         <Text
           theme={TextTheme.ERROR}
           align={TextAlign.CENTER}
-          title="Произошла ошибка при загрузке файлов"
-          text="Попробуйте перезагрузить страницу"
+          title={t("Произошла ошибка при загрузке файлов")}
+          text={t("Попробуйте перезагрузить страницу")}
         />
       </div>
     );
@@ -80,42 +83,42 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
               src={data?.avatar}
               size={AvatarSize.XL}
               rounded
-              alt="Изображение пользователя"
+              alt={t("Изображение пользователя")}
             />
           </div>
         )}
 
         <Input
           value={data?.avatar}
-          placeholder="Ссылка на аватар"
+          placeholder={t("Ссылка на аватар")}
           className={cl.input}
           onChange={onChangeAvatar}
           readonly={readonly}
         />
         <Input
           value={data?.username}
-          placeholder="Никнейм"
+          placeholder={t("Никнейм")}
           className={cl.input}
           onChange={onChangeUsername}
           readonly={readonly}
         />
         <Input
           value={data?.firstname}
-          placeholder="Имя"
+          placeholder={t("Имя")}
           className={cl.input}
           onChange={onChangeFirstname}
           readonly={readonly}
         />
         <Input
           value={data?.lastname}
-          placeholder="Фамилия"
+          placeholder={t("Фамилия")}
           className={cl.input}
           onChange={onChangeLastname}
           readonly={readonly}
         />
         <Input
           value={data?.age}
-          placeholder="Возраст"
+          placeholder={t("Возраст")}
           className={cl.input}
           onChange={onChangeAge}
           readonly={readonly}
@@ -129,7 +132,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
         />
         <Input
           value={data?.city}
-          placeholder="Город"
+          placeholder={t("Город")}
           className={cl.input}
           onChange={onChangeCity}
           readonly={readonly}

@@ -2,6 +2,7 @@ import { FC, useCallback } from "react";
 import { Country } from "../../model/types/country";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Select } from "shared/ui/Select/Select";
+import { useTranslation } from "react-i18next";
 
 interface CountrySelectProps {
   className?: string;
@@ -12,6 +13,7 @@ interface CountrySelectProps {
 
 export const CountrySelect: FC<CountrySelectProps> = (props) => {
   const { className, value, onChange, readonly } = props;
+  const { t } = useTranslation("profile");
 
   const onChangeHandler = useCallback(
     (value: string) => {
@@ -20,7 +22,6 @@ export const CountrySelect: FC<CountrySelectProps> = (props) => {
     [onChange]
   );
 
-  // Преобразование из перечисления в массив валют
   const countryList = Object.values(Country).map((country) => ({
     content: country,
     value: country,
@@ -33,7 +34,7 @@ export const CountrySelect: FC<CountrySelectProps> = (props) => {
       options={countryList}
       value={value}
       onChange={onChangeHandler}
-      label={"Страна"}
+      label={t("Страна")}
     />
   );
 };

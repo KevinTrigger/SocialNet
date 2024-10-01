@@ -7,13 +7,13 @@
     }
   ],
   "profile": {
-    "firstname": "Sergey",
-    "lastname": "Konovalov",
+    "firstname": "Сергей",
+    "lastname": "Коновалов",
     "age": 22,
     "currency": "EUR",
-    "country": "Belarus",
-    "city": "Yekaterinburg",
-    "username": "admin",
+    "country": "Ukraine",
+    "city": "Екатеринбург",
+    "username": "Kevin",
     "avatar": "https://www.svgrepo.com/show/27220/avatar.svg"
   }
 }

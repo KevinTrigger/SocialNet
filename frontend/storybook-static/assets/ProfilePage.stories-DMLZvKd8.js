@@ -1,6 +1,0 @@
-import{T as i,a as c}from"./ThemeDecorator-DOb0kzc_.js";import"./index-BP8_t0zE.js";import d from"./ProfilePage-VMCZGsk9.js";import{R as n}from"./RouterDecorator-DTQIMn4G.js";import{S as g}from"./StoreDecorator-_TQRufpt.js";import"./jsx-runtime-CexXSJP5.js";import"./DynamicModuleLoader-DI9N5zYt.js";import"./useAppDispatch-B-92xP32.js";import"./i18next-DXJLt4wh.js";import"./index-DJkmxc1E.js";import"./ProfileCard-Dq5WoC5u.js";import"./classNames-DgDD4s-s.js";import"./Text-B2gU8dYJ.js";import"./Input-DIdXN3MZ.js";import"./Loader-Ba6IOZ8c.js";import"./Button-DFlArtjJ.js";import"./useTranslation-B2QVmqVC.js";import"./index-8HAOCAKB.js";import"./index-BhfaPLzF.js";const b={title:"pages/ProfilePage",component:d,argTypes:{},decorators:[n,g({profile:{data:void 0,isLoading:!1,readonly:!0}})]},r={args:{}},o={args:{},decorators:[i(c.DARK)]};var e,t,a;r.parameters={...r.parameters,docs:{...(e=r.parameters)==null?void 0:e.docs,source:{originalSource:`{
-  args: {}
-}`,...(a=(t=r.parameters)==null?void 0:t.docs)==null?void 0:a.source}}};var s,m,p;o.parameters={...o.parameters,docs:{...(s=o.parameters)==null?void 0:s.docs,source:{originalSource:`{
-  args: {},
-  decorators: [ThemeDecorator(Theme.DARK)]
-}`,...(p=(m=o.parameters)==null?void 0:m.docs)==null?void 0:p.source}}};const j=["Light","Dark"];export{o as Dark,r as Light,j as __namedExportsOrder,b as default};

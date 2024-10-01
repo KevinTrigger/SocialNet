@@ -9,6 +9,7 @@ import {
   getProfileForm,
   getProfileIsLoading,
   getProfileReadonly,
+  getProfileValidateErrors,
   profileActions,
   ProfileCard,
   profileReducer,
@@ -18,6 +19,9 @@ import { useSelector } from "react-redux";
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 import { Currency } from "entities/Currency";
 import { Country } from "entities/Country";
+import { Text, TextTheme } from "shared/ui/Text/Text";
+import { ValidateProfileError } from "entities/Profile/model/types/profile";
+import { useTranslation } from "react-i18next";
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -28,11 +32,13 @@ interface ProfilePageProps {
 }
 
 const ProfilePage: FC<ProfilePageProps> = () => {
+  const { t } = useTranslation("profile");
   const dispatch = useAppDispatch();
   const form = useSelector(getProfileForm);
   const isLoading = useSelector(getProfileIsLoading);
   const error = useSelector(getProfileError);
   const readonly = useSelector(getProfileReadonly);
+  const validateErrors = useSelector(getProfileValidateErrors);
 
   const onChangeFirstname = useCallback(
     (value?: string) => {
@@ -90,6 +96,34 @@ const ProfilePage: FC<ProfilePageProps> = () => {
     [dispatch]
   );
 
+  const getValidateErrors = () => {
+    if (validateErrors?.length) {
+      return validateErrors.map((error) => (
+        <Text
+          theme={TextTheme.ERROR}
+          text={validateErrorTranslates[error]}
+          key={error}
+        />
+      ));
+    }
+  };
+
+  const validateErrorTranslates = {
+    [ValidateProfileError.INCORRECT_USER_FIRSTNAME]: t("Неверно указано имя"),
+    [ValidateProfileError.INCORRECT_USER_LASTNAME]: t(
+      "Неверно указана фамилия"
+    ),
+    [ValidateProfileError.INCORRECT_USER_USERNAME]: t("Неверно указан никнейм"),
+    [ValidateProfileError.INCORRECT_CHARACTERS]: t(
+      "Имя и фамилия не могут содержить числа"
+    ),
+    [ValidateProfileError.INCORRECT_USER_AGE]: t("Неверно указан возраст"),
+    [ValidateProfileError.INCORRECT_USER_COUNTRY]: t("Неверно указана страна"),
+    [ValidateProfileError.NO_DATA]: t("Данные отсутствуют"),
+    [ValidateProfileError.SERVER_ERROR]: t("Ошибка сервера"),
+    [ValidateProfileError.INCORRECT_USER_AVATAR]: t("Неверный путь изображения"),
+  };
+
   useEffect(() => {
     dispatch(fetchProfileData());
   }, [dispatch]);
@@ -97,6 +131,7 @@ const ProfilePage: FC<ProfilePageProps> = () => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <ProfilePageHeader />
+      {getValidateErrors()}
       <ProfileCard
         data={form}
         isLoading={isLoading}
