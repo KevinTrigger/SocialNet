@@ -23,12 +23,9 @@ export default meta;
 
 type Story = StoryObj<typeof Navbar>;
 
-export const Light: Story = {
-  args: {},
-};
+export const Light: Story = {};
 
 export const LightAuthtorized: Story = {
-  args: {},
   decorators: [
     StoreDecorator({
       user: { authData: { id: "1", username: "admin" } },
@@ -37,12 +34,10 @@ export const LightAuthtorized: Story = {
 };
 
 export const Dark: Story = {
-  args: {},
   decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const DarkAuthtorized: Story = {
-  args: {},
   decorators: [
     StoreDecorator({
       user: { authData: { id: "1", username: "admin" } },

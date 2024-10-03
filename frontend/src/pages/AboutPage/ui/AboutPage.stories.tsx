@@ -7,7 +7,6 @@ import { ThemeDecorator } from "../../../shared/config/storybook/ThemeDecorator/
 const meta: Meta<typeof AboutPage> = {
   title: "pages/AboutPage",
   component: AboutPage,
-  argTypes: {},
   decorators: [RouterDecorator]
 };
 
@@ -15,11 +14,8 @@ export default meta;
 
 type Story = StoryObj<typeof AboutPage>;
 
-export const Light: Story = {
-  args: {},
-};
+export const Light: Story = {};
 
 export const Dark: Story = {
-  args: {},
   decorators: [ThemeDecorator(Theme.DARK)]
 };

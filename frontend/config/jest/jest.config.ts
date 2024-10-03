@@ -22,7 +22,7 @@ const config: Config = {
     "node"
   ],
   moduleNameMapper: {
-    '\\.s?css$': 'identity-obj-proxy',
+    '.+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
     '^app/(.*)$': '<rootDir>/src/app/$1',
     '^entities/(.*)$': '<rootDir>/src/entities/$1',

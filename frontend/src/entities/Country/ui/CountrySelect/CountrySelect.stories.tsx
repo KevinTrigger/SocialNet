@@ -6,7 +6,6 @@ import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDeco
 const meta: Meta<typeof CountrySelect> = {
   title: "entities/CountrySelect",
   component: CountrySelect,
-  argTypes: {},
 };
 
 export default meta;
@@ -18,6 +17,5 @@ export const Light: Story = {
 };
 
 export const Dark: Story = {
-  args: {},
   decorators: [ThemeDecorator(Theme.DARK)],
 };

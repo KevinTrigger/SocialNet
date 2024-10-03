@@ -3,11 +3,25 @@ import { Theme } from "app/providers/ThemeProvider";
 import { ProfileCard } from "./ProfileCard";
 import { RouterDecorator } from "shared/config/storybook/RouteDecorator/RouterDecorator";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import avatar from "shared/assets/tests/storybook.png";
+import { Country } from "entities/Country";
+import { Currency } from "entities/Currency";
 
 const meta: Meta<typeof ProfileCard> = {
   title: "entities/ProfileCard",
   component: ProfileCard,
-  argTypes: {},
+  args: {
+    data: {
+      firstname: "Sergey",
+      lastname: "Konovalov",
+      username: "Kevin Trigger",
+      age: 22,
+      avatar: avatar,
+      city: "Yekaterinburg",
+      country: Country.Russia,
+      currency: Currency.RUB,
+    },
+  },
   decorators: [RouterDecorator],
 };
 
