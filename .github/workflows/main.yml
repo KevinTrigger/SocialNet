@@ -24,8 +24,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: install modules
         run: npm install
-      - name: install husky hooks
-        run: npx husky install ../.git/hooks
+      # Вручную установить husky и указать путь к .git в корне
+      - name: Install husky hooks manually
+        run: |
+          npx husky install ../.git/hooks
         shell: bash
         working-directory: ./frontend
       - name: build project

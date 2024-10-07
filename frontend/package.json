@@ -17,7 +17,7 @@
     "test:ui:ci": "npx loki --requireReference --reactUri file:./storybook-static",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook",
-    "prepare": "husky install"
+    "prepare": ""
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.0",
