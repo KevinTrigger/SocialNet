@@ -1,0 +1,16 @@
+.CommentCard {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--primary-color);
+  width: 100%;
+  padding: 20px;
+}
+
+.authorBlock {
+  display: flex;
+  gap: 8px;
+}
+
+.commentText {
+  margin-top: 10px;
+}
