@@ -3,18 +3,15 @@
   position: relative;
   width: 80px;
   height: 80px;
-  box-sizing: border-box;
-  color: var(--inverted-bg-color);
 }
 
 .lds-ellipsis div {
   position: absolute;
-  box-sizing: border-box;
-  top: 33.3333px;
-  width: 13.3333px;
-  height: 13.3333px;
+  top: 33px;
+  width: 13px;
+  height: 13px;
   border-radius: 50%;
-  background: currentcolor;
+  background: var(--inverted-bg-color);
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 
@@ -40,30 +37,30 @@
 
 @keyframes lds-ellipsis1 {
   0% {
-    transform: scale(0);
+      transform: scale(0);
   }
 
   100% {
-    transform: scale(1);
+      transform: scale(1);
   }
 }
 
 @keyframes lds-ellipsis3 {
   0% {
-    transform: scale(1);
+      transform: scale(1);
   }
 
   100% {
-    transform: scale(0);
+      transform: scale(0);
   }
 }
 
 @keyframes lds-ellipsis2 {
   0% {
-    transform: translate(0, 0);
+      transform: translate(0, 0);
   }
 
   100% {
-    transform: translate(24px, 0);
+      transform: translate(24px, 0);
   }
 }

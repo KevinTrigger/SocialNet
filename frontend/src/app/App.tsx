@@ -1,14 +1,14 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import { AppRouter } from "./providers/router";
 import { Navbar } from "widgets/Navbar";
+import { Suspense, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserInited, userActions } from "entities/User";
 import { Sidebar } from "widgets/Sidebar";
-import { FC, Suspense, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { userActions } from "entities/User";
-import { PageLoader } from "widgets/PageLoader";
 
-const App: FC = () => {
+const App = () => {
   const dispatch = useDispatch();
+  const isInited = useSelector(getUserInited);
 
   useEffect(() => {
     dispatch(userActions.initAuthData());
@@ -16,11 +16,11 @@ const App: FC = () => {
 
   return (
     <div className={classNames("app", {}, [])}>
-      <Suspense fallback={<PageLoader />}>
+      <Suspense fallback="">
         <Navbar />
         <div className="content-page">
           <Sidebar />
-          <AppRouter />
+          {isInited && <AppRouter />}
         </div>
       </Suspense>
     </div>

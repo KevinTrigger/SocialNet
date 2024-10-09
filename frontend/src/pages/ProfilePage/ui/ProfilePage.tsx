@@ -31,7 +31,7 @@ interface ProfilePageProps {
   className?: string;
 }
 
-const ProfilePage: FC<ProfilePageProps> = () => {
+export const ProfilePage: FC<ProfilePageProps> = () => {
   const { t } = useTranslation("profile");
   const dispatch = useAppDispatch();
   const form = useSelector(getProfileForm);

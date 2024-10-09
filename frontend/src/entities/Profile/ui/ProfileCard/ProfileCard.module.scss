@@ -12,7 +12,7 @@
   margin-top: 10px;
 }
 
-.loading, .error {
+.error {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,4 +23,15 @@
   display: flex;
   justify-content: center;
   width: 100%;
+}
+
+.skeleton_wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.skeleton_avatar {
+  margin: 0 auto;
+  margin-bottom: 10px;
 }

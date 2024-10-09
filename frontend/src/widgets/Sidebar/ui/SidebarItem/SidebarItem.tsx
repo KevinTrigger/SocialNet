@@ -12,12 +12,14 @@ interface SidebarItemProps {
   collapsed: boolean;
 }
 
-const SidebarItem: FC<SidebarItemProps> = (props) => {
+export const SidebarItem: FC<SidebarItemProps> = memo((props) => {
   const { item, collapsed } = props;
   const { t } = useTranslation("");
   const isAuth = useSelector(getUserAuthData);
 
-  if (item.authOnly && !isAuth) return null;
+  if (item.authOnly && !isAuth) {
+    return null;
+  }
 
   return (
     <AppLink
@@ -29,6 +31,4 @@ const SidebarItem: FC<SidebarItemProps> = (props) => {
       <span className={cl.link}>{t(item.text)}</span>
     </AppLink>
   );
-};
-
-export default memo(SidebarItem);
+});

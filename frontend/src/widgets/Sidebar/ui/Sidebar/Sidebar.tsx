@@ -5,20 +5,20 @@ import { LangSwitcher } from "shared/ui/LangSwitcher";
 import { ThemeSwitcher } from "shared/ui/ThemeSwitcher";
 import Button, { ButtonSize, ButtonTheme } from "shared/ui/Button/Button";
 import { SidebarItemList } from "../../model/items";
-import SidebarItem from "../SidebarItem/SidebarItem";
+import { SidebarItem } from "../SidebarItem/SidebarItem";
 
 interface SidebarProps {
   className?: string;
 }
 
-const Sidebar: FC = ({ className }: SidebarProps) => {
+export const Sidebar: FC = memo(({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(true);
 
   const onToggle = () => {
     setCollapsed((prev) => !prev);
   };
 
-  const getSidebarItems = useMemo(
+  const itemsList = useMemo(
     () =>
       SidebarItemList.map((item) => (
         <SidebarItem collapsed={collapsed} item={item} key={item.path} />
@@ -26,15 +26,12 @@ const Sidebar: FC = ({ className }: SidebarProps) => {
     [collapsed]
   );
 
-  const mods = {
-    [cl.collapsed]: collapsed,
-    [cl.link]: collapsed,
-  };
-
   return (
     <div
       data-testid="sidebar"
-      className={classNames(cl.Sidebar, mods, [className])}
+      className={classNames(cl.Sidebar, { [cl.collapsed]: collapsed }, [
+        className,
+      ])}
     >
       <Button
         data-testid="sidebar-toggle"
@@ -46,13 +43,11 @@ const Sidebar: FC = ({ className }: SidebarProps) => {
       >
         {collapsed ? ">" : "<"}
       </Button>
-      <div className={cl.items}>{getSidebarItems}</div>
+      <div className={cl.items}>{itemsList}</div>
       <div className={cl.switchers}>
         <ThemeSwitcher />
         <LangSwitcher className={cl.lang} isShort={collapsed} />
       </div>
     </div>
   );
-};
-
-export default memo(Sidebar);
+});

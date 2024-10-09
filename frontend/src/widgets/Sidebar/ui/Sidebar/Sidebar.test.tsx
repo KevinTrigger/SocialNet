@@ -1,7 +1,6 @@
 import { fireEvent, screen } from "@testing-library/react";
-import Sidebar from "./Sidebar";
+import { Sidebar } from "./Sidebar";
 import { componentRender } from "shared/lib/tests/componentRender/componentRender";
-
 
 describe("Testing a sidebar", () => {
   test("test on render sidebar", () => {

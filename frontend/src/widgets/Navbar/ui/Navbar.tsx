@@ -5,7 +5,6 @@ import Button, { ButtonTheme } from "shared/ui/Button/Button";
 import { useTranslation } from "react-i18next";
 import { LoginModal } from "features/AuthByUsername/ui/LoginModal/LoginModal";
 import { getUserAuthData, userActions } from "entities/User";
-import { Text, TextTheme } from "shared/ui/Text/Text";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useSelector } from "react-redux";
 
@@ -34,7 +33,6 @@ const Navbar: FC = ({ className }: NavbarProps) => {
   if (authData) {
     return (
       <div className={classNames(cl.Navbar, {}, [className])}>
-        <Text theme={TextTheme.NORMAL} text={authData.username} />
         <Button
           theme={ButtonTheme.CLEAR_INVERTED}
           className={cl.links}

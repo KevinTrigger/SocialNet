@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import cl from "./[FTName].module.scss";
@@ -8,4 +9,4 @@ const [FTName] = () => {
   return <div></div>;
 };
 
-export default [FTName];
+export default memo([FTName]);

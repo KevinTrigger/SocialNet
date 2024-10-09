@@ -1,5 +1,5 @@
 import type { Meta, StoryFn, StoryObj } from "@storybook/react";
-import Sidebar from "./Sidebar";
+import { Sidebar } from "./Sidebar";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "app/providers/ThemeProvider";
 import { I18nextProvider } from "react-i18next";

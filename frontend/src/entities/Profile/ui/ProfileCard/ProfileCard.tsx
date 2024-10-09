@@ -3,12 +3,12 @@ import { classNames, Mods } from "shared/lib/classNames/classNames";
 import { Text, TextAlign, TextTheme } from "shared/ui/Text/Text";
 import { Input } from "shared/ui/Input/Input";
 import { Profile } from "../../model/types/profile";
-import { Loader } from "shared/ui/Loader";
 import cl from "./ProfileCard.module.scss";
 import { Avatar, AvatarSize } from "shared/ui/Avatar/Avatar";
 import { Currency, CurrencySelect } from "entities/Currency";
 import { Country, CountrySelect } from "entities/Country";
 import { useTranslation } from "react-i18next";
+import { Skeleton } from "shared/ui/Skeleton/Skeleton";
 
 interface ProfileCardProps {
   className?: string;
@@ -47,12 +47,16 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
 
   if (isLoading) {
     return (
-      <div
-        className={classNames(cl.ProfileCard, { [cl.loading]: true }, [
-          className,
-        ])}
-      >
-        <Loader />
+      <div className={classNames(cl.ProfileCard, {}, [className])}>
+        <div className={cl.skeleton_wrap}>
+          <Skeleton
+            className={cl.skeleton_avatar}
+            width={200}
+            height={200}
+            border={"50%"}
+          />
+          <Skeleton className={cl.skeleton} width={400} height={235} />
+        </div>
       </div>
     );
   }

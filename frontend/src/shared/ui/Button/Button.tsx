@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC, memo } from "react";
+import { ButtonHTMLAttributes, FC, memo, MouseEvent } from "react";
 import { classNames, Mods } from "shared/lib/classNames/classNames";
 import cl from "./Button.module.scss";
 
@@ -24,10 +24,12 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   disabled?: boolean;
   square?: boolean;
   size?: ButtonSize;
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
 const Button: FC<ButtonProps> = (props) => {
   const {
+    onClick,
     className,
     theme = ButtonTheme.OUTLINE,
     children,
@@ -45,7 +47,11 @@ const Button: FC<ButtonProps> = (props) => {
   };
 
   return (
-    <button className={classNames(cl.Button, mods, [className])} {...other}>
+    <button
+      onClick={onClick}
+      className={classNames(cl.Button, mods, [className])}
+      {...other}
+    >
       {children}
     </button>
   );
