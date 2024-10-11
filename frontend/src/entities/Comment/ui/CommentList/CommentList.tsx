@@ -14,7 +14,19 @@ interface CommentListProps {
 export const CommentList: FC<CommentListProps> = (props) => {
   const { className, comments, isLoading } = props;
 
-  console.log(comments, ' comments')
+  console.log(comments, " comments");
+
+  if (isLoading) {
+    return comments?.map((comment) => (
+      <CommentCard
+        key={comment.id}
+        isLoading={isLoading}
+        className={cl.comment}
+        comment={comment}
+      />
+    ));
+  }
+
   return (
     <div className={classNames(cl.CommentList, {}, [className])}>
       {!comments?.length ? (
@@ -22,6 +34,7 @@ export const CommentList: FC<CommentListProps> = (props) => {
       ) : (
         comments?.map((comment) => (
           <CommentCard
+            key={comment.id}
             isLoading={isLoading}
             className={cl.comment}
             comment={comment}

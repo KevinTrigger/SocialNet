@@ -18,6 +18,7 @@ import { getArticleCommentsIsLoading } from "../model/selectors/comments";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { fetchCommentsByArticleId } from "../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
+import { CommentForm } from "features/AddNewComment";
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -28,14 +29,13 @@ const reducers: ReducersList = {
 };
 
 const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
-  const dispatch = useAppDispatch();
   const { className } = props;
   const { id } = useParams<{ id: string }>();
   const { t } = useTranslation("article-details");
 
+  const dispatch = useAppDispatch();
   const comments = useSelector(getArticleComments.selectAll);
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
-  // const commentsError = useSelector(getArticleCommentsError);
 
   useEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
@@ -54,6 +54,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
       <div className={classNames(cl.ArticleDetailsPage, {}, [className])}>
         <ArticleDetails id={id} />
         <Text className={cl.commentTitle} title="Комментарии" />
+        <CommentForm className={cl.commentForm} />
         <CommentList isLoading={commentsIsLoading} comments={comments} />
       </div>
     </DynamicModuleLoader>

@@ -1,40 +1,4 @@
 {
-  "users": [
-    {
-      "id": "1",
-      "username": "admin",
-      "password": "123",
-      "role": "admin",
-      "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
-    },
-    {
-      "id": "2",
-      "username": "kevin",
-      "password": "123",
-      "role": "user",
-      "avatar": "https://sectricity.com/wp-content/uploads/2020/03/Ethical-Hacker-Sectricity.jpg"
-    }
-  ],
-  "comments": [
-    {
-      "id": "1",
-      "text": "some comment",
-      "articleId": "1",
-      "userId": "1"
-    },
-    {
-      "id": "2",
-      "text": "some comment2",
-      "articleId": "1",
-      "userId": "1"
-    },
-    {
-      "id": "3",
-      "text": "some comment3",
-      "articleId": "1",
-      "userId": "1"
-    }
-  ],
   "articles": [
     {
       "id": "1",
@@ -108,14 +72,82 @@
       ]
     }
   ],
-  "profile": {
-    "firstname": "Сергей",
-    "lastname": "Коновалов",
-    "age": 23,
-    "currency": "EUR",
-    "country": "Russia",
-    "city": "Екатеринбург",
-    "username": "Kevin",
-    "avatar": "https://sun9-48.userapi.com/impg/Q--ZQCHe269vronAmySy2NuJPnjw4p15s_ZV4A/r62Ei1uIRMA.jpg?size=1620x2160&quality=95&sign=04c20514de6999204913bccd9c1b47c7&type=album"
-  }
+  "comments": [
+    {
+      "id": "1",
+      "text": "some comment",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "text": "some comment2",
+      "articleId": "1",
+      "userId": "2"
+    },
+    {
+      "id": "3",
+      "text": "some comment3",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "dqwd",
+      "id": "O6dorKz"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "tests1",
+      "id": "WYJrcpP"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "test2",
+      "id": "LDBfjkU"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": "admin",
+      "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
+    },
+    {
+      "id": "2",
+      "username": "kevin",
+      "password": "123",
+      "role": "user",
+      "avatar": "https://sectricity.com/wp-content/uploads/2020/03/Ethical-Hacker-Sectricity.jpg"
+    }
+  ],
+  "profile": [
+    {
+      "id": "1",
+      "firstname": "Сергей",
+      "lastname": "Коновалов",
+      "age": 23,
+      "currency": "EUR",
+      "country": "Russia",
+      "city": "Екатеринбург",
+      "username": "Kevin",
+      "avatar": "https://sectricity.com/wp-content/uploads/2020/03/Ethical-Hacker-Sectricity.jpg"
+    },
+    {
+      "id": "2",
+      "firstname": "Иван",
+      "lastname": "Иванов",
+      "age": 33,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Екатеринбург",
+      "username": "Melo",
+      "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
+    }
+  ]
 }

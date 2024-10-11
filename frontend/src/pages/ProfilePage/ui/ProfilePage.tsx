@@ -22,6 +22,7 @@ import { Country } from "entities/Country";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 import { ValidateProfileError } from "entities/Profile/model/types/profile";
 import { useTranslation } from "react-i18next";
+import { useParams } from "react-router-dom";
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -34,6 +35,7 @@ interface ProfilePageProps {
 export const ProfilePage: FC<ProfilePageProps> = () => {
   const { t } = useTranslation("profile");
   const dispatch = useAppDispatch();
+  const { id } = useParams<{ id: string }>();
   const form = useSelector(getProfileForm);
   const isLoading = useSelector(getProfileIsLoading);
   const error = useSelector(getProfileError);
@@ -121,12 +123,16 @@ export const ProfilePage: FC<ProfilePageProps> = () => {
     [ValidateProfileError.INCORRECT_USER_COUNTRY]: t("Неверно указана страна"),
     [ValidateProfileError.NO_DATA]: t("Данные отсутствуют"),
     [ValidateProfileError.SERVER_ERROR]: t("Ошибка сервера"),
-    [ValidateProfileError.INCORRECT_USER_AVATAR]: t("Неверный путь изображения"),
+    [ValidateProfileError.INCORRECT_USER_AVATAR]: t(
+      "Неверный путь изображения"
+    ),
   };
 
   useEffect(() => {
-    dispatch(fetchProfileData());
-  }, [dispatch]);
+    if (id) {
+      dispatch(fetchProfileData(id));
+    }
+  }, [dispatch, id]);
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
