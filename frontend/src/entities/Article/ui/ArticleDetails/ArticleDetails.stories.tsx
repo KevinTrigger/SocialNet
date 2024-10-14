@@ -91,7 +91,6 @@ export default meta;
 type Story = StoryObj<typeof ArticleDetails>;
 
 export const Light: Story = {
-  args: {},
   decorators: [
     StoreDecorator({
       articleDetails: {
@@ -102,7 +101,6 @@ export const Light: Story = {
 };
 
 export const LightIsLoading: Story = {
-  args: {},
   decorators: [
     StoreDecorator({
       articleDetails: {
@@ -113,7 +111,6 @@ export const LightIsLoading: Story = {
 };
 
 export const LightError: Story = {
-  args: {},
   decorators: [
     StoreDecorator({
       articleDetails: {
@@ -124,16 +121,17 @@ export const LightError: Story = {
 };
 
 export const Dark: Story = {
-  args: {},
-  decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({
-    articleDetails: {
-      data: article
-    }
-  })],
+  decorators: [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+      articleDetails: {
+        data: article,
+      },
+    }),
+  ],
 };
 
 export const DarkIsLoading: Story = {
-  args: {},
   decorators: [
     ThemeDecorator(Theme.DARK),
     StoreDecorator({
@@ -145,7 +143,6 @@ export const DarkIsLoading: Story = {
 };
 
 export const DarkError: Story = {
-  args: {},
   decorators: [
     ThemeDecorator(Theme.DARK),
     StoreDecorator({

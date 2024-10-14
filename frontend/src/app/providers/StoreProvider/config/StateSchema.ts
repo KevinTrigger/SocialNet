@@ -4,13 +4,11 @@ import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } f
 import { LoginSchema } from 'features/AuthByUsername';
 import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
-import { CounterSchema } from 'entities/Counter';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailsCommentSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from 'features/AddNewComment';
 
 export interface StateSchema {
-    counter: CounterSchema;
     user: UserSchema;
 
     // Асинхронные редюсеры

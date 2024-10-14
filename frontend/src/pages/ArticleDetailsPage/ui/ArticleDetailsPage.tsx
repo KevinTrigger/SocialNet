@@ -1,8 +1,7 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import cl from "./ArticleDetailsPage.module.scss";
-import { memo, useEffect } from "react";
-import { ArticleDetails } from "entities/Article";
+import { memo, useCallback, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Text } from "shared/ui/Text/Text";
 import { CommentList } from "entities/Comment";
@@ -19,6 +18,8 @@ import { useSelector } from "react-redux";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { fetchCommentsByArticleId } from "../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { CommentForm } from "features/AddNewComment";
+import { ArticleDetails } from "entities/Article";
+import { addCommentForArticle } from "../model/services/addCommentForArticle/addCommentForArticle";
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -41,6 +42,10 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     dispatch(fetchCommentsByArticleId(id));
   }, [dispatch, id]);
 
+  const onSendComment = useCallback((text: string) => {
+    dispatch(addCommentForArticle(text));
+  }, [dispatch]);
+
   if (!id) {
     return (
       <div className={classNames(cl.ArticleDetailsPage, {}, [className])}>
@@ -54,7 +59,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
       <div className={classNames(cl.ArticleDetailsPage, {}, [className])}>
         <ArticleDetails id={id} />
         <Text className={cl.commentTitle} title="Комментарии" />
-        <CommentForm className={cl.commentForm} />
+        <CommentForm className={cl.commentForm} onSendComment={onSendComment} />
         <CommentList isLoading={commentsIsLoading} comments={comments} />
       </div>
     </DynamicModuleLoader>

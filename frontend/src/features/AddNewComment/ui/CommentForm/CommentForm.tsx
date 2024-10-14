@@ -1,6 +1,5 @@
 import { FC, memo, useCallback } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
-// import { useTranslation } from "react-i18next";
 import cl from "./CommentForm.module.scss";
 import { Input } from "shared/ui/Input/Input";
 import Button, { ButtonTheme } from "shared/ui/Button/Button";
@@ -15,10 +14,10 @@ import {
 import { useSelector } from "react-redux";
 import { getCommentFormText } from "../../model/selectors/commentFormSelectors";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { sendComment } from "features/AddNewComment/model/services/sendComment/sendComment";
 
 export interface CommentFormProps {
   className?: string;
+  onSendComment: (text: string) => void;
 }
 
 const reducers: ReducersList = {
@@ -26,8 +25,7 @@ const reducers: ReducersList = {
 };
 
 const CommentForm: FC<CommentFormProps> = (props) => {
-  const { className } = props;
-  // const { t } = useTranslation("");
+  const { className, onSendComment } = props;
   const text = useSelector(getCommentFormText);
   const dispatch = useAppDispatch();
 
@@ -38,9 +36,10 @@ const CommentForm: FC<CommentFormProps> = (props) => {
     [dispatch]
   );
 
-  const onSendComment = useCallback(() => {
-    dispatch(sendComment());
-  }, [dispatch]);
+  const onSendHandler = useCallback(() => {
+    onSendComment(text || "");
+    onChangeText("");
+  }, [onChangeText, onSendComment, text]);
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
@@ -52,7 +51,7 @@ const CommentForm: FC<CommentFormProps> = (props) => {
           placeholder={">"}
         />
         <Button
-          onClick={onSendComment}
+          onClick={onSendHandler}
           className={cl.btn}
           theme={ButtonTheme.OUTLINE}
         >
