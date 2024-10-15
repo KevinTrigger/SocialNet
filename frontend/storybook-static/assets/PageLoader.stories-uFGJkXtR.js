@@ -1,0 +1,6 @@
+import{T as i,a as g}from"./ThemeDecorator-vrAVssHn.js";import{r as L}from"./index-CTjT7uj6.js";import{j as a}from"./jsx-runtime-Cw0GR0a5.js";import{c as l}from"./classNames-DgDD4s-s.js";import{L as u}from"./Loader-XX8D1B_m.js";import{R as f}from"./RouterDecorator-uw3pIXXC.js";import"./index-D51GX6Yn.js";import"./index-vZN_Bsf0.js";const h="_PageLoader_a5tvp_1",P={PageLoader:h},p=({className:n})=>a.jsx("div",{className:l(P.PageLoader,{},[n]),children:a.jsx(u,{})}),x=L.memo(p);p.__docgenInfo={description:"",methods:[],displayName:"PageLoader",props:{className:{required:!1,tsType:{name:"string"},description:""}}};const k={title:"widget/PageLoader",component:x,argTypes:{},decorators:[f]},r={args:{}},e={args:{},decorators:[i(g.DARK)]};var o,s,t;r.parameters={...r.parameters,docs:{...(o=r.parameters)==null?void 0:o.docs,source:{originalSource:`{
+  args: {}
+}`,...(t=(s=r.parameters)==null?void 0:s.docs)==null?void 0:t.source}}};var m,c,d;e.parameters={...e.parameters,docs:{...(m=e.parameters)==null?void 0:m.docs,source:{originalSource:`{
+  args: {},
+  decorators: [ThemeDecorator(Theme.DARK)]
+}`,...(d=(c=e.parameters)==null?void 0:c.docs)==null?void 0:d.source}}};const v=["Light","Dark"];export{e as Dark,r as Light,v as __namedExportsOrder,k as default};

@@ -1,0 +1,1 @@
+import{j as r}from"./jsx-runtime-Cw0GR0a5.js";import{r as t}from"./index-CTjT7uj6.js";const e=()=>r.jsx("div",{children:"ArticlesPage"}),i=t.memo(e);e.__docgenInfo={description:"",methods:[],displayName:"ArticlesPage"};export{i as default};
