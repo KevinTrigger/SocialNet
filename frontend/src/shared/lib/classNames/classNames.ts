@@ -16,5 +16,3 @@ export function classNames(
 }
 
 classNames('remove-btn', {hovered: true, selectable: true, red: false}, ['padding']);
-
-// remove-btn hovered selectable padding

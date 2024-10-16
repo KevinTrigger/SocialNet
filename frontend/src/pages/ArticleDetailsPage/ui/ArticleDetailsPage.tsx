@@ -18,8 +18,10 @@ import { useSelector } from "react-redux";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { fetchCommentsByArticleId } from "../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { CommentForm } from "features/AddNewComment";
-import { ArticleDetails } from "entities/Article";
+import { ArticleDetails, getArticleDetailsError } from "entities/Article";
 import { addCommentForArticle } from "../model/services/addCommentForArticle/addCommentForArticle";
+import AppLink, { AppLinkTheme } from "shared/ui/AppLink/AppLink";
+import { RoutePath } from "shared/config/routeConfig/routeConfig";
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -37,14 +39,18 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const dispatch = useAppDispatch();
   const comments = useSelector(getArticleComments.selectAll);
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
+  const error = useSelector(getArticleDetailsError);
 
   useEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
   }, [dispatch, id]);
 
-  const onSendComment = useCallback((text: string) => {
-    dispatch(addCommentForArticle(text));
-  }, [dispatch]);
+  const onSendComment = useCallback(
+    (text: string) => {
+      dispatch(addCommentForArticle(text));
+    },
+    [dispatch]
+  );
 
   if (!id) {
     return (
@@ -57,10 +63,20 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div className={classNames(cl.ArticleDetailsPage, {}, [className])}>
+        <AppLink to={RoutePath.article_details} theme={AppLinkTheme.PRIMARY}>
+          {"< Все статьи"}
+        </AppLink>
         <ArticleDetails id={id} />
-        <Text className={cl.commentTitle} title="Комментарии" />
-        <CommentForm className={cl.commentForm} onSendComment={onSendComment} />
-        <CommentList isLoading={commentsIsLoading} comments={comments} />
+        {!error && (
+          <>
+            <Text className={cl.commentTitle} title="Комментарии" />
+            <CommentForm
+              className={cl.commentForm}
+              onSendComment={onSendComment}
+            />
+            <CommentList isLoading={commentsIsLoading} comments={comments} />
+          </>
+        )}
       </div>
     </DynamicModuleLoader>
   );

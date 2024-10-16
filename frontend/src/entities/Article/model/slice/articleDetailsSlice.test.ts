@@ -11,7 +11,12 @@ const data: Article = {
   createdAt: '21.20.2000',
   img: 'src.img',
   type: [ArticleType.ECONOMICS],
-  views: 220
+  views: 220,
+  user: {
+    id: "1",
+    username: "Kevin",
+    avatar: "https://teknotower.com/wp-content/uploads/2020/11/js.png"
+  }
 }
 
 describe('profileSlice.test', () => {

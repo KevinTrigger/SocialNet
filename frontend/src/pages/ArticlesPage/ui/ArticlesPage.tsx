@@ -1,8 +1,137 @@
-import { memo } from "react";
+import { FC, memo, useCallback, useState } from "react";
+import { classNames } from "shared/lib/classNames/classNames";
+import cl from "./ArticlesPage.module.scss";
+import { Article, ArticleList } from "entities/Article";
+import {
+  ArticleBlockType,
+  ArticleType,
+  ArticleViewMode,
+} from "entities/Article/model/types/article";
+import { Icon } from "shared/ui/Icon/Icon";
+import TiledIcon from "shared/assets/icons/tiled.svg?react";
+import ListIcon from "shared/assets/icons/list.svg?react";
+import Button from "shared/ui/Button/Button";
 
-const ArticlesPage = () => {
+const article: Article = {
+  id: "1",
+  title: "Javascript news about me",
+  subtitle: "Что нового в JS за 2022 год?",
+  img: "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+  user: {
+    id: "1",
+    username: "Kevin Trigger",
+    avatar:
+      "https://sectricity.com/wp-content/uploads/2020/03/Ethical-Hacker-Sectricity.jpg",
+  },
+  views: 1022,
+  createdAt: "26.02.2022",
+  type: [ArticleType.IT, ArticleType.ECONOMICS, ArticleType.SCIENCE],
+  blocks: [
+    {
+      id: "1",
+      type: ArticleBlockType.TEXT,
+      title: "Заголовок этого блока",
+      paragraphs: [
+        "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.",
+        "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
+        "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:",
+      ],
+    },
+    {
+      id: "4",
+      type: ArticleBlockType.CODE,
+      code: '<!DOCTYPE html>\n<html>\n  <body>\n    <p id="hello"></p>\n\n    <script>\n      document.getElementById("hello").innerHTML = "Hello, world!";\n    </script>\n  </body>\n</html>;',
+    },
+    {
+      id: "5",
+      type: ArticleBlockType.TEXT,
+      title: "Заголовок этого блока",
+      paragraphs: [
+        "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.",
+        "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:",
+      ],
+    },
+    {
+      id: "2",
+      type: ArticleBlockType.IMAGE,
+      src: "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+      title: "Рисунок 1 - скриншот сайта",
+    },
+    {
+      id: "3",
+      type: ArticleBlockType.CODE,
+      code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
+    },
+    {
+      id: "7",
+      type: ArticleBlockType.TEXT,
+      title: "Заголовок этого блока",
+      paragraphs: [
+        "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
+        "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:",
+      ],
+    },
+    {
+      id: "8",
+      type: ArticleBlockType.IMAGE,
+      src: "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
+      title: "Рисунок 1 - скриншот сайта",
+    },
+    {
+      id: "9",
+      type: ArticleBlockType.TEXT,
+      title: "Заголовок этого блока",
+      paragraphs: [
+        "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
+      ],
+    },
+  ],
+};
 
-  return <div>ArticlesPage</div>;
+interface ArticlesPageProps {
+  className?: string;
+}
+
+const ArticlesPage: FC<ArticlesPageProps> = (props) => {
+  const { className } = props;
+  const [view, setView] = useState<ArticleViewMode>(ArticleViewMode.SMALL);
+
+  const onSetSmallView = useCallback(() => {
+    setView(ArticleViewMode.SMALL);
+  }, []);
+
+  const onSetBigView = useCallback(() => {
+    setView(ArticleViewMode.BIG);
+  }, []);
+
+  return (
+    <div className={classNames(cl.ArticlesPage, {}, [className])}>
+      <div className={cl.viewModeWrap}>
+        <Button
+          className={cl.viewBtn}
+          onClick={onSetBigView}
+          disabled={view == ArticleViewMode.BIG}
+        >
+          <Icon className={cl.icon} Svg={ListIcon} />
+        </Button>
+        <Button
+          disabled={view == ArticleViewMode.SMALL}
+          className={cl.viewBtn}
+          onClick={onSetSmallView}
+        >
+          <Icon className={cl.icon} Svg={TiledIcon} />
+        </Button>
+      </div>
+      <ArticleList
+        articles={new Array(16).fill(0).map((_, index) => ({
+          ...article,
+          id: String(index),
+        }))}
+        view={view}
+      />
+      {/* <ArticleList articles={[article]} /> */}
+    </div>
+  );
 };
 
 export default memo(ArticlesPage);

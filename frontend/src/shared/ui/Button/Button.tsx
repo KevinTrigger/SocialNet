@@ -49,6 +49,7 @@ const Button: FC<ButtonProps> = (props) => {
   return (
     <button
       onClick={onClick}
+      disabled={disabled}
       className={classNames(cl.Button, mods, [className])}
       {...other}
     >

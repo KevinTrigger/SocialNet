@@ -1,0 +1,143 @@
+.ArticleListItem {
+  color: var(--primary-color);
+}
+
+.icon {
+  margin-left: 3px;
+}
+
+.BIG {
+  width: 100%;
+
+  .authorAndDate {
+    display: flex;
+    gap: 5px;
+  }
+
+  .date {
+    margin-left: auto;
+  }
+
+  .titleAndType {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }  
+
+  .imageWrap {
+    margin: 16px 0;
+  }
+
+  .image {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  .views {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    opacity: .5;
+  }
+
+  .types {
+    white-space: pre;
+  }
+
+  .textBlock {
+    display: -webkit-box;
+    max-height: 200px;
+    overflow-y: hidden;
+    position: relative;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+  }
+}
+
+.SMALL {
+  width: 230px;
+
+  .card {
+    &:hover {
+      opacity: 0.8;
+      scale: 1.01;
+      transition: 0.3s all ease-in-out;
+    }
+  }
+
+  .imageWrap {
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    position: relative;
+  }
+
+  .stats {
+    display: flex;
+    margin-top: 10px;
+  }
+
+  .views {
+    margin-left: auto;
+    display: flex;
+  }
+
+  .image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .date {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &:hover {
+    .date {
+      display: block;
+      animation: appear-animate 0.3s ease-out;
+    }
+  }
+
+  .title {
+    margin-top: 8px;
+
+    p {
+      width: 180px;
+      white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+  }
+
+  .types {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 115px;
+  }
+}
+
+@keyframes appear-animate {
+  from {
+    opacity: 0;
+    scale: 0;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}

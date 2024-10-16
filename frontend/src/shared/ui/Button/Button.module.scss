@@ -66,6 +66,11 @@
   font: var(--font-xl);
 }
 
+.disabled {
+  opacity: .5;
+  cursor: default;
+}
+
 .size_m {
   font: var(--font-m);
 }

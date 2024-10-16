@@ -6,3 +6,5 @@ export {
   getArticleDetailsIsLoading,
   getArticleDetailsError
 } from './model/selectors/articleDetails';
+export { ArticleViewMode } from './model/types/article';
+export { ArticleList } from './ui/ArticleList/ArticleList';

@@ -10,7 +10,7 @@ import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice";
 import { fetchArticleById } from "../../model/services/fetchArticleById/fetchArticleById";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useSelector } from "react-redux";
-import { Text, TextAlign, TextSize } from "shared/ui/Text/Text";
+import { Text, TextAlign, TextSize, TextTheme } from "shared/ui/Text/Text";
 import {
   getArticleDetailsData,
   getArticleDetailsError,
@@ -83,6 +83,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
         text={t(
           "Попробуйте перезагрузить страницу или убедитесь, что статья по данному адресу существует"
         )}
+        theme={TextTheme.ERROR}
       />
     );
   } else {
