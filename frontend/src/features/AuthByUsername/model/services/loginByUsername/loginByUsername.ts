@@ -30,7 +30,7 @@ export const loginByUsername = createAsyncThunk<
             return response.data;
         } catch (e) {
             console.log(e);
-            return rejectWithValue(t('Ошибка'));
+            return rejectWithValue(t('Проверьте правильность комбинации логин и пароль'));
         }
     },
 );

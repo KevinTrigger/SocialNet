@@ -41,7 +41,7 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = (props) => {
   }, [dispatch]);
 
   return (
-    <div className={classNames(cl.ProfilePageHeader, {}, [className])}>
+    <header className={classNames(cl.ProfilePageHeader, {}, [className])}>
       <Text title={t("Профиль")} />
       {canEdit && (
         <div className={cl.btnsWrapper}>
@@ -73,6 +73,6 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = (props) => {
           )}
         </div>
       )}
-    </div>
+    </header>
   );
 };

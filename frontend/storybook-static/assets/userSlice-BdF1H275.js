@@ -1,0 +1,1 @@
+import{c as o}from"./i18next-Byb45X2d.js";const a="user",r={_inited:!1},s=o({name:"user",initialState:r,reducers:{setAuthData:(t,e)=>{t.authData=e.payload},initAuthData:t=>{const e=localStorage.getItem(a);e&&(t.authData=JSON.parse(e)),t._inited=!0},logout:t=>{localStorage.removeItem(a),t.authData=void 0}}}),{actions:u}=s,{reducer:i}=s;export{a as U,i as a,u};

@@ -16,25 +16,30 @@ import Button, { ButtonTheme } from "shared/ui/Button/Button";
 import { TextBlock } from "../TextBlock/TextBlock";
 import { useNavigate } from "react-router-dom";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
+import { ArticleListItemSkeleton } from "./ArticleListItemSkeleton";
 
 interface ArticleListItemProps {
   className?: string;
   article: Article;
   view: ArticleViewMode;
+  isLoading?: boolean;
 }
 
 export const ArticleListItem: FC<ArticleListItemProps> = (props) => {
-  const { className, article, view } = props;
+  const { className, article, isLoading, view } = props;
   const types = <Text text={article.type.join(`,  `)} className={cl.types} />;
   const textBlock = article.blocks.find((block) => {
     if (block.type === ArticleBlockType.TEXT) return block.paragraphs;
   }) as ArticleTextBlock;
 
   const navigate = useNavigate();
-
   const onOpenArticleDetails = useCallback(() => {
     navigate(RoutePath.article_details + article.id);
   }, [navigate, article]);
+
+  if (isLoading) {
+    return <ArticleListItemSkeleton view={view} />;
+  }
 
   if (view == ArticleViewMode.BIG) {
     return (

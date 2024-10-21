@@ -21,7 +21,7 @@ const article: Article = {
   user: {
     id: "1",
     username: "Kevin",
-    avatar: "https://teknotower.com/wp-content/uploads/2020/11/js.png"
+    avatar: "https://teknotower.com/wp-content/uploads/2020/11/js.png",
   },
   blocks: [
     {
@@ -86,7 +86,7 @@ const article: Article = {
 };
 
 const meta: Meta<typeof ArticleDetails> = {
-  title: "entities/ArticleDetails",
+  title: "entities/Article/ArticleDetails",
   component: ArticleDetails,
   decorators: [RouterDecorator],
 };
@@ -105,54 +105,12 @@ export const Light: Story = {
   ],
 };
 
-export const LightIsLoading: Story = {
-  decorators: [
-    StoreDecorator({
-      articleDetails: {
-        isLoading: true,
-      },
-    }),
-  ],
-};
-
-export const LightError: Story = {
-  decorators: [
-    StoreDecorator({
-      articleDetails: {
-        error: "Ошибка при загрузке статьи",
-      },
-    }),
-  ],
-};
-
 export const Dark: Story = {
   decorators: [
     ThemeDecorator(Theme.DARK),
     StoreDecorator({
       articleDetails: {
         data: article,
-      },
-    }),
-  ],
-};
-
-export const DarkIsLoading: Story = {
-  decorators: [
-    ThemeDecorator(Theme.DARK),
-    StoreDecorator({
-      articleDetails: {
-        isLoading: true,
-      },
-    }),
-  ],
-};
-
-export const DarkError: Story = {
-  decorators: [
-    ThemeDecorator(Theme.DARK),
-    StoreDecorator({
-      articleDetails: {
-        error: "Ошибка при загрузке статьи",
       },
     }),
   ],

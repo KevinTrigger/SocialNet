@@ -23,6 +23,7 @@ import { Text, TextTheme } from "shared/ui/Text/Text";
 import { ValidateProfileError } from "entities/Profile/model/types/profile";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
+import { Page } from "shared/ui/Page/Page";
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -136,22 +137,24 @@ export const ProfilePage: FC<ProfilePageProps> = () => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <ProfilePageHeader />
-      {getValidateErrors()}
-      <ProfileCard
-        data={form}
-        isLoading={isLoading}
-        error={error}
-        readonly={readonly}
-        onChangeFirstname={onChangeFirstname}
-        onChangeLastname={onChangeLastname}
-        onChangeAge={onChangeAge}
-        onChangeCountry={onChangeCountry}
-        onChangeCurrency={onChangeCurrency}
-        onChangeCity={onChangeCity}
-        onChangeAvatar={onChangeAvatar}
-        onChangeUsername={onChangeUsername}
-      />
+      <Page>
+        <ProfilePageHeader />
+        {getValidateErrors()}
+        <ProfileCard
+          data={form}
+          isLoading={isLoading}
+          error={error}
+          readonly={readonly}
+          onChangeFirstname={onChangeFirstname}
+          onChangeLastname={onChangeLastname}
+          onChangeAge={onChangeAge}
+          onChangeCountry={onChangeCountry}
+          onChangeCurrency={onChangeCurrency}
+          onChangeCity={onChangeCity}
+          onChangeAvatar={onChangeAvatar}
+          onChangeUsername={onChangeUsername}
+        />
+      </Page>
     </DynamicModuleLoader>
   );
 };

@@ -2,7 +2,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import cl from "./ArticleDetailsPage.module.scss";
 import { memo, useCallback, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Text } from "shared/ui/Text/Text";
 import { CommentList } from "entities/Comment";
 import {
@@ -20,8 +20,9 @@ import { fetchCommentsByArticleId } from "../model/services/fetchCommentsByArtic
 import { CommentForm } from "features/AddNewComment";
 import { ArticleDetails, getArticleDetailsError } from "entities/Article";
 import { addCommentForArticle } from "../model/services/addCommentForArticle/addCommentForArticle";
-import AppLink, { AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
+import Button from "shared/ui/Button/Button";
+import { Page } from "shared/ui/Page/Page";
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -35,6 +36,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const { className } = props;
   const { id } = useParams<{ id: string }>();
   const { t } = useTranslation("article-details");
+  const navigate = useNavigate();
 
   const dispatch = useAppDispatch();
   const comments = useSelector(getArticleComments.selectAll);
@@ -52,6 +54,10 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     [dispatch]
   );
 
+  const onBackToList = useCallback(() => {
+    navigate(RoutePath.articles);
+  }, [navigate]);
+
   if (!id) {
     return (
       <div className={classNames(cl.ArticleDetailsPage, {}, [className])}>
@@ -62,10 +68,8 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(cl.ArticleDetailsPage, {}, [className])}>
-        <AppLink to={RoutePath.article_details} theme={AppLinkTheme.PRIMARY}>
-          {"< Все статьи"}
-        </AppLink>
+      <Page className={classNames(cl.ArticleDetailsPage, {}, [className])}>
+        <Button onClick={onBackToList}>{"< Все статьи"}</Button>
         <ArticleDetails id={id} />
         {!error && (
           <>
@@ -77,7 +81,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
             <CommentList isLoading={commentsIsLoading} comments={comments} />
           </>
         )}
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

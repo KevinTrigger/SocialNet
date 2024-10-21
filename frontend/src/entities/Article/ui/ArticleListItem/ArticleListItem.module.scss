@@ -39,13 +39,19 @@
     display: flex;
     align-items: center;
     margin-top: 50px;
+
+    &Skeleton {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+    }
   }
 
   .views {
     margin-left: auto;
     display: flex;
     align-items: center;
-    opacity: .5;
   }
 
   .types {
@@ -60,6 +66,10 @@
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
+
+    &Skeleton {
+      margin-top: 15px;
+    }
   }
 }
 
@@ -84,6 +94,13 @@
   .stats {
     display: flex;
     margin-top: 10px;
+
+    &Skeleton {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
   }
 
   .views {
@@ -95,6 +112,10 @@
     width: 200px;
     height: 200px;
     object-fit: cover;
+
+    &Skeleton {
+      object-fit: cover;
+    }
   }
 
   .date {

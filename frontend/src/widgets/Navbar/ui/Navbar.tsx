@@ -32,7 +32,7 @@ const Navbar: FC = ({ className }: NavbarProps) => {
 
   if (authData) {
     return (
-      <div className={classNames(cl.Navbar, {}, [className])}>
+      <nav className={classNames(cl.Navbar, {}, [className])}>
         <Button
           theme={ButtonTheme.CLEAR_INVERTED}
           className={cl.links}
@@ -40,12 +40,12 @@ const Navbar: FC = ({ className }: NavbarProps) => {
         >
           {t("Выйти")}
         </Button>
-      </div>
+      </nav>
     );
   }
 
   return (
-    <div className={classNames(cl.Navbar, {}, [className])}>
+    <nav className={classNames(cl.Navbar, {}, [className])}>
       <Button
         theme={ButtonTheme.CLEAR_INVERTED}
         className={cl.links}
@@ -56,7 +56,7 @@ const Navbar: FC = ({ className }: NavbarProps) => {
       {isAuthModal && (
         <LoginModal isAuth={isAuthModal} onClose={onCloseModal} />
       )}
-    </div>
+    </nav>
   );
 };
 
