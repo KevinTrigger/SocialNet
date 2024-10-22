@@ -22,7 +22,7 @@ import { ArticleDetails, getArticleDetailsError } from "entities/Article";
 import { addCommentForArticle } from "../model/services/addCommentForArticle/addCommentForArticle";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import Button from "shared/ui/Button/Button";
-import { Page } from "shared/ui/Page/Page";
+import { Page } from "widgets/Page/Page";
 
 interface ArticleDetailsPageProps {
   className?: string;

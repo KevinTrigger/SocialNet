@@ -22,7 +22,7 @@ import {
   getArticlesPageIsLoading,
   getArticlesPageView,
 } from "../model/selectors/articles";
-import { Page } from "shared/ui/Page/Page";
+import { Page } from "widgets/Page/Page";
 import { fetchNextArticlesPage } from "../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import { initArticlesPage } from "../model/services/initArticlesPage/initArticlesPage";
 import cl from "./ArticlesPage.module.scss";
