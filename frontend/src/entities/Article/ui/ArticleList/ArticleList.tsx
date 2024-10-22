@@ -19,8 +19,6 @@ export const ArticleList: FC<ArticleListProps> = (props) => {
     isLoading,
     view = ArticleViewMode.SMALL,
   } = props;
-  
-  console.log(articles, ' articles')
 
   const getSkeletons = (view: ArticleViewMode) =>
     new Array(view === ArticleViewMode.SMALL ? 9 : 3)

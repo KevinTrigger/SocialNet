@@ -25,7 +25,7 @@ const articlesPageSlice = createSlice({
     ids: [],
     entities: {},
     view: ArticleViewMode.SMALL,
-    
+    _inited: false,
     // pagination
     hasMore: true,
     page: 1
@@ -39,6 +39,7 @@ const articlesPageSlice = createSlice({
       const view = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleViewMode;
       state.view = view;
       state.limit = view === ArticleViewMode.SMALL ? 9 : 4;
+      state._inited = true;
     },
     setPage: (state, action: PayloadAction<number>) => {
       state.page = action.payload;

@@ -1,6 +1,5 @@
 import { FC, memo, useCallback, useEffect } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
-import cl from "./ArticlesPage.module.scss";
 import {
   ArticleList,
   ArticleViewMode,
@@ -15,7 +14,6 @@ import {
   articlesPageReducer,
   getArticles,
 } from "../model/slice/articlesPageSlice";
-import { fetchArticles } from "../model/services/fetchArticles/fetchArticles";
 import { useSelector } from "react-redux";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
@@ -26,6 +24,8 @@ import {
 } from "../model/selectors/articles";
 import { Page } from "shared/ui/Page/Page";
 import { fetchNextArticlesPage } from "../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
+import { initArticlesPage } from "../model/services/initArticlesPage/initArticlesPage";
+import cl from "./ArticlesPage.module.scss";
 
 const reducers: ReducersList = {
   articlesPage: articlesPageReducer,
@@ -44,12 +44,7 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
   const articles = useSelector(getArticles.selectAll);
 
   useEffect(() => {
-    dispatch(articlesPageActions.initState());
-    dispatch(
-      fetchArticles({
-        page: 1,
-      })
-    );
+    dispatch(initArticlesPage());
   }, [dispatch]);
 
   const onLoadNextPart = useCallback(() => {
@@ -73,7 +68,7 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
   }
 
   return (
-    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page
         className={classNames(cl.ArticlesPage, {}, [className])}
         onScrollEnd={onLoadNextPart}

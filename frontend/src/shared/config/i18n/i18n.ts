@@ -5,7 +5,7 @@ import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 // Режим: development || production
-const mode = import.meta.env.MODE
+// const mode = import.meta.env.MODE
 
 i18n
   .use(Backend)
@@ -13,7 +13,7 @@ i18n
   .use(initReactI18next)
   .init({
     fallbackLng: 'en',
-    debug: mode === 'development',
+    debug: false,
 
     interpolation: {
       escapeValue: false
