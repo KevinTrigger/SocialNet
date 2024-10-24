@@ -1,6 +1,7 @@
 import { AboutPage } from "pages/AboutPage";
 import { ArticleDetailsPage } from "pages/ArticleDetailsPage";
 import { ArticlesPage } from "pages/ArticlesPage";
+import { ChatPage } from "pages/ChatPage";
 import { MainPage } from "pages/MainPage";
 import { NotFoundPage } from "pages/NotFoundPage";
 import { ProfilePage } from "pages/ProfilePage";
@@ -16,6 +17,7 @@ export enum AppRoutes {
   PROFILE = "profile",
   ARTICLES = "articles",
   ARTICLE_DETAILS = "article_details",
+  CHAT = "chat",
 
   // last
   NOT_FOUND = "not_found",
@@ -27,6 +29,7 @@ export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.PROFILE]: "/profile/", // + :id
   [AppRoutes.ARTICLES]: "/articles",
   [AppRoutes.ARTICLE_DETAILS]: "/articles/", // + :id
+  [AppRoutes.CHAT]: "/chat",
   // last
   [AppRoutes.NOT_FOUND]: "*",
 };
@@ -53,6 +56,11 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   [AppRoutes.ARTICLE_DETAILS]: {
     path: `${RoutePath.article_details}:id`,
     element: <ArticleDetailsPage />,
+    authOnly: true,
+  },
+  [AppRoutes.CHAT]: {
+    path: RoutePath.chat,
+    element: <ChatPage />,
     authOnly: true,
   },
 

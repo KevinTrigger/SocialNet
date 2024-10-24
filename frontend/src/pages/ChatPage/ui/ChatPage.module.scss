@@ -1,0 +1,13 @@
+.ChatPage {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chatListCard {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

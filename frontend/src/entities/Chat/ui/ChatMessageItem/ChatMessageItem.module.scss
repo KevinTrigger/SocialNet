@@ -1,0 +1,12 @@
+.ChatMessageItem {
+  background: var(--bg-color);
+  display: flex;
+  gap: 10px;
+  max-width: 720px;
+  height: max-content;
+  position: relative;
+}
+
+.timestamp {
+  opacity: .5;
+}

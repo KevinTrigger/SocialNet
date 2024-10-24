@@ -4,10 +4,11 @@ import {
   PayloadAction,
 } from '@reduxjs/toolkit'
 import { StateSchema } from 'app/providers/StoreProvider';
-import { Article, ArticleViewMode } from 'entities/Article';
+import { Article, ArticlesSortField, ArticleViewMode } from 'entities/Article';
 import { ArticlesPageSchema } from '../types/articlesPageSchema';
 import { fetchArticles } from '../services/fetchArticles/fetchArticles';
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
+import { SortOrder } from 'shared/types';
 
 const articlesAdapter = createEntityAdapter<Article>({
   selectId: (article) => article.id,
@@ -28,7 +29,12 @@ const articlesPageSlice = createSlice({
     _inited: false,
     // pagination
     hasMore: true,
-    page: 1
+    page: 1,
+    limit: 9,
+    // filters
+    order: 'asc',
+    search: '',
+    sort: ArticlesSortField.CREATED
   }),
   reducers: {
     setViewMode: (state, action: PayloadAction<ArticleViewMode>) => {
@@ -43,6 +49,15 @@ const articlesPageSlice = createSlice({
     },
     setPage: (state, action: PayloadAction<number>) => {
       state.page = action.payload;
+    },
+    setOrder: (state, action: PayloadAction<SortOrder>) => {
+      state.order = action.payload;
+    },
+    setSearch: (state, action: PayloadAction<string>) => {
+      state.search = action.payload;
+    },
+    setSort: (state, action: PayloadAction<ArticlesSortField>) => {
+      state.sort = action.payload;
     }
   },
   extraReducers(builder) {

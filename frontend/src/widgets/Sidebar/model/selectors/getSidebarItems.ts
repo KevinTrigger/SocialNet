@@ -5,6 +5,7 @@ import AboutIcon from "shared/assets/icons/about.svg?react";
 import MainIcon from "shared/assets/icons/main.svg?react";
 import ProfileIcon from "shared/assets/icons/profile.svg?react";
 import ArticleIcon from "shared/assets/icons/article.svg?react";
+import ChatIcon from "shared/assets/icons/messager.svg?react";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
 
 export const getSidebarItems = createSelector(
@@ -36,7 +37,13 @@ export const getSidebarItems = createSelector(
           Icon: ArticleIcon,
           path: RoutePath.articles,
           authOnly: true
-        }
+        },
+        {
+          text: 'Чат',
+          Icon: ChatIcon,
+          path: RoutePath.chat,
+          authOnly: true
+        },
       )
     }
     return sidebarItemList;

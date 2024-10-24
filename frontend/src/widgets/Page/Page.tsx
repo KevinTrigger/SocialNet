@@ -51,7 +51,7 @@ export const Page: FC<PageProps> = (props) => {
 
   useEffect(() => {
     wrapperRef.current.scrollTop = scrollPosition;
-  }, [scrollPosition])
+  }, [scrollPosition]);
 
   return (
     <section
@@ -60,7 +60,7 @@ export const Page: FC<PageProps> = (props) => {
       className={classNames(cl.Page, {}, [className])}
     >
       {children}
-      <div ref={triggerRef} />
+      {onScrollEnd ? <div className={cl.trigger} ref={triggerRef} /> : null}
     </section>
   );
 };

@@ -1,1 +1,0 @@
-import{j as r}from"./jsx-runtime-Cw0GR0a5.js";import{r as s}from"./index-CTjT7uj6.js";import{P as a}from"./Page-DOlsuWKT.js";import{u as e}from"./useTranslation-DegO0IwE.js";import"./classNames-DgDD4s-s.js";const o=()=>{const{t}=e("about");return r.jsx(a,{children:t("О сайте")})},c=s.memo(o);o.__docgenInfo={description:"",methods:[],displayName:"AboutPage"};export{c as default};
