@@ -66,7 +66,6 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
           className={cl.image}
           width={170}
           height={170}
-          border={"50%"}
         />
         <Skeleton className={cl.skeleton_title} width={300} height={32} />
         <Skeleton className={cl.skeleton} width={600} height={24} />

@@ -8,10 +8,9 @@ const meta: Meta<typeof Select> = {
   component: Select,
 };
 
-const options: SelectOptions[] = [
-  { content: "Первый пункт", value: 1 },
-  { content: "Второй пункт", value: 2 },
-  { content: "Третий пункт", value: 3 },
+const options: SelectOptions<"asc" | "desc">[] = [
+  { content: "Первый пункт", value: "asc" },
+  { content: "Второй пункт", value: "desc" },
 ];
 
 export default meta;

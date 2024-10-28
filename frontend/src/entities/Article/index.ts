@@ -11,3 +11,4 @@ export { ArticleViewMode } from './model/types/article';
 export { ArticleList } from './ui/ArticleList/ArticleList';
 export { ArticleBlockType, ArticleType } from './model/types/article.ts';
 export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';
+export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector';

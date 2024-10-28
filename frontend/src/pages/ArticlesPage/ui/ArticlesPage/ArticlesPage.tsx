@@ -1,8 +1,6 @@
 import { FC, memo, useCallback, useEffect } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
-import {
-  ArticleList,
-} from "entities/Article";
+import { ArticleList } from "entities/Article";
 import {
   DynamicModuleLoader,
   ReducersList,
@@ -24,6 +22,7 @@ import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlesPag
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
 import cl from "./ArticlesPage.module.scss";
 import { ArticlesPageFilters } from "../ArticlesPageFilters/ArticlesPageFilters";
+import { useSearchParams } from "react-router-dom";
 
 const reducers: ReducersList = {
   articlesPage: articlesPageReducer,
@@ -40,14 +39,15 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
   const error = useSelector(getArticlesPageError);
   const isLoading = useSelector(getArticlesPageIsLoading);
   const articles = useSelector(getArticles.selectAll);
-
-  useEffect(() => {
-    dispatch(initArticlesPage());
-  }, [dispatch]);
+  const [searchParams] = useSearchParams();
 
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPage());
   }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(initArticlesPage(searchParams));
+  }, [dispatch, searchParams]);
 
   if (error) {
     return (
@@ -65,7 +65,12 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
         onScrollEnd={onLoadNextPart}
       >
         <ArticlesPageFilters />
-        <ArticleList articles={articles} view={view} isLoading={isLoading} />
+        <ArticleList
+          className={cl.list}
+          articles={articles}
+          view={view}
+          isLoading={isLoading}
+        />
       </Page>
     </DynamicModuleLoader>
   );
