@@ -1,0 +1,19 @@
+.Tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.tab {
+  color: var(--primary-color);
+  cursor: pointer;
+  opacity: .7;
+  transition: 0.3s opacity;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.active {
+  opacity: 1;
+}

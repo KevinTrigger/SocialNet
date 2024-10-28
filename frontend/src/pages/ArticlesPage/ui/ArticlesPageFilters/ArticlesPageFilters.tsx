@@ -4,6 +4,8 @@ import cl from "./ArticlesPageFilters.module.scss";
 import {
   ArticleSortSelector,
   ArticlesSortField,
+  ArticleType,
+  ArticleTypeTabs,
   ArticleViewMode,
   ArticleViewSelector,
 } from "entities/Article";
@@ -14,6 +16,7 @@ import {
   getArticlesPageOrder,
   getArticlesPageSearch,
   getArticlesPageSort,
+  getArticlesPageType,
   getArticlesPageView,
 } from "../../model/selectors/articles";
 import { Card } from "shared/ui/Card/Card";
@@ -33,6 +36,7 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = (props) => {
   const searchValue = useSelector(getArticlesPageSearch);
   const sort = useSelector(getArticlesPageSort);
   const order = useSelector(getArticlesPageOrder);
+  const type = useSelector(getArticlesPageType);
 
   const fetchData = useCallback(() => {
     dispatch(fetchArticles({ replace: true }));
@@ -74,6 +78,15 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = (props) => {
     [dispatch, fetchData]
   );
 
+  const onChangeType = useCallback(
+    (value: ArticleType) => {
+      dispatch(articlesPageActions.setType(value));
+      dispatch(articlesPageActions.setPage(1));
+      fetchData();
+    },
+    [dispatch, fetchData]
+  );
+
   return (
     <div className={classNames(cl.ArticlesPageFilters, {}, [className])}>
       <div className={cl.sortWrapper}>
@@ -96,6 +109,11 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = (props) => {
           onChange={onChangeSearch}
         />
       </Card>
+      <ArticleTypeTabs
+        className={cl.tabs}
+        onChangeType={onChangeType}
+        value={type}
+      />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import { Article, ArticleViewMode } from "../../model/types/article";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
 import cl from "./ArticleList.module.scss";
+import { Text, TextSize } from "shared/ui/Text/Text";
 
 interface ArticleListProps {
   className?: string;
@@ -35,6 +36,14 @@ export const ArticleList: FC<ArticleListProps> = (props) => {
       />
     );
   };
+
+  if (!isLoading && !articles.length) {
+    return (
+      <div className={classNames(cl.ArticleList, {}, [className])}>
+        <Text size={TextSize.L} title={"По вашему запросу статьи не найдены"} />
+      </div>
+    );
+  }
 
   return (
     <div className={classNames(cl.ArticleList, {}, [className])}>

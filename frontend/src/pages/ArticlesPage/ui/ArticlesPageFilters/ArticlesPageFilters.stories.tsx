@@ -1,9 +1,18 @@
-import { ArticlesPageFilters } from "./ArticlesPageFilters";
+import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
 import type { Meta, StoryObj } from "@storybook/react";
+import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "app/providers/ThemeProvider";
+import { ArticlesPageFilters } from "./ArticlesPageFilters";
 
 const meta: Meta<typeof ArticlesPageFilters> = {
-  title: "ui/ArticlesPageFilters",
+  title: "pages/ArticlesPage/ArticlesPageFilters",
   component: ArticlesPageFilters,
+  argTypes: {},
+  decorators: [
+    StoreDecorator({
+      articlesPage: {},
+    }),
+  ],
 };
 
 export default meta;
@@ -12,4 +21,9 @@ type Story = StoryObj<typeof ArticlesPageFilters>;
 
 export const Light: Story = {
   args: {},
+};
+
+export const Dark: Story = {
+  args: {},
+  decorators: [ThemeDecorator(Theme.DARK)],
 };

@@ -1,5 +1,5 @@
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Card } from "./Card";
+import { Card, CardTheme } from "./Card";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Theme } from "app/providers/ThemeProvider";
 import { Text, TextSize } from "../Text/Text";
@@ -20,8 +20,21 @@ export default meta;
 
 type Story = StoryObj<typeof Card>;
 
-export const Light: Story = {};
+export const LightNormal: Story = {};
 
-export const Dark: Story = {
+export const LightOutline: Story = {
+  args: {
+    theme: CardTheme.OUTLINE
+  }
+};
+
+export const DarkNormal: Story = {
+  decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const DarkOutline: Story = {
+  args: {
+    theme: CardTheme.OUTLINE
+  },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
