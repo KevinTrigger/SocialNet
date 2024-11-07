@@ -62,11 +62,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
   if (isLoading) {
     content = (
       <div className={cl.skeleton}>
-        <Skeleton
-          className={cl.image}
-          width={170}
-          height={170}
-        />
+        <Skeleton className={cl.image} width={170} height={170} />
         <Skeleton className={cl.skeleton_title} width={300} height={32} />
         <Skeleton className={cl.skeleton} width={600} height={24} />
         <Skeleton className={cl.skeleton} width={"100%"} height={200} />

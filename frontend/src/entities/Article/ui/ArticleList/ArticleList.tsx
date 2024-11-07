@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, HTMLAttributeAnchorTarget } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Article, ArticleViewMode } from "../../model/types/article";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
@@ -11,6 +11,7 @@ interface ArticleListProps {
   articles: Article[];
   isLoading: boolean;
   view?: ArticleViewMode;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticleList: FC<ArticleListProps> = (props) => {
@@ -18,6 +19,7 @@ export const ArticleList: FC<ArticleListProps> = (props) => {
     className,
     articles,
     isLoading,
+    target,
     view = ArticleViewMode.SMALL,
   } = props;
 
@@ -33,6 +35,7 @@ export const ArticleList: FC<ArticleListProps> = (props) => {
         article={article}
         view={view}
         isLoading={isLoading}
+        target={target}
       />
     );
   };

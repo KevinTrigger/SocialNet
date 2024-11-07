@@ -23,7 +23,7 @@ export const fetchCommentsByArticleId = createAsyncThunk<Comment[], string | und
           if (!response.data) {
             throw new Error();
           }
-          
+
           return response.data;
       } catch (e) {
           return rejectWithValue(t('Ошибка'));

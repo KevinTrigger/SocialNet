@@ -5,3 +5,13 @@
 .commentForm {
   margin-top: 20px;
 }
+
+.recommendWrap {
+  margin-top: 16px;
+}
+
+.recommendList {
+  display: flex;
+  flex-wrap: nowrap !important;
+  overflow: auto hidden;
+}

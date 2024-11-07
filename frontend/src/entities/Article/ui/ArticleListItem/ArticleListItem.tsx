@@ -1,4 +1,4 @@
-import { FC, useCallback } from "react";
+import { FC, HTMLAttributeAnchorTarget, useCallback } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import {
   Article,
@@ -17,16 +17,18 @@ import { TextBlock } from "../TextBlock/TextBlock";
 import { useNavigate } from "react-router-dom";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { ArticleListItemSkeleton } from "./ArticleListItemSkeleton";
+import AppLink from "shared/ui/AppLink/AppLink";
 
 interface ArticleListItemProps {
   className?: string;
   article: Article;
   view: ArticleViewMode;
   isLoading?: boolean;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticleListItem: FC<ArticleListItemProps> = (props) => {
-  const { className, article, isLoading, view } = props;
+  const { className, article, isLoading, view, target } = props;
   const types = <Text text={article.type.join(`,  `)} className={cl.types} />;
   const textBlock = article.blocks.find((block) => {
     if (block.type === ArticleBlockType.TEXT) return block.paragraphs;
@@ -79,7 +81,11 @@ export const ArticleListItem: FC<ArticleListItemProps> = (props) => {
   }
 
   return (
-    <div className={classNames(cl.ArticleListItem, {}, [className, cl[view]])}>
+    <AppLink
+      to={RoutePath.article_details + article.id}
+      target={target}
+      className={classNames(cl.ArticleListItem, {}, [className, cl[view]])}
+    >
       <Card onClick={onOpenArticleDetails} className={cl.card}>
         <div className={cl.imageWrap}>
           <Text
@@ -110,6 +116,6 @@ export const ArticleListItem: FC<ArticleListItemProps> = (props) => {
           />
         </div>
       </Card>
-    </div>
+    </AppLink>
   );
 };
