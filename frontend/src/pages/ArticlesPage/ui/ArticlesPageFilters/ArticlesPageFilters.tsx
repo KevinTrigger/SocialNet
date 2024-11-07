@@ -104,6 +104,7 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = (props) => {
       </div>
       <Card className={cl.search}>
         <Input
+          className={cl.searchInput}
           placeholder={"Поиск"}
           value={searchValue}
           onChange={onChangeSearch}

@@ -9,6 +9,7 @@ export enum TextSize {
 
 export enum TextTheme {
   NORMAL = "normal",
+  INVERTED = "inverted",
   ERROR = "error",
 }
 
