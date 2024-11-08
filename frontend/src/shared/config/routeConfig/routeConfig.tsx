@@ -1,4 +1,5 @@
 import { AboutPage } from "pages/AboutPage";
+import { ArticleCreatePage } from "pages/ArticleCreatePage";
 import { ArticleDetailsPage } from "pages/ArticleDetailsPage";
 import { ArticleEditPage } from "pages/ArticleEditPage";
 import { ArticlesPage } from "pages/ArticlesPage";
@@ -65,7 +66,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   },
   [AppRoutes.ARTICLE_CREATE]: {
     path: RoutePath.article_create,
-    element: <ArticleEditPage />,
+    element: <ArticleCreatePage />,
     authOnly: true,
   },
   [AppRoutes.ARTICLE_EDIT]: {

@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 import AppLink, { AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
+import { useLocation } from "react-router-dom";
 
 interface NavbarProps {
   className?: string;
@@ -18,8 +19,11 @@ interface NavbarProps {
 const Navbar: FC = ({ className }: NavbarProps) => {
   const { t } = useTranslation("translation");
   const [isAuthModal, setIsAuthModal] = useState(false);
-  const authData = useSelector(getUserAuthData);
+  const { pathname } = useLocation();
   const dispatch = useAppDispatch();
+
+  const authData = useSelector(getUserAuthData);
+  const isArticlesPath = pathname === RoutePath.articles;
 
   const onCloseModal = useCallback(() => {
     setIsAuthModal(false);
@@ -41,13 +45,15 @@ const Navbar: FC = ({ className }: NavbarProps) => {
           className={cl.authUser}
           title={authData.username}
         />
-        <AppLink
-          className={cl.createLink}
-          theme={AppLinkTheme.SECONDARY}
-          to={`${RoutePath.article_create}`}
-        >
-          {t("Создать статью")}
-        </AppLink>
+        {isArticlesPath && (
+          <AppLink
+            className={cl.createLink}
+            theme={AppLinkTheme.SECONDARY}
+            to={`${RoutePath.article_create}`}
+          >
+            {t("Создать статью")}
+          </AppLink>
+        )}
         <Button
           theme={ButtonTheme.CLEAR_INVERTED}
           className={cl.links}

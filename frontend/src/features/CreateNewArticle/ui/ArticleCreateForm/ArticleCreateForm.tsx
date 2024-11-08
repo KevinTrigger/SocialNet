@@ -1,0 +1,46 @@
+import { FC } from "react";
+import { classNames } from "shared/lib/classNames/classNames";
+import { useTranslation } from "react-i18next";
+import cl from "./ArticleCreateForm.module.scss";
+import { Input } from "shared/ui/Input/Input";
+import { Select } from "shared/ui/Select/Select";
+import { ArticleType } from "entities/Article";
+import { Avatar } from "shared/ui/Avatar/Avatar";
+
+interface ArticleCreateFormProps {
+  className?: string;
+}
+
+export const ArticleCreateForm: FC<ArticleCreateFormProps> = (props) => {
+  const { className } = props;
+  const { t } = useTranslation("");
+
+  const typesOptions = [
+    {
+      content: t("Айти"),
+      value: ArticleType.IT,
+    },
+    {
+      content: t("Экономика"),
+      value: ArticleType.ECONOMICS,
+    },
+    {
+      content: t("Наука"),
+      value: ArticleType.SCIENCE,
+    },
+  ];
+
+  return (
+    <div className={classNames(cl.ArticleCreateForm, {}, [className])}>
+      <Avatar
+        className={cl.articleAvatar}
+        src="https://img.lovepik.com/bg/20240105/Download-High-Quality-Construction-Background-Images-Perfect-for-Construction-themed_2734403_wh860.jpg!/fw/860"
+      />
+      <Input className={cl.input} placeholder={t("Ссылка на изображение")} />
+      <Input className={cl.input} placeholder={t("Название")} />
+      <Input className={cl.input} placeholder={t("Подзаголовок")} />
+      <Input className={cl.input} placeholder={t("Подзаголовок")} />
+      <Select label={t("Укажите тип статьи")} options={typesOptions} />
+    </div>
+  );
+};
