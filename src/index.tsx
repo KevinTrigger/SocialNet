@@ -13,9 +13,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <BrowserRouter>
       <StoreProvider>
         <ErrorBoundary>
-          <ThemeProvider>
+          <ThemeProviderr>
             <App />
-          </ThemeProvider>
+          </ThemeProviderr>
         </ErrorBoundary>
       </StoreProvider>
     </BrowserRouter>
