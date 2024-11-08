@@ -1016,6 +1016,12 @@
       "userId": "1",
       "text": "test",
       "id": "FVjPX0l"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "оставляю коммент",
+      "id": "tkB16Jc"
     }
   ],
   "users": [

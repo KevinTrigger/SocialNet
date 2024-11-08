@@ -9,7 +9,6 @@ import { Currency, CurrencySelect } from "entities/Currency";
 import { Country, CountrySelect } from "entities/Country";
 import { useTranslation } from "react-i18next";
 import { Skeleton } from "shared/ui/Skeleton/Skeleton";
-import { PathNoneAvatar } from "shared/const/profile";
 
 interface ProfileCardProps {
   className?: string;
@@ -82,16 +81,16 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
   return (
     <div className={classNames(cl.ProfileCard, mods, [className])}>
       <div className={cl.data}>
-        {/* {data?.avatar && ( */}
-        <div className={cl.avatarWrap}>
-          <Avatar
-            src={data?.avatar || PathNoneAvatar}
-            size={AvatarSize.XL}
-            rounded
-            alt={t("Изображение пользователя")}
-          />
-        </div>
-        {/* )} */}
+        {data?.avatar && (
+          <div className={cl.avatarWrap}>
+            <Avatar
+              src={data?.avatar}
+              size={AvatarSize.XL}
+              rounded
+              alt={t("Изображение пользователя")}
+            />
+          </div>
+        )}
 
         <Input
           value={data?.avatar}

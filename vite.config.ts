@@ -6,12 +6,17 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 import svgr from "vite-plugin-svgr";
 
 export default defineConfig({
-  plugins: [react(), svgr(), EnvironmentPlugin('all'), tsconfigPaths(),  visualizer({
-    template: "treemap", // or sunburst
-    open: true,
-    gzipSize: true,
-    brotliSize: true,
-    filename: "analyse.html", // will be saved in project's root
+  plugins: [
+    react(), 
+    svgr(), 
+    EnvironmentPlugin('all'), 
+    tsconfigPaths(),
+    visualizer({
+      template: "treemap", // or sunburst
+      open: false,
+      gzipSize: true,
+      brotliSize: true,
+      filename: "analyse.html", // will be saved in project's root
   }) as PluginOption],
   server: {
     port: 3000,

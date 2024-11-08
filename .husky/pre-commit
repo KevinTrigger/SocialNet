@@ -2,10 +2,8 @@
 . "$(dirname "$0")/_/husky.sh"
 
 # Путь к .git
-export HUSKY_GIT_PARAMS="$PWD/../.git"
+export HUSKY_GIT_PARAMS="$PWD/.git"
 
-# Переходим в папку frontend
-cd frontend
 
 npm run build
 npm run lint:ts
