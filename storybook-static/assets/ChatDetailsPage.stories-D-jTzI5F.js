@@ -1,6 +1,0 @@
-import{j as l}from"./jsx-runtime-DR9Q75dM.js";import{r as g}from"./index-DRjF_FHU.js";import{c as h}from"./classNames-DgDD4s-s.js";import{u}from"./useTranslation-BUpB3eR0.js";import{T as D,a as f}from"./ThemeDecorator-BCi7Uwnf.js";import{R as T}from"./RouterDecorator-CwRlzliy.js";import"./index-BB2jNUZ5.js";import"./index-rX-Bn4lm.js";import"./index-CZJRB5QZ.js";const _="_test_81enk_1",x={test:_},i=n=>{const{className:p}=n,{t:d}=u("");return l.jsx("div",{className:h(x.ChatDetailsPage,{},[p]),children:d("ChatDetailsPage")})},C=g.memo(i);i.__docgenInfo={description:"",methods:[],displayName:"ChatDetailsPage",props:{className:{required:!1,tsType:{name:"string"},description:""}}};const L={title:"pages/ChatDetailsPage",component:C,argTypes:{},decorators:[T]},e={args:{}},s={args:{},decorators:[D(f.DARK)]};var a,r,t;e.parameters={...e.parameters,docs:{...(a=e.parameters)==null?void 0:a.docs,source:{originalSource:`{
-  args: {}
-}`,...(t=(r=e.parameters)==null?void 0:r.docs)==null?void 0:t.source}}};var o,c,m;s.parameters={...s.parameters,docs:{...(o=s.parameters)==null?void 0:o.docs,source:{originalSource:`{
-  args: {},
-  decorators: [ThemeDecorator(Theme.DARK)]
-}`,...(m=(c=s.parameters)==null?void 0:c.docs)==null?void 0:m.source}}};const S=["Light","Dark"];export{s as Dark,e as Light,S as __namedExportsOrder,L as default};
