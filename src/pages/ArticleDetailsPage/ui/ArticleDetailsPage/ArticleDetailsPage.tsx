@@ -57,10 +57,6 @@ const ArticleDetailsPage = () => {
     [dispatch]
   );
 
-  useEffect(() => {
-    console.log(comments);
-  }, [comments]);
-
   if (!id) {
     return (
       <div className={cl.ArticleDetailsPage}>{t("Статья не найдена")}</div>

@@ -13,7 +13,6 @@ interface CommentListProps {
 
 export const CommentList: FC<CommentListProps> = (props) => {
   const { className, comments, isLoading } = props;
-  console.log(comments);
 
   if (isLoading) {
     return (
