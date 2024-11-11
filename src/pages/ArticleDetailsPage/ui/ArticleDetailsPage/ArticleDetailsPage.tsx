@@ -1,6 +1,4 @@
-import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
-import cl from "./ArticleDetailsPage.module.scss";
 import { memo, useCallback, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Text, TextSize } from "shared/ui/Text/Text";
@@ -27,17 +25,13 @@ import { getArticleRecommendationsIsLoading } from "../../model/selectors/recomm
 import { fetchArticleRecommendations } from "../../model/services/fetchArticleRecommendations/fetchArticleRecommendations";
 import { articleDetailsPageReducer } from "../../model/slice";
 import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
-
-interface ArticleDetailsPageProps {
-  className?: string;
-}
+import cl from "./ArticleDetailsPage.module.scss";
 
 const reducers: ReducersList = {
   articleDetailsPage: articleDetailsPageReducer,
 };
 
-const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
-  const { className } = props;
+const ArticleDetailsPage = () => {
   const { id } = useParams<{ id: string }>();
   const { t } = useTranslation("article-details");
 
@@ -50,7 +44,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const recommendationsIsLoading = useSelector(
     getArticleRecommendationsIsLoading
   );
-  // const recommendationsError = useSelector(getArticleRecommendationsError);
 
   useEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
@@ -70,15 +63,13 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 
   if (!id) {
     return (
-      <div className={classNames(cl.ArticleDetailsPage, {}, [className])}>
-        {t("Статья не найдена")}
-      </div>
+      <div className={cl.ArticleDetailsPage}>{t("Статья не найдена")}</div>
     );
   }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <Page className={classNames(cl.ArticleDetailsPage, {}, [className])}>
+      <Page className={cl.ArticleDetailsPage}>
         <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
         <div className={cl.recommendWrap}>

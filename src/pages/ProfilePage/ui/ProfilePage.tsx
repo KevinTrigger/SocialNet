@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import {
   DynamicModuleLoader,
   ReducersList,
@@ -29,11 +29,7 @@ const reducers: ReducersList = {
   profile: profileReducer,
 };
 
-interface ProfilePageProps {
-  className?: string;
-}
-
-export const ProfilePage: FC<ProfilePageProps> = () => {
+export const ProfilePage = () => {
   const { t } = useTranslation("profile");
   const dispatch = useAppDispatch();
   const { id } = useParams<{ id: string }>();

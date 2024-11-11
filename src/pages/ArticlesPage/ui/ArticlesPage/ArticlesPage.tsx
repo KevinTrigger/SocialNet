@@ -1,5 +1,4 @@
-import { FC, memo, useCallback, useEffect } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { memo, useCallback, useEffect } from "react";
 import { ArticleList } from "entities/Article";
 import {
   DynamicModuleLoader,
@@ -28,12 +27,7 @@ const reducers: ReducersList = {
   articlesPage: articlesPageReducer,
 };
 
-interface ArticlesPageProps {
-  className?: string;
-}
-
-const ArticlesPage: FC<ArticlesPageProps> = (props) => {
-  const { className } = props;
+const ArticlesPage = () => {
   const dispatch = useAppDispatch();
   const view = useSelector(getArticlesPageView);
   const error = useSelector(getArticlesPageError);
@@ -60,10 +54,7 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-      <Page
-        className={classNames(cl.ArticlesPage, {}, [className])}
-        onScrollEnd={onLoadNextPart}
-      >
+      <Page className={cl.ArticlesPage} onScrollEnd={onLoadNextPart}>
         <ArticlesPageFilters />
         <ArticleList
           className={cl.list}

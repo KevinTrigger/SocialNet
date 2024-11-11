@@ -1,0 +1,1 @@
+import{T as r,a as e}from"./ThemeDecorator-BCi7Uwnf.js";import"./index-DRjF_FHU.js";import"./jsx-runtime-DR9Q75dM.js";const t=o=>o(),m={parameters:{controls:{matchers:{color:/(background|color)$/i,date:/Date$/i}}}},i=[t,r(e.LIGHT)];export{i as decorators,m as preview};

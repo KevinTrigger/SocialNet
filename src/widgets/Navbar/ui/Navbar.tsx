@@ -11,6 +11,7 @@ import { Text, TextTheme } from "shared/ui/Text/Text";
 import AppLink, { AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { useLocation } from "react-router-dom";
+import { Avatar, AvatarSize } from "shared/ui/Avatar/Avatar";
 
 interface NavbarProps {
   className?: string;
@@ -24,6 +25,7 @@ const Navbar: FC = ({ className }: NavbarProps) => {
 
   const authData = useSelector(getUserAuthData);
   const isArticlesPath = pathname === RoutePath.articles;
+  const profilePath = RoutePath.profile + authData?.id;
 
   const onCloseModal = useCallback(() => {
     setIsAuthModal(false);
@@ -40,11 +42,16 @@ const Navbar: FC = ({ className }: NavbarProps) => {
   if (authData) {
     return (
       <nav className={classNames(cl.Navbar, {}, [className])}>
-        <Text
-          theme={TextTheme.INVERTED}
-          className={cl.authUser}
-          title={authData.username}
-        />
+        <div className={cl.authWrap}>
+          <AppLink to={profilePath}>
+            <Avatar src={authData.avatar} rounded size={AvatarSize.XS} />
+          </AppLink>
+          <Text
+            theme={TextTheme.INVERTED}
+            className={cl.authUser}
+            title={authData.username}
+          />
+        </div>
         {isArticlesPath && (
           <AppLink
             className={cl.createLink}

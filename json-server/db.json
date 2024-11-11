@@ -234,7 +234,7 @@
       "id": "5",
       "title": "WEB REQUEST-RESPONSE CYCLE",
       "subtitle": "Сабтитульник про Submit JS",
-      "img": "https://habrastorage.org/getpro/habr/upload_files/b56/920/a6a/b56920a6a7ef8db270a45d73ff250f1a.png",
+      "img": "https://kinsta.com/wp-content/uploads/2022/06/what-is-an-http-request-1024x512.jpg",
       "user": {
         "id": "1",
         "username": "admin",
@@ -1022,6 +1022,12 @@
       "userId": "1",
       "text": "оставляю коммент",
       "id": "tkB16Jc"
+    },
+    {
+      "articleId": "2",
+      "userId": "2",
+      "text": "Коммент новый",
+      "id": "-flGtoU"
     }
   ],
   "users": [
@@ -1050,7 +1056,7 @@
       "country": "Russia",
       "city": "Екатеринбург",
       "username": "Kevin",
-      "avatar": "https://cdn.iconscout.com/icon/free/png-256/free-avatar-icon-download-in-svg-png-gif-file-formats--user-boy-avatars-flat-icons-pack-people-456322.png"
+      "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
     },
     {
       "id": "2",
