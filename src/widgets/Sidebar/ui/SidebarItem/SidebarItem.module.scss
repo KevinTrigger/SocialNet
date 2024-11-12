@@ -1,7 +1,7 @@
 .item {
   display: flex;
   align-items: center;
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
 .link {
@@ -15,7 +15,7 @@
 
 .collapsed {
   .link {
-      opacity: 0;
+      display: none;
       transition: 0.2s opacity;
       width: 0;
   }

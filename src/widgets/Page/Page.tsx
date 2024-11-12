@@ -54,13 +54,13 @@ export const Page: FC<PageProps> = (props) => {
   }, [scrollPosition]);
 
   return (
-    <section
+    <main
       {...(isSaveScroll ? { onScroll } : {})}
       ref={wrapperRef}
       className={classNames(cl.Page, {}, [className])}
     >
       {children}
       {onScrollEnd ? <div className={cl.trigger} ref={triggerRef} /> : null}
-    </section>
+    </main>
   );
 };

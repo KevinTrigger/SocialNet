@@ -4,6 +4,7 @@ import { Select, SelectOptions } from "shared/ui/Select/Select";
 import { ArticlesSortField } from "entities/Article";
 import { SortOrder } from "shared/types";
 import cl from "./ArticleSortSelector.module.scss";
+import { HStack } from "shared/ui/Stack";
 
 interface ArticleSortSelectorProps {
   className?: string;
@@ -49,7 +50,7 @@ export const ArticleSortSelector: FC<ArticleSortSelectorProps> = (props) => {
   );
 
   return (
-    <div className={classNames(cl.ArticleSortSelector, {}, [className])}>
+    <HStack gap="8" className={classNames("", {}, [className])}>
       <Select<ArticlesSortField>
         className={cl.select}
         value={sort}
@@ -64,6 +65,6 @@ export const ArticleSortSelector: FC<ArticleSortSelectorProps> = (props) => {
         label="по"
         options={sortOptions}
       />
-    </div>
+    </HStack>
   );
 };

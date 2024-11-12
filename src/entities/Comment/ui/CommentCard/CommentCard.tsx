@@ -7,6 +7,7 @@ import { Text, TextSize } from "shared/ui/Text/Text";
 import { Skeleton } from "shared/ui/Skeleton/Skeleton";
 import AppLink from "shared/ui/AppLink/AppLink";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
+import { HStack } from "shared/ui/Stack/HStack/HStack";
 
 interface CommentCardProps {
   className?: string;
@@ -24,12 +25,12 @@ export const CommentCard: FC<CommentCardProps> = (props) => {
   if (isLoading) {
     return (
       <div className={classNames(cl.CommentCard, mods, [className])}>
-        <div className={cl.header}>
+        <HStack className={cl.header}>
           {comment?.user.avatar && (
             <Skeleton width={60} height={60} border={"50%"} />
           )}
           <Skeleton className={cl.username} width={150} height={20} />
-        </div>
+        </HStack>
         <Skeleton className={cl.text} width={"100%"} height={50} />
       </div>
     );

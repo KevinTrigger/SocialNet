@@ -25,6 +25,8 @@ import { ArticleBlock, ArticleBlockType } from "../../model/types/article";
 import { CodeBlock } from "../CodeBlock/CodeBlock";
 import { TextBlock } from "../TextBlock/TextBlock";
 import { ImageBlock } from "../ImageBlock/ImageBlock";
+import { VStack } from "shared/ui/Stack/VStack/VStack";
+import { HStack } from "shared/ui/Stack/HStack/HStack";
 
 interface ArticleDetailsProps {
   className?: string;
@@ -92,16 +94,16 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
           title={articleData?.title}
           text={articleData?.subtitle}
         />
-        <div className={cl.statistics}>
-          <div className={cl.statistics__item}>
+        <VStack gap="4" className={cl.statistics}>
+          <HStack align="center" className={cl.statistics__item}>
             <Icon className={cl.icon} Svg={EyeIcon} />
             <Text text={String(articleData?.views)} />
-          </div>
-          <div className={cl.statistics__item}>
+          </HStack>
+          <HStack className={cl.statistics__item}>
             <Icon className={cl.icon} Svg={CalendarIcon} />
             <Text text={articleData?.createdAt} />
-          </div>
-        </div>
+          </HStack>
+        </VStack>
         {articleData?.blocks.map(renderBlock)}
       </>
     );

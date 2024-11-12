@@ -6,6 +6,7 @@ import { Input } from "shared/ui/Input/Input";
 import { Select } from "shared/ui/Select/Select";
 import { ArticleType } from "entities/Article";
 import { Avatar } from "shared/ui/Avatar/Avatar";
+import { VStack } from "shared/ui/Stack";
 
 interface ArticleCreateFormProps {
   className?: string;
@@ -31,7 +32,10 @@ export const ArticleCreateForm: FC<ArticleCreateFormProps> = (props) => {
   ];
 
   return (
-    <div className={classNames(cl.ArticleCreateForm, {}, [className])}>
+    <VStack
+      gap="8"
+      className={classNames(cl.ArticleCreateForm, {}, [className])}
+    >
       <Avatar
         className={cl.articleAvatar}
         src="https://img.lovepik.com/bg/20240105/Download-High-Quality-Construction-Background-Images-Perfect-for-Construction-themed_2734403_wh860.jpg!/fw/860"
@@ -41,6 +45,6 @@ export const ArticleCreateForm: FC<ArticleCreateFormProps> = (props) => {
       <Input className={cl.input} placeholder={t("Подзаголовок")} />
       <Input className={cl.input} placeholder={t("Подзаголовок")} />
       <Select label={t("Укажите тип статьи")} options={typesOptions} />
-    </div>
+    </VStack>
   );
 };

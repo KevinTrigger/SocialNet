@@ -9,21 +9,13 @@
 .BIG {
   width: 100%;
 
-  .authorAndDate {
-    display: flex;
-    gap: 5px;
+  .footer {
+    margin-top: 20px;
   }
 
   .date {
     margin-left: auto;
   }
-
-  .titleAndType {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-  }  
 
   .imageWrap {
     margin: 16px 0;
@@ -33,25 +25,6 @@
     width: 100%;
     max-height: 250px;
     object-fit: cover;
-  }
-
-  .footer {
-    display: flex;
-    align-items: center;
-    margin-top: 50px;
-
-    &Skeleton {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 20px;
-    }
-  }
-
-  .views {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
   }
 
   .types {

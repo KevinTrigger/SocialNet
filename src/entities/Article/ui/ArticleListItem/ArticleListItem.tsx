@@ -18,6 +18,8 @@ import { useNavigate } from "react-router-dom";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { ArticleListItemSkeleton } from "./ArticleListItemSkeleton";
 import AppLink from "shared/ui/AppLink/AppLink";
+import { VStack } from "shared/ui/Stack/VStack/VStack";
+import { HStack } from "shared/ui/Stack/HStack/HStack";
 
 interface ArticleListItemProps {
   className?: string;
@@ -50,15 +52,15 @@ export const ArticleListItem: FC<ArticleListItemProps> = (props) => {
       >
         <Card className={cl.card}>
           <div className={cl.header}>
-            <div className={cl.authorAndDate}>
+            <HStack gap="8">
               <Avatar rounded size={AvatarSize.XS} src={article.user.avatar} />
               <Text text={article.user.username} />
               <Text className={cl.date} text={article.createdAt} />
-            </div>
-            <div className={cl.titleAndType}>
+            </HStack>
+            <VStack gap="8" className={cl.titleAndType}>
               <Text title={article.title} />
               {types}
-            </div>
+            </VStack>
           </div>
           <div className={cl.imageWrap}>
             <img className={cl.image} src={article.img} alt={article.title} />
@@ -66,15 +68,15 @@ export const ArticleListItem: FC<ArticleListItemProps> = (props) => {
           {textBlock && (
             <TextBlock block={textBlock} className={cl.textBlock} />
           )}
-          <div className={cl.footer}>
+          <HStack justify="between" align="center" className={cl.footer}>
             <Button onClick={onOpenArticleDetails} theme={ButtonTheme.OUTLINE}>
               Читать далее...
             </Button>
-            <div className={cl.views}>
+            <HStack className={cl.views}>
               <Text text={`${article.views}`} />
               <Icon className={cl.icon} Svg={EyeIcon} />
-            </div>
-          </div>
+            </HStack>
+          </HStack>
         </Card>
       </div>
     );

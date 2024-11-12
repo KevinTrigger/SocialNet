@@ -16,6 +16,7 @@ import {
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import cl from "./LoginForm.module.scss";
+import { VStack } from "shared/ui/Stack";
 
 export interface LoginFormProps {
   className?: string;
@@ -58,7 +59,7 @@ const LoginForm = (props: LoginFormProps) => {
 
   return (
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
-      <div className={classNames(cl.LoginForm, {}, [className])}>
+      <VStack className={classNames(cl.LoginForm, {}, [className])}>
         <Text title={t("Авторизация")} />
         {error && <Text theme={TextTheme.ERROR} text={error} />}
         <Input
@@ -81,7 +82,7 @@ const LoginForm = (props: LoginFormProps) => {
         >
           {t("Войти")}
         </Button>
-      </div>
+      </VStack>
     </DynamicModuleLoader>
   );
 };

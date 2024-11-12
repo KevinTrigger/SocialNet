@@ -1,12 +1,13 @@
 import { FC, memo, useMemo, useState } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
-import cl from "./Sidebar.module.scss";
 import { LangSwitcher } from "shared/ui/LangSwitcher";
 import { ThemeSwitcher } from "shared/ui/ThemeSwitcher";
 import Button, { ButtonSize, ButtonTheme } from "shared/ui/Button/Button";
 import { SidebarItem } from "../SidebarItem/SidebarItem";
 import { getSidebarItems } from "../../model/selectors/getSidebarItems";
 import { useSelector } from "react-redux";
+import { VStack } from "shared/ui/Stack/VStack/VStack";
+import cl from "./Sidebar.module.scss";
 
 interface SidebarProps {
   className?: string;
@@ -29,7 +30,7 @@ export const Sidebar: FC = memo(({ className }: SidebarProps) => {
   );
 
   return (
-    <menu
+    <aside
       data-testid="sidebar"
       className={classNames(cl.Sidebar, { [cl.collapsed]: collapsed }, [
         className,
@@ -45,11 +46,11 @@ export const Sidebar: FC = memo(({ className }: SidebarProps) => {
       >
         {collapsed ? ">" : "<"}
       </Button>
-      <div className={cl.items}>{itemsList}</div>
-      <div className={cl.switchers}>
+      <VStack className={cl.items}>{itemsList}</VStack>
+      <VStack align="center" className={cl.switchers}>
         <ThemeSwitcher />
         <LangSwitcher className={cl.lang} isShort={collapsed} />
-      </div>
-    </menu>
+      </VStack>
+    </aside>
   );
 });

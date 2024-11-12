@@ -9,6 +9,8 @@ import { Currency, CurrencySelect } from "entities/Currency";
 import { Country, CountrySelect } from "entities/Country";
 import { useTranslation } from "react-i18next";
 import { Skeleton } from "shared/ui/Skeleton/Skeleton";
+import { VStack } from "shared/ui/Stack/VStack/VStack";
+import { HStack } from "shared/ui/Stack/HStack/HStack";
 
 interface ProfileCardProps {
   className?: string;
@@ -48,7 +50,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
   if (isLoading) {
     return (
       <div className={classNames(cl.ProfileCard, {}, [className])}>
-        <div className={cl.skeleton_wrap}>
+        <VStack className={cl.skeleton_wrap}>
           <Skeleton
             className={cl.skeleton_avatar}
             width={200}
@@ -56,21 +58,24 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
             border={"50%"}
           />
           <Skeleton className={cl.skeleton} width={400} height={235} />
-        </div>
+        </VStack>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className={classNames(cl.ProfileCard, {}, [className, cl.error])}>
+      <HStack
+        justify="center"
+        className={classNames(cl.ProfileCard, {}, [className, cl.error])}
+      >
         <Text
           theme={TextTheme.ERROR}
           align={TextAlign.CENTER}
           title={t("Произошла ошибка при загрузке файлов")}
           text={t("Попробуйте перезагрузить страницу")}
         />
-      </div>
+      </HStack>
     );
   }
 
@@ -80,16 +85,16 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
 
   return (
     <div className={classNames(cl.ProfileCard, mods, [className])}>
-      <div className={cl.data}>
+      <VStack>
         {data?.avatar && (
-          <div className={cl.avatarWrap}>
+          <HStack justify="center" className={cl.avatarWrap}>
             <Avatar
               src={data?.avatar}
               size={AvatarSize.XL}
               rounded
               alt={t("Изображение пользователя")}
             />
-          </div>
+          </HStack>
         )}
 
         <Input
@@ -147,7 +152,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
           className={cl.input}
           readonly={readonly}
         />
-      </div>
+      </VStack>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { createElement, memo } from "react";
 import { classNames, Mods } from "shared/lib/classNames/classNames";
 import cl from "./Text.module.scss";
 
@@ -19,6 +19,8 @@ export enum TextAlign {
   RIGHT = "right",
 }
 
+export type TextTag = "h1" | "h2" | "h3" | "h4" | "p" | "span" | "div";
+
 interface TextProps {
   className?: string;
   title?: string;
@@ -26,6 +28,7 @@ interface TextProps {
   theme?: TextTheme;
   align?: TextAlign;
   size?: TextSize;
+  tag?: TextTag;
 }
 
 export const Text = memo((props: TextProps) => {
@@ -36,18 +39,22 @@ export const Text = memo((props: TextProps) => {
     theme = TextTheme.NORMAL,
     align = TextAlign.LEFT,
     size = TextSize.M,
+    tag = "p",
   } = props;
 
   const mods: Mods = {
     [cl[theme]]: true,
     [cl[align]]: true,
-    [cl[size]]: true
+    [cl[size]]: true,
   };
+
+  const TitleElement = createElement(tag, { className: cl.title }, title);
+  const TextElement = createElement(tag, { className: cl.text }, text);
 
   return (
     <div className={classNames(cl.Text, mods, [className])}>
-      {title && <p className={cl.title}>{title}</p>}
-      {text && <p className={cl.text}>{text}</p>}
+      {title && TitleElement}
+      {text && TextElement}
     </div>
   );
 });

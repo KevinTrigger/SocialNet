@@ -5,6 +5,7 @@ import { Suspense, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserInited, userActions } from "entities/User";
 import { Sidebar } from "widgets/Sidebar";
+import { HStack } from "shared/ui/Stack";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -18,10 +19,10 @@ const App = () => {
     <div className={classNames("app", {}, [])}>
       <Suspense fallback="">
         <Navbar />
-        <div className="content-page">
+        <HStack>
           <Sidebar />
           {isInited && <AppRouter />}
-        </div>
+        </HStack>
       </Suspense>
     </div>
   );

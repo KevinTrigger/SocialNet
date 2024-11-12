@@ -14,10 +14,6 @@ body {
   background: var(--bg-color);
 }
 
-.content-page {
-  display: flex;
-}
-
 *::-webkit-scrollbar {
   width: 12px;               /* ширина всей полосы прокрутки */
   height: 8px;

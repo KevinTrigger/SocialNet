@@ -31,6 +31,7 @@ export const Tabs: FC<TabsProps> = (props) => {
           className={cl.tab}
           theme={tab.value === value ? CardTheme.NORMAL : CardTheme.OUTLINE}
           onClick={clickHandle(tab)}
+          key={tab.value}
         >
           {tab.content}
         </Card>
