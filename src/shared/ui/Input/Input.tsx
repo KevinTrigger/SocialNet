@@ -61,9 +61,7 @@ export const Input: FC<InputProps> = memo((props) => {
 
   return (
     <div className={classNames(cl.InputWrapper, {}, [className])}>
-      {!placeholder || (
-        <div className={cl.inputPlaceholder}>{`${placeholder}>`}</div>
-      )}
+      {!placeholder || <div>{`${placeholder}>`}</div>}
       <input
         readOnly={readonly}
         ref={ref}

@@ -85,7 +85,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
 
   return (
     <div className={classNames(cl.ProfileCard, mods, [className])}>
-      <VStack>
+      <VStack gap="16">
         {data?.avatar && (
           <HStack justify="center" className={cl.avatarWrap}>
             <Avatar
@@ -100,56 +100,48 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
         <Input
           value={data?.avatar}
           placeholder={t("Ссылка на аватар")}
-          className={cl.input}
           onChange={onChangeAvatar}
           readonly={readonly}
         />
         <Input
           value={data?.username}
           placeholder={t("Никнейм")}
-          className={cl.input}
           onChange={onChangeUsername}
           readonly={readonly}
         />
         <Input
           value={data?.firstname}
           placeholder={t("Имя")}
-          className={cl.input}
           onChange={onChangeFirstname}
           readonly={readonly}
         />
         <Input
           value={data?.lastname}
           placeholder={t("Фамилия")}
-          className={cl.input}
           onChange={onChangeLastname}
           readonly={readonly}
         />
         <Input
           value={data?.age}
           placeholder={t("Возраст")}
-          className={cl.input}
           onChange={onChangeAge}
           readonly={readonly}
           isNumber
         />
         <CountrySelect
           value={data?.country}
-          className={cl.input}
           onChange={onChangeCountry}
           readonly={readonly}
         />
         <Input
           value={data?.city}
           placeholder={t("Город")}
-          className={cl.input}
           onChange={onChangeCity}
           readonly={readonly}
         />
         <CurrencySelect
           value={data?.currency}
           onChange={onChangeCurrency}
-          className={cl.input}
           readonly={readonly}
         />
       </VStack>

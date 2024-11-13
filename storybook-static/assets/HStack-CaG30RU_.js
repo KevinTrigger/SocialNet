@@ -1,0 +1,1 @@
+import{j as o}from"./jsx-runtime-DR9Q75dM.js";import{F as s}from"./Flex-C5DsYTI8.js";const e=t=>{const{align:n="start"}=t;return o.jsx(s,{...t,direction:"column",align:n})};e.__docgenInfo={description:"",methods:[],displayName:"VStack"};const r=t=>o.jsx(s,{direction:"row",...t});r.__docgenInfo={description:"",methods:[],displayName:"HStack"};export{r as H,e as V};

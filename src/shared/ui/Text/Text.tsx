@@ -19,7 +19,7 @@ export enum TextAlign {
   RIGHT = "right",
 }
 
-export type TextTag = "h1" | "h2" | "h3" | "h4" | "p" | "span" | "div";
+export type TextTag = "h1" | "h2" | "h3" | "h4" | "p" | "span";
 
 interface TextProps {
   className?: string;
@@ -28,7 +28,8 @@ interface TextProps {
   theme?: TextTheme;
   align?: TextAlign;
   size?: TextSize;
-  tag?: TextTag;
+  tagTitle?: TextTag;
+  tagText?: TextTag;
 }
 
 export const Text = memo((props: TextProps) => {
@@ -39,7 +40,8 @@ export const Text = memo((props: TextProps) => {
     theme = TextTheme.NORMAL,
     align = TextAlign.LEFT,
     size = TextSize.M,
-    tag = "p",
+    tagTitle = "h3",
+    tagText = "p",
   } = props;
 
   const mods: Mods = {
@@ -48,8 +50,8 @@ export const Text = memo((props: TextProps) => {
     [cl[size]]: true,
   };
 
-  const TitleElement = createElement(tag, { className: cl.title }, title);
-  const TextElement = createElement(tag, { className: cl.text }, text);
+  const TitleElement = createElement(tagTitle, { className: classNames(cl.title, mods, []) }, title);
+  const TextElement = createElement(tagText, { className: cl.text }, text);
 
   return (
     <div className={classNames(cl.Text, mods, [className])}>
