@@ -48,6 +48,7 @@ export interface FlexProps {
   direction: FlexDirection;
   gap?: FlexGap;
   wrap?: FlexWrap;
+  max?: boolean;
 }
 
 export const Flex: FC<FlexProps> = (props) => {
@@ -59,6 +60,7 @@ export const Flex: FC<FlexProps> = (props) => {
     direction = "row",
     gap,
     wrap = "noWrap",
+    max = false,
   } = props;
 
   const additional: Array<string | undefined> = [
@@ -70,7 +72,9 @@ export const Flex: FC<FlexProps> = (props) => {
     wrapClasses[wrap],
   ];
 
-  const mods: Mods = {};
+  const mods: Mods = {
+    [cl.max]: max,
+  };
 
   return (
     <div className={classNames(cl.Flex, mods, additional)}>{children}</div>

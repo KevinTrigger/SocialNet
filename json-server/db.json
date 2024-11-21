@@ -1028,6 +1028,18 @@
       "userId": "2",
       "text": "Коммент новый",
       "id": "-flGtoU"
+    },
+    {
+      "articleId": "18",
+      "userId": "1",
+      "text": "first comment",
+      "id": "yTllNyz"
+    },
+    {
+      "articleId": "3",
+      "userId": "1",
+      "text": "test",
+      "id": "IZ_VYEW"
     }
   ],
   "users": [
@@ -1053,9 +1065,9 @@
       "lastname": "Коновалов",
       "age": 23,
       "currency": "EUR",
-      "country": "Kazakhstan",
+      "country": "Armenia",
       "city": "Екатеринбург",
-      "username": "Kevin",
+      "username": "Kevinв",
       "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
     },
     {

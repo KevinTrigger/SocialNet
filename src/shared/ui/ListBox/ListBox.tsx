@@ -11,25 +11,12 @@ import { Icon } from "../Icon/Icon";
 import Button from "../Button/Button";
 import { HStack } from "../Stack";
 import cl from "./ListBox.module.scss";
+import { DropdownDirection } from "../../const/headlessUI";
 
 interface ListBoxItem<T extends string> {
   content: ReactNode;
   value: T;
 }
-
-export type DropdownDirection =
-  | "bottom"
-  | "bottom start"
-  | "bottom end"
-  | "left"
-  | "left start"
-  | "left end"
-  | "right"
-  | "right start"
-  | "right end"
-  | "top"
-  | "top start"
-  | "top end";
 
 interface ListBoxProps<T extends string> {
   className?: string;

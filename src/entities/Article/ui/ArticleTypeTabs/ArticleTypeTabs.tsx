@@ -37,9 +37,11 @@ export const ArticleTypeTabs: FC<ArticleTypeTabsProps> = (props) => {
 
   const onTabClick = useCallback(
     (tab: TabItem) => {
-      onChangeType(tab.value as ArticleType);
+      if (tab.value !== value) {
+        onChangeType(tab.value as ArticleType);
+      }
     },
-    [onChangeType]
+    [onChangeType, value]
   );
 
   return (

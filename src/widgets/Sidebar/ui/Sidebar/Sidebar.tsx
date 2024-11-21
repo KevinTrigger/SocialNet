@@ -46,7 +46,7 @@ export const Sidebar: FC = memo(({ className }: SidebarProps) => {
       >
         {collapsed ? ">" : "<"}
       </Button>
-      <VStack className={cl.items}>{itemsList}</VStack>
+      <VStack gap="4" className={cl.items}>{itemsList}</VStack>
       <VStack align="center" className={cl.switchers}>
         <ThemeSwitcher />
         <LangSwitcher className={cl.lang} isShort={collapsed} />

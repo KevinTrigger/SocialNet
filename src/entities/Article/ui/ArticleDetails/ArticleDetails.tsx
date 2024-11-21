@@ -1,7 +1,6 @@
 import { FC, memo, ReactNode, useCallback, useEffect } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
-import cl from "./ArticleDetails.module.scss";
 import {
   DynamicModuleLoader,
   ReducersList,
@@ -27,10 +26,11 @@ import { TextBlock } from "../TextBlock/TextBlock";
 import { ImageBlock } from "../ImageBlock/ImageBlock";
 import { VStack } from "shared/ui/Stack/VStack/VStack";
 import { HStack } from "shared/ui/Stack/HStack/HStack";
+import cl from "./ArticleDetails.module.scss";
 
 interface ArticleDetailsProps {
   className?: string;
-  id: string;
+  id?: string;
 }
 
 const reducers: ReducersList = {
@@ -110,7 +110,9 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
   }
 
   useEffect(() => {
-    dispatch(fetchArticleById(id));
+    if (id) {
+      dispatch(fetchArticleById(id));
+    }
   }, [dispatch, id]);
 
   return (

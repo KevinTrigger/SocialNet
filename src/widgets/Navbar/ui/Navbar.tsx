@@ -1,4 +1,4 @@
-import { FC, memo, useCallback, useState } from "react";
+import { FC, memo, useCallback, useMemo, useState } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import cl from "./Navbar.module.scss";
 import Button, { ButtonTheme } from "shared/ui/Button/Button";
@@ -12,6 +12,9 @@ import AppLink, { AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { useLocation } from "react-router-dom";
 import { Avatar, AvatarSize } from "shared/ui/Avatar/Avatar";
+import { Dropdown, DropdownItem } from "shared/ui/Dropdown/Dropdown";
+import LogoutIcon from "shared/assets/icons/logout.svg?react";
+import ProfileIcon from "shared/assets/icons/profile.svg?react";
 
 interface NavbarProps {
   className?: string;
@@ -39,19 +42,32 @@ const Navbar: FC = ({ className }: NavbarProps) => {
     dispatch(userActions.logout());
   }, [dispatch]);
 
+  const dropDownAvatar = useMemo(
+    () => <Avatar src={authData?.avatar} rounded size={AvatarSize.XS} />,
+    [authData?.avatar]
+  );
+
+  const dropDownItems: DropdownItem[] = [
+    {
+      label: t("Профиль"),
+      icon: ProfileIcon,
+      href: profilePath,
+    },
+    {
+      label: t("Выйти"),
+      icon: LogoutIcon,
+      onClick: () => onLogout(),
+    },
+  ];
+
   if (authData) {
     return (
       <nav className={classNames(cl.Navbar, {}, [className])}>
-        <div className={cl.authWrap}>
-          <AppLink to={profilePath}>
-            <Avatar src={authData.avatar} rounded size={AvatarSize.XS} />
-          </AppLink>
-          <Text
-            theme={TextTheme.INVERTED}
-            className={cl.authUser}
-            title={authData.username}
-          />
-        </div>
+        <Text
+          theme={TextTheme.INVERTED}
+          className={cl.authUser}
+          title={authData.username}
+        />
         {isArticlesPath && (
           <AppLink
             className={cl.createLink}
@@ -61,13 +77,11 @@ const Navbar: FC = ({ className }: NavbarProps) => {
             {t("Создать статью")}
           </AppLink>
         )}
-        <Button
-          theme={ButtonTheme.CLEAR_INVERTED}
-          className={cl.links}
-          onClick={onLogout}
-        >
-          {t("Выйти")}
-        </Button>
+        <Dropdown
+          className={cl.dropdown}
+          trigger={dropDownAvatar}
+          items={dropDownItems}
+        />
       </nav>
     );
   }
@@ -76,7 +90,7 @@ const Navbar: FC = ({ className }: NavbarProps) => {
     <nav className={classNames(cl.Navbar, {}, [className])}>
       <Button
         theme={ButtonTheme.CLEAR_INVERTED}
-        className={cl.links}
+        className={cl.authBtn}
         onClick={onShowModal}
       >
         {t("Войти")}

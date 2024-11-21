@@ -24,6 +24,7 @@ import { Input } from "shared/ui/Input/Input";
 import { SortOrder } from "shared/types";
 import { fetchArticles } from "../../model/services/fetchArticles/fetchArticles";
 import { useDebounce } from "shared/lib/hooks/useDebounce/useDebounce";
+import { HStack } from "shared/ui/Stack";
 
 interface ArticlesPageFiltersProps {
   className?: string;
@@ -89,7 +90,7 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = (props) => {
 
   return (
     <div className={classNames(cl.ArticlesPageFilters, {}, [className])}>
-      <div className={cl.sortWrapper}>
+      <HStack justify="between" className={cl.sortWrapper}>
         <ArticleSortSelector
           sort={sort}
           order={order}
@@ -101,7 +102,7 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = (props) => {
           view={view}
           onViewClick={onChangeView}
         />
-      </div>
+      </HStack>
       <Card className={cl.search}>
         <Input
           className={cl.searchInput}
