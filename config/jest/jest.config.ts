@@ -37,7 +37,16 @@ const config: Config = {
     '<rootDir>src'
   ],
   rootDir: '../../',
-  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts']
+  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
+  reporters: [
+    "default",
+    ["jest-html-reporters", {
+      "publicPath": "",
+      "filename": "jest-report.html",
+      "openReport": true,
+      "darkTheme": true
+    }]
+  ]
 };
 
 export default config;

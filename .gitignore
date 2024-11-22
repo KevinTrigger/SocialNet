@@ -24,5 +24,8 @@ dist-ssr
 *.sw?
 
 *storybook.log
-./frontend/storybook-static
+/storybook-static
 ./frontend/analyse.html
+/jest-html-reporters-attach/
+./jest-report.html
+./analyse.html

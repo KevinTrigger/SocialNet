@@ -1,6 +1,0 @@
-import{T as n,a as g}from"./ThemeDecorator-BCi7Uwnf.js";import{r as f}from"./index-DRjF_FHU.js";import{j as o}from"./jsx-runtime-DR9Q75dM.js";import{c as l}from"./classNames-DgDD4s-s.js";import{L as u}from"./Loader-Be95oddb.js";import{H as L}from"./HStack-CaG30RU_.js";import{R as h}from"./RouterDecorator-CwRlzliy.js";import"./Flex-C5DsYTI8.js";import"./index-BB2jNUZ5.js";import"./index-rX-Bn4lm.js";import"./index-CZJRB5QZ.js";const x="_PageLoader_1fpxl_1",P={PageLoader:x},d=({className:i})=>o.jsx(L,{justify:"center",className:l(P.PageLoader,{},[i]),children:o.jsx(u,{})}),D=f.memo(d);d.__docgenInfo={description:"",methods:[],displayName:"PageLoader",props:{className:{required:!1,tsType:{name:"string"},description:""}}};const K={title:"widget/PageLoader",component:D,argTypes:{},decorators:[h]},r={args:{}},e={args:{},decorators:[n(g.DARK)]};var a,s,t;r.parameters={...r.parameters,docs:{...(a=r.parameters)==null?void 0:a.docs,source:{originalSource:`{
-  args: {}
-}`,...(t=(s=r.parameters)==null?void 0:s.docs)==null?void 0:t.source}}};var m,c,p;e.parameters={...e.parameters,docs:{...(m=e.parameters)==null?void 0:m.docs,source:{originalSource:`{
-  args: {},
-  decorators: [ThemeDecorator(Theme.DARK)]
-}`,...(p=(c=e.parameters)==null?void 0:c.docs)==null?void 0:p.source}}};const $=["Light","Dark"];export{e as Dark,r as Light,$ as __namedExportsOrder,K as default};
