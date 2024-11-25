@@ -2,7 +2,6 @@ import { FC } from "react";
 import { classNames, Mods } from "shared/lib/classNames/classNames";
 import { Text, TextAlign, TextTheme } from "shared/ui/Text/Text";
 import { Input } from "shared/ui/Input/Input";
-import cl from "./ProfileCard.module.scss";
 import { Avatar, AvatarSize } from "shared/ui/Avatar/Avatar";
 import { Currency, CurrencySelect } from "entities/Currency";
 import { Country, CountrySelect } from "entities/Country";
@@ -11,6 +10,7 @@ import { Skeleton } from "shared/ui/Skeleton/Skeleton";
 import { VStack } from "shared/ui/Stack/VStack/VStack";
 import { HStack } from "shared/ui/Stack/HStack/HStack";
 import { Profile } from "../../model/types/profile";
+import cl from "./ProfileCard.module.scss";
 
 interface ProfileCardProps {
   className?: string;
@@ -110,12 +110,14 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
           readonly={readonly}
         />
         <Input
+          data-testid="ProfileCard.Firstname"
           value={data?.firstname}
           placeholder={t("Имя")}
           onChange={onChangeFirstname}
           readonly={readonly}
         />
         <Input
+          data-testid="ProfileCard.Lastname"
           value={data?.lastname}
           placeholder={t("Фамилия")}
           onChange={onChangeLastname}

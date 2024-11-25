@@ -1,12 +1,12 @@
 import { FC, FunctionComponent, ReactNode, SVGProps } from "react";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
-import cl from "./Dropdown.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import { DropdownDirection } from "../../const/headlessUI";
 import { Icon } from "../Icon/Icon";
 import { HStack } from "../Stack";
-import AppLink from "../AppLink/AppLink";
 import Button, { ButtonTheme } from "../Button/Button";
+import AppLink from "../AppLink/AppLink";
+import cl from "./Dropdown.module.scss";
 
 export interface DropdownItem {
   label: string;
@@ -28,7 +28,11 @@ export const Dropdown: FC<DropdownProps> = (props) => {
 
   const menuItem = (item: DropdownItem) => {
     const content = ({ active }: { active: boolean }) => (
-      <HStack key={item.label} gap="8" className={classNames(cl.item, { [cl.active]: active })}>
+      <HStack
+        key={item.label}
+        gap="8"
+        className={classNames(cl.item, { [cl.active]: active })}
+      >
         {item.icon && <Icon className={cl.icon} Svg={item.icon} />}
         <Button theme={ButtonTheme.CLEAR}>{item.label}</Button>
       </HStack>
@@ -50,7 +54,12 @@ export const Dropdown: FC<DropdownProps> = (props) => {
 
     if (item.onClick) {
       return (
-        <MenuItem key={item.label} onClick={item.onClick} as={"div"} disabled={item.disabled}>
+        <MenuItem
+          key={item.label}
+          onClick={item.onClick}
+          as={"div"}
+          disabled={item.disabled}
+        >
           {content}
         </MenuItem>
       );

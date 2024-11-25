@@ -1047,27 +1047,34 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "admin",
+      "roles": ["ADMIN"],
       "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
     },
     {
       "id": "2",
       "username": "kevin",
       "password": "123",
-      "role": "user",
+      "roles": ["USER"],
+      "avatar": "https://sectricity.com/wp-content/uploads/2020/03/Ethical-Hacker-Sectricity.jpg"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "123",
+      "roles": "user",
       "avatar": "https://sectricity.com/wp-content/uploads/2020/03/Ethical-Hacker-Sectricity.jpg"
     }
   ],
   "profile": [
     {
       "id": "1",
-      "firstname": "Сергей",
+      "firstname": "Сергейqwdqw",
       "lastname": "Коновалов",
       "age": 23,
       "currency": "EUR",
       "country": "Armenia",
       "city": "Екатеринбург",
-      "username": "Kevinв",
+      "username": "Kevin",
       "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
     },
     {

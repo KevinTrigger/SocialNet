@@ -4,7 +4,12 @@ import cl from "./Navbar.module.scss";
 import Button, { ButtonTheme } from "shared/ui/Button/Button";
 import { useTranslation } from "react-i18next";
 import { LoginModal } from "features/AuthByUsername/ui/LoginModal/LoginModal";
-import { getUserAuthData, userActions } from "entities/User";
+import {
+  getUserAuthData,
+  isUserAdmin,
+  isUserManager,
+  userActions,
+} from "entities/User";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useSelector } from "react-redux";
 import { Text, TextTheme } from "shared/ui/Text/Text";
@@ -15,6 +20,7 @@ import { Avatar, AvatarSize } from "shared/ui/Avatar/Avatar";
 import { Dropdown, DropdownItem } from "shared/ui/Dropdown/Dropdown";
 import LogoutIcon from "shared/assets/icons/logout.svg?react";
 import ProfileIcon from "shared/assets/icons/profile.svg?react";
+import AdminPanelIcon from "shared/assets/icons/admin-panel.svg?react";
 
 interface NavbarProps {
   className?: string;
@@ -27,6 +33,9 @@ const Navbar: FC = ({ className }: NavbarProps) => {
   const dispatch = useAppDispatch();
 
   const authData = useSelector(getUserAuthData);
+  const isAdmin = useSelector(isUserAdmin);
+  const isManager = useSelector(isUserManager);
+  const isAdminPanelVisible = isAdmin || isManager;
   const isArticlesPath = pathname === RoutePath.articles;
   const profilePath = RoutePath.profile + authData?.id;
 
@@ -53,6 +62,15 @@ const Navbar: FC = ({ className }: NavbarProps) => {
       icon: ProfileIcon,
       href: profilePath,
     },
+    ...(isAdminPanelVisible
+      ? [
+          {
+            label: t("Админ-панель"),
+            icon: AdminPanelIcon,
+            href: RoutePath.admin_panel,
+          },
+        ]
+      : []),
     {
       label: t("Выйти"),
       icon: LogoutIcon,

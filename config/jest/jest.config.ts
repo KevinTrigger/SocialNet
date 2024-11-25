@@ -43,10 +43,11 @@ const config: Config = {
     ["jest-html-reporters", {
       "publicPath": "",
       "filename": "jest-report.html",
-      "openReport": true,
+      "openReport": false,
       "darkTheme": true
     }]
-  ]
+  ],
+  setupFiles: ['<rootDir>/config/jest/jest.setupMock.ts'],
 };
 
 export default config;

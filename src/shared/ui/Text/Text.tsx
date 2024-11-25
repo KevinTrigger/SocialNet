@@ -30,6 +30,7 @@ interface TextProps {
   size?: TextSize;
   tagTitle?: TextTag;
   tagText?: TextTag;
+  "data-testid"?: string;
 }
 
 export const Text = memo((props: TextProps) => {
@@ -42,6 +43,7 @@ export const Text = memo((props: TextProps) => {
     size = TextSize.M,
     tagTitle = "h3",
     tagText = "p",
+    "data-testid": dataTestid = "Text",
   } = props;
 
   const mods: Mods = {
@@ -50,8 +52,19 @@ export const Text = memo((props: TextProps) => {
     [cl[size]]: true,
   };
 
-  const TitleElement = createElement(tagTitle, { className: classNames(cl.title, mods, []) }, title);
-  const TextElement = createElement(tagText, { className: cl.text }, text);
+  const TitleElement = createElement(
+    tagTitle,
+    {
+      className: classNames(cl.title, mods, []),
+      "data-testid": `${dataTestid}.Title`,
+    },
+    title
+  );
+  const TextElement = createElement(
+    tagText,
+    { className: cl.text, "data-testid": `${dataTestid}.Paragraph` },
+    text
+  );
 
   return (
     <div className={classNames(cl.Text, mods, [className])}>

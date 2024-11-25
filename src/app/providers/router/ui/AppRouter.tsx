@@ -6,6 +6,7 @@ import {
 } from "shared/config/routeConfig/routeConfig";
 import { PageLoader } from "widgets/PageLoader";
 import { RequireAuth } from "./RequireAuth";
+import { UserRole } from "entities/User";
 
 const AppRouter = () => {
   const renderWithWrapper = useCallback((route: AppRoutesProps) => {
@@ -18,7 +19,13 @@ const AppRouter = () => {
         key={route.path}
         path={route.path}
         element={
-          route.authOnly ? <RequireAuth>{element}</RequireAuth> : element
+          route.authOnly ? (
+            <RequireAuth roles={[UserRole.ADMIN, UserRole.MANAGER]}>
+              {element}
+            </RequireAuth>
+          ) : (
+            element
+          )
         }
       />
     );

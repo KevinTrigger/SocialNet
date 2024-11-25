@@ -7,9 +7,6 @@ import { Profile } from 'entities/Profile'
 const initialState: ProfileSchema = {
   readonly: true,
   isLoading: false,
-  error: undefined,
-  data: undefined,
-  form: undefined
 }
 
 export const profileSlice = createSlice({

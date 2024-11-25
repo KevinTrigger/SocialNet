@@ -3,8 +3,8 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { Text, TextSize } from "shared/ui/Text/Text";
 import { ArticleList } from "entities/Article";
-import cl from "./ArticleRecommendationList.module.scss";
 import { useArticleRecommendationsList } from "../api/articleRecommendationsApi";
+import cl from "./ArticleRecommendationList.module.scss";
 
 interface ArticleRecommendationListProps {
   className?: string;
@@ -17,7 +17,7 @@ export const ArticleRecommendationList: FC<ArticleRecommendationListProps> = (
   const { t } = useTranslation("");
   const { data: articles, isLoading, error } = useArticleRecommendationsList(8);
 
-  if (isLoading || error) return null;
+  if (isLoading || error || !articles) return null;
 
   return (
     <div className={classNames("", {}, [className])}>

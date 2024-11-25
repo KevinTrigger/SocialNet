@@ -99,6 +99,7 @@ export const EditableProfileCard: FC<EditableProfileCardProps> = (props) => {
     if (validateErrors?.length) {
       return validateErrors.map((error) => (
         <Text
+          data-testid="EditableProfileCard.Error"
           theme={TextTheme.ERROR}
           text={validateErrorTranslates[error]}
           key={error}
