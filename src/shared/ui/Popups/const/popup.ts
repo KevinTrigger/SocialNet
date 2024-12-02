@@ -1,4 +1,4 @@
-export type DropdownDirection =
+export type PopupDirection =
   | "bottom"
   | "bottom start"
   | "bottom end"

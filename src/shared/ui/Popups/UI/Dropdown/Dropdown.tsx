@@ -1,12 +1,12 @@
 import { FC, FunctionComponent, ReactNode, SVGProps } from "react";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { classNames } from "shared/lib/classNames/classNames";
-import { DropdownDirection } from "../../const/headlessUI";
-import { Icon } from "../Icon/Icon";
-import { HStack } from "../Stack";
-import Button, { ButtonTheme } from "../Button/Button";
-import AppLink from "../AppLink/AppLink";
 import cl from "./Dropdown.module.scss";
+import { HStack } from "shared/ui/Stack";
+import Button, { ButtonTheme } from "shared/ui/Button/Button";
+import { Icon } from "shared/ui/Icon/Icon";
+import AppLink from "shared/ui/AppLink/AppLink";
+import { PopupDirection } from "../../const/popup";
 
 export interface DropdownItem {
   label: string;
@@ -20,7 +20,7 @@ interface DropdownProps {
   className?: string;
   trigger?: ReactNode;
   items?: DropdownItem[];
-  direction?: DropdownDirection;
+  direction?: PopupDirection;
 }
 
 export const Dropdown: FC<DropdownProps> = (props) => {

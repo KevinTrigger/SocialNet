@@ -1,4 +1,45 @@
 {
+  "notifications": [
+    {
+      "id": "0",
+      "createdAt": "2024-03-21T14:30:00Z",
+      "href": "https://google.com/",
+      "message": "Ваши коты уже ждут возвращения с работы, не злоупотребляйте временем!"
+    },
+    {
+      "id": "1",
+      "createdAt": "2024-03-23T14:30:00Z",
+      "href": "https://ya.ru/",
+      "message": "Пожалуйста, не ешьте экран... это не сладкий пирог!"
+    },
+    {
+      "id": "2",
+      "createdAt": "2024-03-21T14:30:00Z",
+      "message": "На сайте слишком много информации, пора сделать перерыв на кофе!"
+    },
+    {
+      "id": "3",
+      "createdAt": "2024-03-22T14:30:00Z",
+      "href": "https://ya.ru/",
+      "message": "Ваша улыбка активирует специальные функции сайта! Попробуйте!"
+    },
+    {
+      "id": "4",
+      "createdAt": "2024-02-15T14:30:00Z",
+      "message": "Это уведомление приходит только пользователю с id 2"
+    },
+    {
+      "id": "5",
+      "createdAt": "2024-03-14T15:30:00Z",
+      "href": "https://ya.ru/",
+      "message": "Пока Вы читаете, Ваш кофе остывает... торопитесь!"
+    },
+    {
+      "id": "6",
+      "createdAt": "2024-03-27T14:30:00Z",
+      "message": "Пока Вы читаете, Ваш кофе остывает... торопитесь!"
+    }
+  ],
   "articles": [
     {
       "id": "1",
@@ -10,7 +51,7 @@
         "username": "admin",
         "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
       },
-      "views": 1022,
+      "views": 1345,
       "createdAt": "26.02.2022",
       "type": [
         "IT"
@@ -86,7 +127,7 @@
         "username": "kevin",
         "avatar": "https://sectricity.com/wp-content/uploads/2020/03/Ethical-Hacker-Sectricity.jpg"
       },
-      "views": 567,
+      "views": 513,
       "createdAt": "12.05.2023",
       "type": [
         "IT",
@@ -162,7 +203,7 @@
         "username": "admin",
         "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
       },
-      "views": 413,
+      "views": 3161,
       "createdAt": "31.05.2023",
       "type": [
         "IT"
@@ -201,7 +242,7 @@
         "username": "admin",
         "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
       },
-      "views": 413,
+      "views": 31,
       "createdAt": "31.05.2023",
       "type": [
         "IT"
@@ -240,7 +281,7 @@
         "username": "admin",
         "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
       },
-      "views": 413,
+      "views": 531,
       "createdAt": "31.05.2023",
       "type": [
         "IT"
@@ -279,7 +320,7 @@
         "username": "admin",
         "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
       },
-      "views": 413,
+      "views": 124,
       "createdAt": "31.05.2023",
       "type": [
         "IT"
@@ -318,7 +359,7 @@
         "username": "admin",
         "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
       },
-      "views": 413,
+      "views": 1351,
       "createdAt": "31.05.2023",
       "type": [
         "IT"
@@ -357,7 +398,7 @@
         "username": "admin",
         "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
       },
-      "views": 413,
+      "views": 124,
       "createdAt": "31.05.2023",
       "type": [
         "IT"
@@ -396,7 +437,7 @@
         "username": "admin",
         "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
       },
-      "views": 413,
+      "views": 865,
       "createdAt": "31.05.2023",
       "type": [
         "IT"
@@ -435,7 +476,7 @@
         "username": "admin",
         "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
       },
-      "views": 413,
+      "views": 137,
       "createdAt": "31.05.2023",
       "type": [
         "IT"
@@ -474,7 +515,7 @@
         "username": "admin",
         "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
       },
-      "views": 413,
+      "views": 159,
       "createdAt": "31.05.2023",
       "type": [
         "IT"
@@ -513,7 +554,7 @@
         "username": "admin",
         "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
       },
-      "views": 413,
+      "views": 1350,
       "createdAt": "31.05.2023",
       "type": [
         "IT"
@@ -552,7 +593,7 @@
         "username": "admin",
         "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
       },
-      "views": 413,
+      "views": 2354,
       "createdAt": "31.05.2023",
       "type": [
         "IT"
@@ -591,7 +632,7 @@
         "username": "admin",
         "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
       },
-      "views": 413,
+      "views": 111,
       "createdAt": "31.05.2023",
       "type": [
         "IT"
@@ -630,7 +671,7 @@
         "username": "admin",
         "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
       },
-      "views": 413,
+      "views": 62,
       "createdAt": "31.05.2023",
       "type": [
         "IT"
@@ -669,7 +710,7 @@
         "username": "admin",
         "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
       },
-      "views": 413,
+      "views": 59,
       "createdAt": "31.05.2023",
       "type": [
         "IT"
@@ -708,7 +749,7 @@
         "username": "admin",
         "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
       },
-      "views": 413,
+      "views": 319,
       "createdAt": "31.05.2023",
       "type": [
         "ECONOMICS"
@@ -747,7 +788,7 @@
         "username": "admin",
         "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
       },
-      "views": 413,
+      "views": 134,
       "createdAt": "31.05.2023",
       "type": [
         "SCIENCE"
@@ -786,7 +827,7 @@
         "username": "admin",
         "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
       },
-      "views": 413,
+      "views": 783,
       "createdAt": "31.05.2023",
       "type": [
         "IT",
@@ -826,7 +867,7 @@
         "username": "admin",
         "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
       },
-      "views": 413,
+      "views": 130,
       "createdAt": "31.05.2023",
       "type": [
         "SCIENCE"
@@ -865,7 +906,7 @@
         "username": "admin",
         "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
       },
-      "views": 413,
+      "views": 130,
       "createdAt": "31.05.2023",
       "type": [
         "IT",
@@ -1040,6 +1081,24 @@
       "userId": "1",
       "text": "test",
       "id": "IZ_VYEW"
+    },
+    {
+      "articleId": "3",
+      "userId": "1",
+      "text": "dqwdqwd",
+      "id": "w7KOIlw"
+    },
+    {
+      "articleId": "14",
+      "userId": "1",
+      "text": "test1",
+      "id": "uvAc6R_"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "testtastast",
+      "id": "eGEDUz_"
     }
   ],
   "users": [
@@ -1047,34 +1106,41 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
     },
     {
       "id": "2",
       "username": "kevin",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER",
+        "MANAGER"
+      ],
       "avatar": "https://sectricity.com/wp-content/uploads/2020/03/Ethical-Hacker-Sectricity.jpg"
     },
     {
       "id": "3",
       "username": "manager",
       "password": "123",
-      "roles": "user",
-      "avatar": "https://sectricity.com/wp-content/uploads/2020/03/Ethical-Hacker-Sectricity.jpg"
+      "roles": [
+        "MANAGER"
+      ],
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHfd3PPulVSp4ZbuBFNkePoUR_fLJQe474Ag&s"
     }
   ],
   "profile": [
     {
       "id": "1",
       "firstname": "Сергейqwdqw",
-      "lastname": "Коновалов",
+      "lastname": "Коноваловqwfqwf",
       "age": 23,
       "currency": "EUR",
-      "country": "Armenia",
+      "country": "Russia",
       "city": "Екатеринбург",
-      "username": "Kevin",
+      "username": "Kevinqefqef",
       "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
     },
     {
@@ -1087,6 +1153,114 @@
       "city": "Екатеринбург",
       "username": "Melo",
       "avatar": "https://sectricity.com/wp-content/uploads/2020/03/Ethical-Hacker-Sectricity.jpg"
+    }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 5,
+      "feedback": "Отлично! Спасибо за статью",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "id": "3",
+      "rate": 2,
+      "feedback": "Статья не очень",
+      "userId": "2",
+      "articleId": "2"
+    },
+    {
+      "articleId": "4",
+      "rate": 3,
+      "userId": "1",
+      "id": "yMCqVWI"
+    },
+    {
+      "articleId": "6",
+      "rate": 5,
+      "userId": "1",
+      "feedback": "Очень крутое содержание! =)",
+      "id": "4Qyor30"
+    },
+    {
+      "articleId": "10",
+      "rate": 4,
+      "userId": "1",
+      "feedback": "йуайуа",
+      "id": "fG0nV2I"
+    },
+    {
+      "articleId": "12",
+      "rate": 5,
+      "userId": "1",
+      "feedback": "вйцвйцв",
+      "id": "eFUnCtR"
+    },
+    {
+      "articleId": "15",
+      "rate": 3,
+      "userId": "1",
+      "feedback": "фывйцв",
+      "id": "gWw_2xL"
+    },
+    {
+      "articleId": "155",
+      "rate": 3,
+      "userId": "1",
+      "feedback": "asdqwdqwd",
+      "id": "LqZq75L"
+    },
+    {
+      "articleId": "154",
+      "rate": 3,
+      "userId": "1",
+      "feedback": "tqe",
+      "id": "DtJFmof"
+    },
+    {
+      "articleId": "20",
+      "rate": 4,
+      "userId": "1",
+      "feedback": "qwd",
+      "id": "X6KpW0P"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хороший профиль",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 5,
+      "feedback": "Отлично! Спасибо за красивый профиль",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "3",
+      "rate": 2,
+      "feedback": "Профиль не очень",
+      "userId": "2",
+      "profileId": "2"
+    },
+    {
+      "profileId": "2",
+      "rate": 5,
+      "userId": "1",
+      "feedback": "Крутой профиль, парень!",
+      "id": "jogFgFg"
     }
   ]
 }

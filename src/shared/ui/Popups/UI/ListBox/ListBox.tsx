@@ -6,12 +6,12 @@ import {
   ListboxOptions,
 } from "@headlessui/react";
 import { classNames } from "shared/lib/classNames/classNames";
-import CheckIcon from "../../assets/icons/check.svg?react";
-import { Icon } from "../Icon/Icon";
-import Button from "../Button/Button";
-import { HStack } from "../Stack";
+import CheckIcon from "../../../../assets/icons/check.svg?react";
+import { HStack } from "shared/ui/Stack";
+import Button from "shared/ui/Button/Button";
+import { Icon } from "shared/ui/Icon/Icon";
 import cl from "./ListBox.module.scss";
-import { DropdownDirection } from "../../const/headlessUI";
+import { PopupDirection } from "../../const/popup";
 
 interface ListBoxItem<T extends string> {
   content: ReactNode;
@@ -26,7 +26,7 @@ interface ListBoxProps<T extends string> {
   onChange?: (value: T) => void;
   readonly?: boolean;
   label?: string;
-  direction?: DropdownDirection;
+  direction?: PopupDirection;
 }
 
 export const ListBox = <T extends string>(props: ListBoxProps<T>) => {

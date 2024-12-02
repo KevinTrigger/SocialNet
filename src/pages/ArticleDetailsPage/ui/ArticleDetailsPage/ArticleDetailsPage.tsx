@@ -11,6 +11,7 @@ import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDet
 import { ArticleRecommendationList } from "features/ArticleRecommendationList";
 import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetailsComments";
 import cl from "./ArticleDetailsPage.module.scss";
+import { ArticleRating } from "features/ArticleRating";
 
 const reducers: ReducersList = {
   articleDetailsPage: articleDetailsPageReducer,
@@ -19,11 +20,16 @@ const reducers: ReducersList = {
 const ArticleDetailsPage = () => {
   const { id } = useParams<{ id: string }>();
 
+  if (!id) {
+    return null;
+  }
+
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page>
         <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
+        <ArticleRating articleId={id} className={cl.recommendList} />
         <ArticleRecommendationList className={cl.recommendList} />
         <ArticleDetailsComments className={cl.comments} id={id} />
       </Page>

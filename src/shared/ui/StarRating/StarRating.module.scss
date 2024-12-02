@@ -1,0 +1,8 @@
+.star {
+  fill: none;
+  cursor: pointer;
+}
+
+.hovered, .selected {
+  fill: var(--primary-color);
+}

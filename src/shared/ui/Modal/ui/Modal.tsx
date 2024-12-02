@@ -1,16 +1,11 @@
-import {
-  MouseEvent,
-  MutableRefObject,
-  ReactNode,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { ReactNode } from "react";
 import { classNames, Mods } from "shared/lib/classNames/classNames";
 import cl from "./Modal.module.scss";
 import { Portal } from "shared/ui/Portal";
 import { useTheme } from "app/providers/ThemeProvider";
+import { Overlay } from "shared/ui/Overlay/Overlay";
+import { HStack } from "shared/ui/Stack";
+import { useModal } from "shared/lib/hooks/useModal/useModal";
 
 interface ModalProps {
   className?: string;
@@ -25,9 +20,11 @@ const ANIMATION_DELAY = 300;
 const Modal = (props: ModalProps) => {
   const { children, className, isOpen, onClose, lazy } = props;
 
-  const [isClosing, setIsClosing] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
-  const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
+  const { close, isClosing, isMounted } = useModal({
+    animationDelay: ANIMATION_DELAY,
+    onClose,
+    isOpen,
+  });
   const { theme } = useTheme();
 
   const mods: Mods = {
@@ -35,61 +32,18 @@ const Modal = (props: ModalProps) => {
     [cl.isClosing]: isClosing,
   };
 
-  const closeHandler = useCallback(() => {
-    if (onClose) {
-      setIsClosing(true);
-      timerRef.current = setTimeout(() => {
-        onClose();
-        setIsClosing(false);
-      }, ANIMATION_DELAY);
-    }
-  }, [onClose]);
-
-  const onContentClick = (e: MouseEvent) => {
-    e.stopPropagation();
-  };
-
-  const handleEscape = useCallback(
-    (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        closeHandler();
-      }
-    },
-    [closeHandler]
-  );
-
-  useEffect(() => {
-    if (isOpen) {
-      window.addEventListener("keydown", handleEscape);
-    }
-
-    return () => {
-      clearTimeout(timerRef.current);
-      window.removeEventListener("keydown", handleEscape);
-    };
-  }, [isOpen, handleEscape]);
-
-  useEffect(() => {
-    if (isOpen) {
-      setIsMounted(true);
-    }
-  }, [isOpen]);
-
   if (lazy && !isMounted) {
     return null;
   }
 
   return (
     <Portal>
-      <div
+      <HStack
         className={classNames(cl.Modal, mods, [className, theme, "app_modal"])}
       >
-        <div className={cl.overlay} onClick={closeHandler}>
-          <div className={cl.content} onClick={onContentClick}>
-            {children}
-          </div>
-        </div>
-      </div>
+        <Overlay onClick={close} />
+        <div className={cl.content}>{children}</div>
+      </HStack>
     </Portal>
   );
 };

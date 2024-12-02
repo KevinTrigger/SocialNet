@@ -14,7 +14,6 @@ interface ThemeProviderProps {
 }
 
 const ThemeProvider: FC<ThemeProviderProps> = (props) => {
-
   const {
     initialTheme,
     children, 

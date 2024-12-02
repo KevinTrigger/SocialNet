@@ -11,8 +11,18 @@
 
 .primary {
   color: var(--primary-color);
+  
+  &_outlined {
+    border: 1px solid var(--primary-color);
+    padding: 4px 8px;
+  }
 }
 
 .secondary {
   color: var(--inverted-primary-color);
+  
+  &_outlined {
+    border: 1px solid var(--inverted-primary-color);
+    padding: 4px 8px;
+  }
 }

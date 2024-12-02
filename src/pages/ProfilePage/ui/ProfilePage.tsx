@@ -3,6 +3,8 @@ import { EditableProfileCard } from "features/EditableProfileCard";
 import { useParams } from "react-router-dom";
 import { Text } from "shared/ui/Text/Text";
 import { useTranslation } from "react-i18next";
+import { ProfileRating } from "features/ProfileRating";
+import cl from "./ProfilePage.module.scss";
 
 export const ProfilePage = () => {
   const { id } = useParams<{ id: string }>();
@@ -15,6 +17,7 @@ export const ProfilePage = () => {
   return (
     <Page>
       <EditableProfileCard id={id} />
+      <ProfileRating className={cl.profileRating} profileId={id} />
     </Page>
   );
 };

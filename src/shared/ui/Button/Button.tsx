@@ -24,6 +24,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   disabled?: boolean;
   square?: boolean;
   size?: ButtonSize;
+  fullWidth?: boolean;
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
@@ -35,15 +36,17 @@ const Button: FC<ButtonProps> = (props) => {
     children,
     disabled,
     square,
+    fullWidth,
     size = ButtonSize.M,
     ...other
   } = props;
 
   const mods: Mods = {
     [cl[theme]]: true,
-    [cl.disabled]: !!disabled,
-    [cl.square]: !!square,
+    [cl.disabled]: disabled,
+    [cl.square]: square,
     [cl[size]]: true,
+    [cl.fullWidth]: fullWidth,
   };
 
   return (
