@@ -1,1 +1,0 @@
-import{j as o}from"./jsx-runtime-DR9Q75dM.js";import{B as e}from"./index-BB2jNUZ5.js";const t=r=>o.jsx(e,{children:o.jsx(r,{})});t.__docgenInfo={description:"",methods:[],displayName:"RouterDecorator"};export{t as R};

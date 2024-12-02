@@ -4,10 +4,10 @@ import { useTranslation } from "react-i18next";
 import cl from "./ArticleDetailsPageHeader.module.scss";
 import Button from "shared/ui/Button/Button";
 import { useNavigate } from "react-router-dom";
-import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { useSelector } from "react-redux";
 import { getCanEditArticle } from "../../model/selectors/article";
 import { getArticleDetailsData } from "entities/Article";
+import { RoutePath } from "shared/const/router";
 
 interface ArticleDetailsPageHeaderProps {
   className?: string;

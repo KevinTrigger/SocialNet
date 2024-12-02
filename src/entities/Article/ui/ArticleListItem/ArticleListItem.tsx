@@ -15,11 +15,11 @@ import { Avatar, AvatarSize } from "shared/ui/Avatar/Avatar";
 import Button, { ButtonTheme } from "shared/ui/Button/Button";
 import { TextBlock } from "../TextBlock/TextBlock";
 import { useNavigate } from "react-router-dom";
-import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { ArticleListItemSkeleton } from "./ArticleListItemSkeleton";
 import AppLink from "shared/ui/AppLink/AppLink";
 import { VStack } from "shared/ui/Stack/VStack/VStack";
 import { HStack } from "shared/ui/Stack/HStack/HStack";
+import { RoutePath } from "shared/const/router";
 
 interface ArticleListItemProps {
   className?: string;

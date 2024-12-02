@@ -1,26 +1,22 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Input } from "./Input";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "shared/const/theme";
+import LangSwitcher from "./LangSwitcher";
+import { RouterDecorator } from "shared/config/storybook/RouteDecorator/RouterDecorator";
 
-const meta: Meta<typeof Input> = {
-  title: "ui/Input",
-  component: Input,
+const meta: Meta<typeof LangSwitcher> = {
+  title: "ui/LangSwitcher",
+  component: LangSwitcher,
+  decorators: [RouterDecorator]
 };
 
 export default meta;
 
-type Story = StoryObj<typeof Input>;
+type Story = StoryObj<typeof LangSwitcher>;
 
 export const Light: Story = {
-  args: {
-    placeholder: "Введите текст",
-  },
 };
 
 export const Dark: Story = {
-  args: {
-    placeholder: "Введите текст",
-  },
   decorators: [ThemeDecorator(Theme.DARK)]
 };

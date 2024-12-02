@@ -11,9 +11,9 @@ import {
   isUserManager,
   userActions,
 } from "entities/User";
-import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { Avatar, AvatarSize } from "shared/ui/Avatar/Avatar";
+import { RoutePath } from "shared/const/router";
 
 export const AvatarDropdown = () => {
   const { t } = useTranslation("");

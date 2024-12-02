@@ -6,8 +6,8 @@ import { Avatar, AvatarSize } from "shared/ui/Avatar/Avatar";
 import { Text, TextSize } from "shared/ui/Text/Text";
 import { Skeleton } from "shared/ui/Skeleton/Skeleton";
 import AppLink from "shared/ui/AppLink/AppLink";
-import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { HStack } from "shared/ui/Stack/HStack/HStack";
+import { RoutePath } from "shared/const/router";
 
 interface CommentCardProps {
   className?: string;
