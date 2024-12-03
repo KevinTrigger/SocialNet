@@ -11,16 +11,27 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
   className?: string;
   Svg: FC<SVGProps<SVGSVGElement>>;
   theme?: IconTheme;
+  size?: number;
 }
 
 export const Icon: FC<IconProps> = (props) => {
-  const { className, theme = IconTheme.PRIMARY, Svg, ...otherProps } = props;
+  const {
+    className,
+    size = 24,
+    theme = IconTheme.PRIMARY,
+    Svg,
+    ...otherProps
+  } = props;
 
   const mods: Mods = {
     [cl[theme]]: true,
   };
 
   return (
-    <Svg {...otherProps} className={classNames(cl.Icon, mods, [className])} />
+    <Svg
+      {...otherProps}
+      style={{ width: size, height: size }}
+      className={classNames(cl.Icon, mods, [className])}
+    />
   );
 };

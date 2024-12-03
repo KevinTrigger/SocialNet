@@ -2,12 +2,12 @@ import { FC } from "react";
 import { classNames, Mods } from "shared/lib/classNames/classNames";
 import cl from "./CommentCard.module.scss";
 import { Comment } from "../../model/types/comment";
-import { RoutePath } from "shared/const/router";
 import { HStack } from "shared/ui/Stack";
 import { Skeleton } from "shared/ui/Skeleton";
 import { AppLink } from "shared/ui/AppLink";
 import { Avatar, AvatarSize } from "shared/ui/Avatar";
 import { Text, TextSize } from "shared/ui/Text";
+import { getRouteProfile } from "shared/const/router";
 
 interface CommentCardProps {
   className?: string;
@@ -42,10 +42,7 @@ export const CommentCard: FC<CommentCardProps> = (props) => {
 
   return (
     <div className={classNames(cl.CommentCard, mods, [className])}>
-      <AppLink
-        className={cl.header}
-        to={`${RoutePath.profile + comment.user.id}`}
-      >
+      <AppLink className={cl.header} to={getRouteProfile(comment.user.id)}>
         {comment.user.avatar && (
           <Avatar src={comment.user.avatar} rounded size={AvatarSize.S} />
         )}

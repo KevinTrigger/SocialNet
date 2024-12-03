@@ -9,7 +9,11 @@ module.exports = {
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs", "templates/"],
   parser: "@typescript-eslint/parser",
-  plugins: ["react-refresh", "eslint-plugin-kevin-trigger-plugin"],
+  plugins: [
+    "react-refresh",
+    "eslint-plugin-kevin-trigger-plugin",
+    "eslint-plugin-unused-imports",
+  ],
   rules: {
     "react-refresh/only-export-components": [
       "warn",
@@ -24,5 +28,16 @@ module.exports = {
     "react-hooks/exhaustive-deps": "error",
     "no-param-reassign": "off",
     "kevin-trigger-plugin/path-checker": "error",
+    "no-unused-vars": "off", // or "@typescript-eslint/no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        vars: "all",
+        varsIgnorePattern: "^_",
+        args: "after-used",
+        argsIgnorePattern: "^_",
+      },
+    ],
   },
 };

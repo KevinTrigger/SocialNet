@@ -9,7 +9,6 @@ import {
 import { TextBlock } from "../TextBlock/TextBlock";
 import { useNavigate } from "react-router-dom";
 import { ArticleListItemSkeleton } from "./ArticleListItemSkeleton";
-import { RoutePath } from "shared/const/router";
 import EyeIcon from "shared/assets/icons/eye.svg?react";
 import cl from "./ArticleListItem.module.scss";
 import { Text, TextAlign, TextSize } from "shared/ui/Text";
@@ -19,6 +18,7 @@ import { Avatar, AvatarSize } from "shared/ui/Avatar";
 import { Button, ButtonTheme } from "shared/ui/Button";
 import { Icon } from "shared/ui/Icon";
 import { AppLink } from "shared/ui/AppLink";
+import { getRouteArticleDetails } from "shared/const/router";
 
 interface ArticleListItemProps {
   className?: string;
@@ -37,7 +37,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = (props) => {
 
   const navigate = useNavigate();
   const onOpenArticleDetails = useCallback(() => {
-    navigate(RoutePath.article_details + article.id);
+    navigate(getRouteArticleDetails(article.id));
   }, [navigate, article]);
 
   if (isLoading) {
@@ -83,7 +83,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = (props) => {
 
   return (
     <AppLink
-      to={RoutePath.article_details + article.id}
+      to={getRouteArticleDetails(article.id)}
       target={target}
       className={classNames(cl.ArticleListItem, {}, [className, cl[view]])}
     >

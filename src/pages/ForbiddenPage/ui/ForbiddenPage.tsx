@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "shared/ui/Button";
 import { VStack } from "shared/ui/Stack";
 import { Text } from "shared/ui/Text";
-import { Page } from "widgets/Page/Page";
+import { Page } from "widgets/Page";
 
 const ForbiddenPage = () => {
   const { t } = useTranslation("forbidden");

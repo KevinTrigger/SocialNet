@@ -1,8 +1,8 @@
 import { FC, useCallback, useMemo } from "react";
 import { ArticleType } from "entities/Article";
-import cl from "./ArticleTypeTabs.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import { TabItem, Tabs } from "shared/ui/Tabs";
+import cl from "./ArticleTypeTabs.module.scss";
 
 interface ArticleTypeTabsProps {
   className?: string;

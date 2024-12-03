@@ -7,12 +7,12 @@ import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { AvatarDropdown } from "features/AvatarDropdown";
 import { NotificationButton } from "features/NotificationButton";
-import { RoutePath } from "shared/const/router";
 import cl from "./Navbar.module.scss";
 import { Text, TextTheme } from "shared/ui/Text";
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink";
 import { HStack } from "shared/ui/Stack";
 import { Button, ButtonTheme } from "shared/ui/Button";
+import { getRouteArticleCreate, getRouteArticles } from "shared/const/router";
 
 interface NavbarProps {
   className?: string;
@@ -24,7 +24,7 @@ const Navbar: FC = ({ className }: NavbarProps) => {
   const { pathname } = useLocation();
 
   const authData = useSelector(getUserAuthData);
-  const isArticlesPath = pathname === RoutePath.articles;
+  const isArticlesPath = pathname === getRouteArticles();
 
   const onCloseModal = useCallback(() => {
     setIsAuthModal(false);
@@ -46,7 +46,7 @@ const Navbar: FC = ({ className }: NavbarProps) => {
           <AppLink
             className={cl.createLink}
             theme={AppLinkTheme.SECONDARY}
-            to={`${RoutePath.article_create}`}
+            to={getRouteArticleCreate()}
           >
             {t("Создать статью")}
           </AppLink>

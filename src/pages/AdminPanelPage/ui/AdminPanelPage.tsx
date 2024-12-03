@@ -1,13 +1,8 @@
 import { memo } from "react";
-import { Page } from "widgets/Page/Page";
+import { Page } from "widgets/Page";
 
 const AdminPanelPage = () => {
-
-  return (
-    <Page>
-      test
-    </Page>
-  );
+  return <Page>test</Page>;
 };
 
 export default memo(AdminPanelPage);

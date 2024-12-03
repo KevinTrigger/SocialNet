@@ -2,12 +2,9 @@ import { FC, useCallback } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import cl from "./ArticlesPageFilters.module.scss";
 import {
-  ArticleSortSelector,
   ArticlesSortField,
   ArticleType,
-  ArticleTypeTabs,
   ArticleViewMode,
-  ArticleViewSelector,
 } from "entities/Article";
 import { articlesPageActions } from "../../model/slice/articlesPageSlice";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
@@ -25,6 +22,9 @@ import { useDebounce } from "shared/lib/hooks/useDebounce/useDebounce";
 import { HStack } from "shared/ui/Stack";
 import { Card } from "shared/ui/Card";
 import { Input } from "shared/ui/Input";
+import { ArticleSortSelector } from "features/ArticleSortSelector";
+import { ArticleViewSelector } from "features/ArticleViewSelector";
+import { ArticleTypeTabs } from "features/ArticleTypeTabs";
 
 interface ArticlesPageFiltersProps {
   className?: string;

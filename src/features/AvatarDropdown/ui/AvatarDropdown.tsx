@@ -11,9 +11,9 @@ import {
   userActions,
 } from "entities/User";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { RoutePath } from "shared/const/router";
 import { Avatar, AvatarSize } from "shared/ui/Avatar";
 import { Dropdown, DropdownItem } from "shared/ui/Popups";
+import { getRouteAdminPanel, getRouteProfile } from "shared/const/router";
 
 export const AvatarDropdown = () => {
   const { t } = useTranslation("");
@@ -25,7 +25,7 @@ export const AvatarDropdown = () => {
   const isManager = useSelector(isUserManager);
 
   const isAdminPanelVisible = isAdmin || isManager;
-  const profilePath = RoutePath.profile + authData?.id;
+  const profilePath = authData?.id && getRouteProfile(authData.id);
 
   const onLogout = useCallback(() => {
     dispatch(userActions.logout());
@@ -47,7 +47,7 @@ export const AvatarDropdown = () => {
           {
             label: t("Админ-панель"),
             icon: AdminPanelIcon,
-            href: RoutePath.admin_panel,
+            href: getRouteAdminPanel(),
           },
         ]
       : []),

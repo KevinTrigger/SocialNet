@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { ArticleViewSelector } from "./ArticleViewSelector";
-import { ArticleViewMode } from "../../model/types/article";
 import { action } from "@storybook/addon-actions";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "shared/const/theme";
+import { ArticleViewMode } from "entities/Article";
 
 const meta: Meta<typeof ArticleViewSelector> = {
-  title: "entities/Article/ArticleViewSelector",
+  title: "features/ArticleViewSelector",
   component: ArticleViewSelector,
 };
 
@@ -26,7 +26,5 @@ export const Dark: Story = {
     view: ArticleViewMode.SMALL,
     onViewClick: action("onViewClick"),
   },
-  decorators: [
-    ThemeDecorator(Theme.DARK)
-  ]
+  decorators: [ThemeDecorator(Theme.DARK)],
 };

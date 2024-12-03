@@ -5,7 +5,7 @@ import {
   ReducersList,
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { ArticleDetails } from "entities/Article";
-import { Page } from "widgets/Page/Page";
+import { Page } from "widgets/Page";
 import { articleDetailsPageReducer } from "../../model/slice";
 import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 import { ArticleRecommendationList } from "features/ArticleRecommendationList";
