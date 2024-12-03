@@ -2,12 +2,12 @@ import { FC } from "react";
 import { classNames, Mods } from "shared/lib/classNames/classNames";
 import cl from "./CommentCard.module.scss";
 import { Comment } from "../../model/types/comment";
-import { Avatar, AvatarSize } from "shared/ui/Avatar/Avatar";
-import { Text, TextSize } from "shared/ui/Text/Text";
-import { Skeleton } from "shared/ui/Skeleton/Skeleton";
-import AppLink from "shared/ui/AppLink/AppLink";
-import { HStack } from "shared/ui/Stack/HStack/HStack";
 import { RoutePath } from "shared/const/router";
+import { HStack } from "shared/ui/Stack";
+import { Skeleton } from "shared/ui/Skeleton";
+import { AppLink } from "shared/ui/AppLink";
+import { Avatar, AvatarSize } from "shared/ui/Avatar";
+import { Text, TextSize } from "shared/ui/Text";
 
 interface CommentCardProps {
   className?: string;

@@ -2,7 +2,7 @@ import { FC } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import cl from "./ChatPageHeader.module.scss";
-import { Text } from "shared/ui/Text/Text";
+import { Text } from "shared/ui/Text";
 
 interface ChatPageHeaderProps {
   className?: string;

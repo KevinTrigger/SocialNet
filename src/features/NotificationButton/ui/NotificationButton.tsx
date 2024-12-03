@@ -1,11 +1,11 @@
 import { FC, useState } from "react";
-import Button, { ButtonTheme } from "shared/ui/Button/Button";
-import { Icon, IconTheme } from "shared/ui/Icon/Icon";
 import NotificationIcon from "shared/assets/icons/notifocation.svg?react";
-import { Popup } from "shared/ui/Popups";
 import { NotificationList } from "entities/Notification";
 import { BrowserView, MobileView } from "react-device-detect";
-import { Drawer } from "shared/ui/Drawer/Drawer";
+import { Button, ButtonTheme } from "shared/ui/Button";
+import { Icon, IconTheme } from "shared/ui/Icon";
+import { Popup } from "shared/ui/Popups";
+import { Drawer } from "shared/ui/Drawer";
 
 interface NotificationButtonProps {
   className?: string;

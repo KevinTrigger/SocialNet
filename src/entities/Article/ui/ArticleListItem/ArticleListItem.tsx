@@ -6,20 +6,19 @@ import {
   ArticleTextBlock,
   ArticleViewMode,
 } from "../../model/types/article";
-import { Text, TextAlign, TextSize } from "shared/ui/Text/Text";
-import cl from "./ArticleListItem.module.scss";
-import { Icon } from "shared/ui/Icon/Icon";
-import EyeIcon from "shared/assets/icons/eye.svg?react";
-import { Card } from "shared/ui/Card/Card";
-import { Avatar, AvatarSize } from "shared/ui/Avatar/Avatar";
-import Button, { ButtonTheme } from "shared/ui/Button/Button";
 import { TextBlock } from "../TextBlock/TextBlock";
 import { useNavigate } from "react-router-dom";
 import { ArticleListItemSkeleton } from "./ArticleListItemSkeleton";
-import AppLink from "shared/ui/AppLink/AppLink";
-import { VStack } from "shared/ui/Stack/VStack/VStack";
-import { HStack } from "shared/ui/Stack/HStack/HStack";
 import { RoutePath } from "shared/const/router";
+import EyeIcon from "shared/assets/icons/eye.svg?react";
+import cl from "./ArticleListItem.module.scss";
+import { Text, TextAlign, TextSize } from "shared/ui/Text";
+import { Card } from "shared/ui/Card";
+import { HStack, VStack } from "shared/ui/Stack";
+import { Avatar, AvatarSize } from "shared/ui/Avatar";
+import { Button, ButtonTheme } from "shared/ui/Button";
+import { Icon } from "shared/ui/Icon";
+import { AppLink } from "shared/ui/AppLink";
 
 interface ArticleListItemProps {
   className?: string;

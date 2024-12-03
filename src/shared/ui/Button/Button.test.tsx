@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import Button, { ButtonTheme } from "./Button";
+import { Button, ButtonTheme } from "./Button";
 
 describe("Testing a button", () => {
   test("with empty params", () => {

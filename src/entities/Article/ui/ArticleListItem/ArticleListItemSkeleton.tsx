@@ -2,9 +2,9 @@ import { FC } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { ArticleViewMode } from "entities/Article/model/types/article";
 import cl from "./ArticleListItem.module.scss";
-import { Skeleton } from "shared/ui/Skeleton/Skeleton";
-import { Card } from "shared/ui/Card/Card";
+import { Card } from "shared/ui/Card";
 import { HStack, VStack } from "shared/ui/Stack";
+import { Skeleton } from "shared/ui/Skeleton";
 
 interface ArticleListItemSkeletonProps {
   view?: ArticleViewMode;
@@ -57,11 +57,7 @@ export const ArticleListItemSkeleton: FC<ArticleListItemSkeletonProps> = (
     <div className={classNames(cl.ArticleListItem, {}, [className])}>
       <Card className={cl.card}>
         <div className={cl.imageWrap}>
-          <Skeleton
-            className={cl.imageSkeleton}
-            width={200}
-            height={200}
-          />
+          <Skeleton className={cl.imageSkeleton} width={200} height={200} />
         </div>
         <div className={cl.infoWrap}>
           <div className={cl.statsSkeleton}>
@@ -71,9 +67,7 @@ export const ArticleListItemSkeleton: FC<ArticleListItemSkeletonProps> = (
               <Skeleton className={cl.icon} height={20} width={20} />
             </div>
           </div>
-          <Skeleton
-            className={cl.title}
-          />
+          <Skeleton className={cl.title} />
         </div>
       </Card>
     </div>

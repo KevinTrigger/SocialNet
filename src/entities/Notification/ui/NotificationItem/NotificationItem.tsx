@@ -1,11 +1,11 @@
 import { FC } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
-import { HStack, VStack } from "shared/ui/Stack";
 import { Notification } from "../../model/types/notification";
-import { Text } from "shared/ui/Text/Text";
-import AppLink, { AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import cl from "./NotificationItem.module.scss";
+import { Text } from "shared/ui/Text";
+import { HStack, VStack } from "shared/ui/Stack";
+import { AppLink, AppLinkTheme } from "shared/ui/AppLink";
 
 interface NotificationItemProps {
   className?: string;
@@ -18,9 +18,16 @@ export const NotificationItem: FC<NotificationItemProps> = (props) => {
   const createdAt = new Date(item.createdAt).toLocaleDateString();
 
   return (
-    <VStack gap="8" className={classNames(cl.NotificationItem, {}, [className])}>
+    <VStack
+      gap="8"
+      className={classNames(cl.NotificationItem, {}, [className])}
+    >
       <HStack align="start">
-        <Text title={t("Уведомление") + ` №${item.id}`} text={item.message} className={cl.message}/>
+        <Text
+          title={t("Уведомление") + ` №${item.id}`}
+          text={item.message}
+          className={cl.message}
+        />
         <Text tagText={"span"} text={`${createdAt}`} className={cl.date} />
       </HStack>
       {item.href && (

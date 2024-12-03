@@ -3,8 +3,8 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { Article, ArticleViewMode } from "../../model/types/article";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
-import { Text, TextSize } from "shared/ui/Text/Text";
 import { HStack } from "shared/ui/Stack";
+import { Text, TextSize } from "shared/ui/Text";
 
 interface ArticleListProps {
   className?: string;

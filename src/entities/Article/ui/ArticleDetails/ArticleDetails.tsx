@@ -9,24 +9,23 @@ import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice";
 import { fetchArticleById } from "../../model/services/fetchArticleById/fetchArticleById";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useSelector } from "react-redux";
-import { Text, TextAlign, TextSize, TextTheme } from "shared/ui/Text/Text";
 import {
   getArticleDetailsData,
   getArticleDetailsError,
   getArticleDetailsIsLoading,
 } from "entities/Article/model/selectors/articleDetails";
-import { Skeleton } from "shared/ui/Skeleton/Skeleton";
-import { Avatar, AvatarSize } from "shared/ui/Avatar/Avatar";
 import CalendarIcon from "shared/assets/icons/calendar.svg?react";
 import EyeIcon from "shared/assets/icons/eye.svg?react";
-import { Icon } from "shared/ui/Icon/Icon";
 import { ArticleBlock, ArticleBlockType } from "../../model/types/article";
 import { CodeBlock } from "../CodeBlock/CodeBlock";
 import { TextBlock } from "../TextBlock/TextBlock";
 import { ImageBlock } from "../ImageBlock/ImageBlock";
-import { VStack } from "shared/ui/Stack/VStack/VStack";
-import { HStack } from "shared/ui/Stack/HStack/HStack";
 import cl from "./ArticleDetails.module.scss";
+import { Skeleton } from "shared/ui/Skeleton";
+import { Text, TextAlign, TextSize, TextTheme } from "shared/ui/Text";
+import { Avatar, AvatarSize } from "shared/ui/Avatar";
+import { HStack, VStack } from "shared/ui/Stack";
+import { Icon } from "shared/ui/Icon";
 
 interface ArticleDetailsProps {
   className?: string;

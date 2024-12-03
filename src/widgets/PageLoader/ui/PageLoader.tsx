@@ -1,8 +1,8 @@
 import { FC, memo } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
-import cl from "./PageLoader.module.scss";
-import { Loader } from "shared/ui/Loader";
 import { HStack } from "shared/ui/Stack";
+import { Loader } from "shared/ui/Loader";
+import cl from "./PageLoader.module.scss";
 
 interface PageLoaderProps {
   className?: string;

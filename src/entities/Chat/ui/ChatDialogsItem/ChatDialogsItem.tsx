@@ -2,9 +2,8 @@ import { FC } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import cl from "./ChatDialogsItem.module.scss";
-// import { Card } from "shared/ui/Card/Card";
-import { Avatar, AvatarSize } from "shared/ui/Avatar/Avatar";
-import { Text } from "shared/ui/Text/Text";
+import { Avatar, AvatarSize } from "shared/ui/Avatar";
+import { Text } from "shared/ui/Text";
 
 interface ChatDialogsItemProps {
   className?: string;
@@ -21,7 +20,7 @@ export const ChatDialogsItem: FC<ChatDialogsItemProps> = (props) => {
         size={AvatarSize.S}
         rounded
       />
-      <Text text={t('Username')} />
+      <Text text={t("Username")} />
     </div>
   );
 };

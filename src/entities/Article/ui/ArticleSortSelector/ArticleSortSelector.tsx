@@ -1,9 +1,9 @@
 import { FC, useMemo } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
-import { Select, SelectOptions } from "shared/ui/Select/Select";
 import { ArticlesSortField } from "entities/Article";
 import { SortOrder } from "shared/types";
 import cl from "./ArticleSortSelector.module.scss";
+import { Select, SelectOptions } from "shared/ui/Select";
 import { HStack } from "shared/ui/Stack";
 
 interface ArticleSortSelectorProps {

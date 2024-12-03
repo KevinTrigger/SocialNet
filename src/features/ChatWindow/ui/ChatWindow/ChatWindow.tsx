@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import cl from "./ChatWindow.module.scss";
-import { Card } from "shared/ui/Card/Card";
 import { ChatDialogsList } from "../ChatDialogsList/ChatDialogsList";
+import { Card } from "shared/ui/Card";
 
 interface ChatWindowProps {
   className?: string;

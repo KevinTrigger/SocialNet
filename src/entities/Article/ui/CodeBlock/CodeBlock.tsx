@@ -1,8 +1,8 @@
 import { FC, memo } from "react";
 import { ArticleCodeBlock } from "../../model/types/article";
-import { Code } from "shared/ui/Code/Code";
 import cl from "./CodeBlock.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
+import { Code } from "shared/ui/Code";
 
 interface CodeBlockProps {
   className?: string;

@@ -1,8 +1,8 @@
 import { FC, memo } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { ArticleImageBlock } from "../../model/types/article";
-import { Text, TextAlign } from "shared/ui/Text/Text";
 import cl from "./ImageBlock.module.scss";
+import { Text, TextAlign } from "shared/ui/Text";
 
 interface ImageBlockProps {
   className?: string;

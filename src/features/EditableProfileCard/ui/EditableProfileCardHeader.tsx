@@ -1,8 +1,5 @@
 import { FC, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { HStack } from "shared/ui/Stack";
-import { Text } from "shared/ui/Text/Text";
-import Button, { ButtonTheme } from "shared/ui/Button/Button";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { getProfileReadonly } from "../model/selectors/getProfileReadonly/getProfileReadonly";
@@ -10,6 +7,9 @@ import { getUserAuthData } from "entities/User";
 import { getProfileForm } from "../model/selectors/getProfileForm/getProfileForm";
 import { profileActions } from "../model/slice/profileSlice";
 import { updateProfileData } from "../model/services/updateProfileData/updateProfileData";
+import { HStack } from "shared/ui/Stack";
+import { Text } from "shared/ui/Text";
+import { Button, ButtonTheme } from "shared/ui/Button";
 
 interface EditableProfileCardHeaderProps {
   className?: string;

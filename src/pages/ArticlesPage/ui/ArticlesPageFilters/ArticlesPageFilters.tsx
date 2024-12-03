@@ -19,12 +19,12 @@ import {
   getArticlesPageType,
   getArticlesPageView,
 } from "../../model/selectors/articles";
-import { Card } from "shared/ui/Card/Card";
-import { Input } from "shared/ui/Input/Input";
 import { SortOrder } from "shared/types";
 import { fetchArticles } from "../../model/services/fetchArticles/fetchArticles";
 import { useDebounce } from "shared/lib/hooks/useDebounce/useDebounce";
 import { HStack } from "shared/ui/Stack";
+import { Card } from "shared/ui/Card";
+import { Input } from "shared/ui/Input";
 
 interface ArticlesPageFiltersProps {
   className?: string;

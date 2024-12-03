@@ -1,12 +1,12 @@
 import { FC, FunctionComponent, ReactNode, SVGProps } from "react";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { classNames } from "shared/lib/classNames/classNames";
-import cl from "./Dropdown.module.scss";
-import { HStack } from "shared/ui/Stack";
-import Button, { ButtonTheme } from "shared/ui/Button/Button";
-import { Icon } from "shared/ui/Icon/Icon";
-import AppLink from "shared/ui/AppLink/AppLink";
 import { PopupDirection } from "../../const/popup";
+import { HStack } from "shared/ui/Stack";
+import { Button, ButtonTheme } from "shared/ui/Button";
+import { Icon } from "shared/ui/Icon";
+import { AppLink } from "shared/ui/AppLink";
+import cl from "./Dropdown.module.scss";
 
 export interface DropdownItem {
   label: string;

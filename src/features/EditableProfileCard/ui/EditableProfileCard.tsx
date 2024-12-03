@@ -5,7 +5,6 @@ import { ProfileCard } from "entities/Profile";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { Currency } from "entities/Currency";
 import { Country } from "entities/Country";
-import { Text, TextTheme } from "shared/ui/Text/Text";
 import { getProfileForm } from "../model/selectors/getProfileForm/getProfileForm";
 import { getProfileIsLoading } from "../model/selectors/getProfileIsLoading/getProfileIsLoading";
 import { getProfileError } from "../model/selectors/getProfileError/getProfileError";
@@ -19,6 +18,7 @@ import {
   ReducersList,
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { EditableProfileCardHeader } from "./EditableProfileCardHeader";
+import { Text, TextTheme } from "shared/ui/Text";
 
 interface EditableProfileCardProps {
   className?: string;

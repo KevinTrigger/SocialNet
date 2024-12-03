@@ -7,9 +7,9 @@ import {
 } from "../../api/articleRatingApi";
 import { useSelector } from "react-redux";
 import { getUserAuthData } from "entities/User";
-import { Skeleton } from "shared/ui/Skeleton/Skeleton";
-import { Card } from "shared/ui/Card/Card";
-import { Text, TextTheme } from "shared/ui/Text/Text";
+import { Skeleton } from "shared/ui/Skeleton";
+import { Card } from "shared/ui/Card";
+import { Text, TextTheme } from "shared/ui/Text";
 
 export interface ArticleRatingProps {
   className?: string;

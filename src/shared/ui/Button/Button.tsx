@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC, memo, MouseEvent } from "react";
+import { ButtonHTMLAttributes, FC, MouseEvent } from "react";
 import { classNames, Mods } from "shared/lib/classNames/classNames";
 import cl from "./Button.module.scss";
 
@@ -28,7 +28,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
-const Button: FC<ButtonProps> = (props) => {
+export const Button: FC<ButtonProps> = (props) => {
   const {
     onClick,
     className,
@@ -60,5 +60,3 @@ const Button: FC<ButtonProps> = (props) => {
     </button>
   );
 };
-
-export default memo(Button);

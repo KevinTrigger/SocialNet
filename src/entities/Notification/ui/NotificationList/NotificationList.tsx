@@ -1,13 +1,13 @@
 import { FC } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
-import { Card } from "shared/ui/Card/Card";
 import { useNotifications } from "entities/Notification";
 import { NotificationItem } from "../NotificationItem/NotificationItem";
-import { VStack } from "shared/ui/Stack";
-import { Skeleton } from "shared/ui/Skeleton/Skeleton";
-import { Text } from "shared/ui/Text/Text";
 import { useTranslation } from "react-i18next";
 import cl from "./NotificationList.module.scss";
+import { Text } from "shared/ui/Text";
+import { Card } from "shared/ui/Card";
+import { VStack } from "shared/ui/Stack";
+import { Skeleton } from "shared/ui/Skeleton";
 
 interface NotificationListProps {
   className?: string;

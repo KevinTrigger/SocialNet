@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import LogoutIcon from "shared/assets/icons/logout.svg?react";
 import ProfileIcon from "shared/assets/icons/profile.svg?react";
 import AdminPanelIcon from "shared/assets/icons/admin-panel.svg?react";
-import { Dropdown, DropdownItem } from "shared/ui/Popups";
 import { useSelector } from "react-redux";
 import {
   getUserAuthData,
@@ -12,8 +11,9 @@ import {
   userActions,
 } from "entities/User";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Avatar, AvatarSize } from "shared/ui/Avatar/Avatar";
 import { RoutePath } from "shared/const/router";
+import { Avatar, AvatarSize } from "shared/ui/Avatar";
+import { Dropdown, DropdownItem } from "shared/ui/Popups";
 
 export const AvatarDropdown = () => {
   const { t } = useTranslation("");

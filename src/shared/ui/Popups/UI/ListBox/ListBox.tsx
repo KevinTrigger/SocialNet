@@ -7,11 +7,11 @@ import {
 } from "@headlessui/react";
 import { classNames } from "shared/lib/classNames/classNames";
 import CheckIcon from "../../../../assets/icons/check.svg?react";
-import { HStack } from "shared/ui/Stack";
-import Button from "shared/ui/Button/Button";
-import { Icon } from "shared/ui/Icon/Icon";
 import cl from "./ListBox.module.scss";
 import { PopupDirection } from "../../const/popup";
+import { HStack } from "shared/ui/Stack";
+import { Button } from "shared/ui/Button";
+import { Icon } from "shared/ui/Icon";
 
 interface ListBoxItem<T extends string> {
   content: ReactNode;
