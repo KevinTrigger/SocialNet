@@ -14,7 +14,7 @@ const MainPage = () => {
     : "Для доступа ко всем страницам сайта необходимо авторизоваться";
 
   return (
-    <Page>
+    <Page data-testid="MainPage">
       <Text title={t("Главная страница")} text={textContent} />
     </Page>
   );

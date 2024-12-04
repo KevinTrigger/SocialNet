@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "shared/const/theme";
-import { Avatar, AvatarSize } from "./Avatar";
+import { Avatar } from "./Avatar";
 import Image from "shared/assets/tests/storybook.png";
 
 const meta: Meta<typeof Avatar> = {
@@ -33,45 +33,16 @@ export const LightRounded: Story = {
   },
 };
 
-export const Light_SIZE_XS: Story = {
+export const LightCustomSize: Story = {
   args: {
     src: Image,
-    size: AvatarSize.XS,
-  },
-};
-
-export const Light_SIZE_S: Story = {
-  args: {
-    src: Image,
-    size: AvatarSize.S,
-  },
-};
-
-export const Light_SIZE_M: Story = {
-  args: {
-    src: Image,
-    size: AvatarSize.M,
-  },
-};
-
-export const Light_SIZE_L: Story = {
-  args: {
-    src: Image,
-    size: AvatarSize.L,
-  },
-};
-
-export const Light_SIZE_XL: Story = {
-  args: {
-    src: Image,
-    size: AvatarSize.XL,
+    size: 250,
   },
 };
 
 export const Dark: Story = {
   args: {
     src: Image,
-    size: AvatarSize.XL,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
@@ -88,6 +59,14 @@ export const DarkRounded: Story = {
   args: {
     src: Image,
     rounded: true,
+  },
+  decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const DarkCustomSize: Story = {
+  args: {
+    src: Image,
+    size: 250,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };

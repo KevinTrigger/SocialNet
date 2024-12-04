@@ -1,7 +1,7 @@
 import { FC, useCallback } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import cl from "./Code.module.scss";
-import { Icon } from "../Icon/Icon";
+import { Icon, IconTheme } from "../Icon/Icon";
 import CopyIcon from "shared/assets/icons/copy.svg?react";
 import { Button, ButtonTheme } from "../Button";
 
@@ -21,7 +21,7 @@ export const Code: FC<CodeProps> = (props) => {
     <pre className={cl.CodeWrapper}>
       <code className={classNames(cl.code, {}, [className])}>{text}</code>
       <Button className={cl.btnCopy} theme={ButtonTheme.CLEAR} onClick={onCopy}>
-        <Icon Svg={CopyIcon} className={cl.iconCopy} />
+        <Icon Svg={CopyIcon} theme={IconTheme.CLEAR} className={cl.iconCopy} />
       </Button>
     </pre>
   );

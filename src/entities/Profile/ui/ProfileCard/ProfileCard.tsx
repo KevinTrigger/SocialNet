@@ -8,7 +8,7 @@ import cl from "./ProfileCard.module.scss";
 import { HStack, VStack } from "shared/ui/Stack";
 import { Skeleton } from "shared/ui/Skeleton";
 import { Text, TextAlign, TextTheme } from "shared/ui/Text";
-import { Avatar, AvatarSize } from "shared/ui/Avatar";
+import { Avatar } from "shared/ui/Avatar";
 import { Input } from "shared/ui/Input";
 
 interface ProfileCardProps {
@@ -89,7 +89,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
           <HStack justify="center" className={cl.avatarWrap}>
             <Avatar
               src={data?.avatar}
-              size={AvatarSize.XL}
+              size={170}
               rounded
               alt={t("Изображение пользователя")}
             />

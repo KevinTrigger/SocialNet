@@ -14,11 +14,13 @@ import cl from "./ArticleListItem.module.scss";
 import { Text, TextAlign, TextSize } from "shared/ui/Text";
 import { Card } from "shared/ui/Card";
 import { HStack, VStack } from "shared/ui/Stack";
-import { Avatar, AvatarSize } from "shared/ui/Avatar";
+import { Avatar } from "shared/ui/Avatar";
 import { Button, ButtonTheme } from "shared/ui/Button";
 import { Icon } from "shared/ui/Icon";
 import { AppLink } from "shared/ui/AppLink";
 import { getRouteArticleDetails } from "shared/const/router";
+import { AppImage } from "shared/ui/AppImage";
+import { Skeleton } from "shared/ui/Skeleton";
 
 interface ArticleListItemProps {
   className?: string;
@@ -52,7 +54,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = (props) => {
         <Card className={cl.card}>
           <div className={cl.header}>
             <HStack gap="8">
-              <Avatar rounded size={AvatarSize.XS} src={article.user.avatar} />
+              <Avatar rounded size={40} src={article.user.avatar} />
               <Text text={article.user.username} />
               <Text className={cl.date} text={article.createdAt} />
             </HStack>
@@ -62,7 +64,12 @@ export const ArticleListItem: FC<ArticleListItemProps> = (props) => {
             </VStack>
           </div>
           <div className={cl.imageWrap}>
-            <img className={cl.image} src={article.img} alt={article.title} />
+            <AppImage
+              className={cl.image}
+              src={article.img}
+              alt={article.title}
+              fallback={<Skeleton width={"100%"} height={200} />}
+            />
           </div>
           {textBlock && (
             <TextBlock block={textBlock} className={cl.textBlock} />
@@ -94,11 +101,11 @@ export const ArticleListItem: FC<ArticleListItemProps> = (props) => {
             text={article.createdAt}
             align={TextAlign.RIGHT}
           />
-          <img
+          <AppImage
             className={cl.image}
             src={article.img}
             alt={article.title}
-            width={50}
+            fallback={<Skeleton className={cl.image} />}
           />
         </div>
         <div className={cl.infoWrap}>

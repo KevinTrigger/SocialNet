@@ -15,7 +15,7 @@ const ForbiddenPage = () => {
   };
 
   return (
-    <Page>
+    <Page data-testid="ForbiddenPage">
       <VStack gap="8">
         <Button onClick={handleBackNavigate}>
           {t("< Предыдущая страница")}

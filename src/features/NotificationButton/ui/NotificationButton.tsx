@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import NotificationIcon from "shared/assets/icons/notifocation.svg?react";
+import NotificationIcon from "shared/assets/icons/notification.svg?react";
 import { NotificationList } from "entities/Notification";
 import { BrowserView, MobileView } from "react-device-detect";
 import { Button, ButtonTheme } from "shared/ui/Button";

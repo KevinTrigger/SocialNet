@@ -5,7 +5,7 @@ import cl from "./ChatMessageItem.module.scss";
 import { AppLink } from "shared/ui/AppLink";
 import { Text, TextTheme } from "shared/ui/Text";
 import { Card } from "shared/ui/Card";
-import { Avatar, AvatarSize } from "shared/ui/Avatar";
+import { Avatar } from "shared/ui/Avatar";
 
 interface ChatMessageItemProps {
   className?: string;
@@ -30,7 +30,7 @@ export const ChatMessageItem: FC<ChatMessageItemProps> = (props) => {
           "https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png"
         }
         rounded
-        size={AvatarSize.XS}
+        size={40}
       />
       <div className={cl.textWrap}>
         <AppLink to={""}>

@@ -23,7 +23,7 @@ import { ImageBlock } from "../ImageBlock/ImageBlock";
 import cl from "./ArticleDetails.module.scss";
 import { Skeleton } from "shared/ui/Skeleton";
 import { Text, TextAlign, TextSize, TextTheme } from "shared/ui/Text";
-import { Avatar, AvatarSize } from "shared/ui/Avatar";
+import { Avatar } from "shared/ui/Avatar";
 import { HStack, VStack } from "shared/ui/Stack";
 import { Icon } from "shared/ui/Icon";
 
@@ -86,7 +86,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
     content = (
       <>
         <div className={cl.imageWrap}>
-          <Avatar size={AvatarSize.XL} src={articleData?.img} />
+          <Avatar size={170} src={articleData?.img} />
         </div>
         <Text
           size={TextSize.L}

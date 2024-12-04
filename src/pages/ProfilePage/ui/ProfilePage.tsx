@@ -15,7 +15,7 @@ export const ProfilePage = () => {
   }
 
   return (
-    <Page>
+    <Page data-testid="ProfilePage">
       <EditableProfileCard id={id} />
       <ProfileRating className={cl.profileRating} profileId={id} />
     </Page>

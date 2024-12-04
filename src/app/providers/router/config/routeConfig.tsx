@@ -21,7 +21,6 @@ import {
   getRouteChat,
   getRouteForbidden,
   getRouteMain,
-  getRouteNotFound,
   getRouteProfile,
 } from "shared/const/router";
 import { AppRoutesProps } from "shared/types/router";
@@ -64,7 +63,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     path: getRouteAdminPanel(),
     element: <AdminPanelPage />,
     authOnly: true,
-    roles: [UserRole.ADMIN, UserRole.MANAGER],
+    roles: [UserRole.ADMIN],
   },
   [AppRoutes.FORBIDDEN]: {
     path: getRouteForbidden(),
@@ -78,7 +77,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
 
   // last
   [AppRoutes.NOT_FOUND]: {
-    path: getRouteNotFound(),
+    path: "*",
     element: <NotFoundPage />,
   },
 };

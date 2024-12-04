@@ -5,6 +5,8 @@ import cl from "./Icon.module.scss";
 export enum IconTheme {
   PRIMARY = "primary",
   INVERTED = "inverted",
+  CLEAR = "clear",
+  CLEAR_INVERTED = "clear_inverted",
 }
 
 interface IconProps extends React.SVGProps<SVGSVGElement> {
@@ -12,6 +14,7 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
   Svg: FC<SVGProps<SVGSVGElement>>;
   theme?: IconTheme;
   size?: number;
+  inverted?: boolean;
 }
 
 export const Icon: FC<IconProps> = (props) => {

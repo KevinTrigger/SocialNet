@@ -470,7 +470,7 @@
       "id": "10",
       "title": "Базовый IT-специалист: кто он?",
       "subtitle": "Сабтитульник про Submit JS",
-      "img": "https://asperbrothers.com/wp-content/uploads/2019/11/DSC00366_BB.jpg",
+      "img": "https://laishevskaya.gosuslugi.ru/netcat_files/45/254/1666303440_45_www_funnyart_club_p_kartinki_dlya_programmistov_krasivo_51.jpg",
       "user": {
         "id": "1",
         "username": "admin",
@@ -1116,8 +1116,7 @@
       "username": "kevin",
       "password": "123",
       "roles": [
-        "USER",
-        "MANAGER"
+        "USER"
       ],
       "avatar": "https://sectricity.com/wp-content/uploads/2020/03/Ethical-Hacker-Sectricity.jpg"
     },
@@ -1129,6 +1128,14 @@
         "MANAGER"
       ],
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHfd3PPulVSp4ZbuBFNkePoUR_fLJQe474Ag&s"
+    },
+    {
+      "id": "4",
+      "username": "noname",
+      "password": "123",
+      "roles": [
+        "USER"
+      ]
     }
   ],
   "profile": [
@@ -1153,6 +1160,27 @@
       "city": "Екатеринбург",
       "username": "Melo",
       "avatar": "https://sectricity.com/wp-content/uploads/2020/03/Ethical-Hacker-Sectricity.jpg"
+    },
+    {
+      "id": "3",
+      "firstname": "Алексей",
+      "lastname": "Иванов",
+      "age": 35,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Екатеринбург",
+      "username": "quok",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHfd3PPulVSp4ZbuBFNkePoUR_fLJQe474Ag&s"
+    },
+    {
+      "id": "4",
+      "firstname": "Йола",
+      "lastname": "Фамильин",
+      "age": 32,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Екатеринбург",
+      "username": "Braker"
     }
   ],
   "article-ratings": [
@@ -1231,6 +1259,12 @@
       "userId": "1",
       "feedback": "qwd",
       "id": "X6KpW0P"
+    },
+    {
+      "articleId": "20",
+      "rate": 3,
+      "userId": "1",
+      "id": "4IKA60C"
     }
   ],
   "profile-ratings": [

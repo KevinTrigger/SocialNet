@@ -1,9 +1,21 @@
 .Icon {
   fill: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .inverted {
   fill: var(--inverted-primary-color);
+  color: var(--inverted-primary-color);
+}
+
+.clear {
+  fill: none;
+  color: var(--primary-color);
+}
+
+.clear_inverted {
+  fill: none;
+  color: var(--inverted-primary-color);
 }
 
 .isVisible {

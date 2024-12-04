@@ -11,7 +11,7 @@ import {
   userActions,
 } from "entities/User";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Avatar, AvatarSize } from "shared/ui/Avatar";
+import { Avatar } from "shared/ui/Avatar";
 import { Dropdown, DropdownItem } from "shared/ui/Popups";
 import { getRouteAdminPanel, getRouteProfile } from "shared/const/router";
 
@@ -20,7 +20,6 @@ export const AvatarDropdown = () => {
   const dispatch = useAppDispatch();
 
   const authData = useSelector(getUserAuthData);
-
   const isAdmin = useSelector(isUserAdmin);
   const isManager = useSelector(isUserManager);
 
@@ -32,7 +31,14 @@ export const AvatarDropdown = () => {
   }, [dispatch]);
 
   const dropDownAvatar = useMemo(
-    () => <Avatar src={authData?.avatar} rounded size={AvatarSize.XS} />,
+    () => (
+      <Avatar
+        src={authData?.avatar}
+        rounded
+        size={40}
+        fallbackInverted
+      />
+    ),
     [authData?.avatar]
   );
 

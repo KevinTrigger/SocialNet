@@ -16,7 +16,7 @@ import {
   getArticlesPageType,
   getArticlesPageView,
 } from "../../model/selectors/articles";
-import { SortOrder } from "shared/types";
+import { SortOrder } from "shared/types/sort";
 import { fetchArticles } from "../../model/services/fetchArticles/fetchArticles";
 import { useDebounce } from "shared/lib/hooks/useDebounce/useDebounce";
 import { HStack } from "shared/ui/Stack";

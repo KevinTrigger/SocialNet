@@ -6,7 +6,7 @@ import { Page } from "widgets/Page";
 const AboutPage = () => {
   const { t } = useTranslation("about");
   return (
-    <Page>
+    <Page data-testid="AboutPage">
       <Text
         title={t("О сайте")}
         text={"Проект представляет из себя минимизированную социальную сеть."}
