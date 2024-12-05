@@ -8,8 +8,8 @@
     "server": "node ./json-server/index.js",
     "start": "concurrently \"npm run dev\" \"npm run server\"",
     "build": "tsc -b && vite build",
-    "lint:ts": "eslint . \"*.{ts,tsx}\"",
-    "lint:ts:fix": "eslint . \"*.{ts,tsx}\"",
+    "lint:ts": "eslint . --ext ts,tsx",
+    "lint:ts:fix": "eslint . --ext ts,tsx",
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "preview": "vite preview",
@@ -20,7 +20,7 @@
     "generate:slice": "node ./scripts/createSlice/index.js"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": "eslint"
+    "--ext ts,tsx": "eslint"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
@@ -70,6 +70,7 @@
     "babel-plugin-transform-import-meta": "^2.2.1",
     "babel-preset-vite": "^1.1.3",
     "concurrently": "^9.1.0",
+    "cypress": "^13.16.1",
     "eslint": "^8.57.0",
     "eslint-plugin-kevin-trigger-plugin": "^0.1.0",
     "eslint-plugin-react-hooks": "^4.6.2",

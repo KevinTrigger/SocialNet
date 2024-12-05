@@ -7,7 +7,7 @@ import { Card } from "shared/ui/Card";
 
 const ChatPage = () => {
   return (
-    <Page className={cl.ChatPage}>
+    <Page data-testid="ChatPage" className={cl.ChatPage}>
       <ChatPageHeader />
       <Card className={cl.chatListCard}>
         <ChatDialogsList />
