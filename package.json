@@ -20,7 +20,7 @@
     "generate:slice": "node ./scripts/createSlice/index.js"
   },
   "lint-staged": {
-    "*.{ts,tsx}": "lint-staged"
+    "src/**/*.{ts,tsx}": "eslint"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
