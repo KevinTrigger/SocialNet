@@ -51,26 +51,4 @@ describe("Testing a EditableProfileCard", () => {
     ).toBeInTheDocument();
   });
 
-  // test("При отмене значения должны обнуляться", async () => {
-  //   componentRender(<EditableProfileCard id="1" />, options);
-  //   await userEvent.click(
-  //     screen.getByTestId("EditableProfileCardHeader.EditButton")
-  //   );
-
-  //   await userEvent.clear(screen.getByTestId("ProfileCard.Firstname"));
-  //   await userEvent.clear(screen.getByTestId("ProfileCard.Lastname"));
-
-  //   await userEvent.type(screen.getByTestId("ProfileCard.Firstname"), "user");
-  //   await userEvent.type(screen.getByTestId("ProfileCard.Lastname"), "user");
-
-  //   expect(screen.getByTestId("ProfileCard.Firstname")).toHaveValue("user");
-  //   expect(screen.getByTestId("ProfileCard.Lastname")).toHaveValue("user");
-
-  //   await userEvent.click(
-  //     screen.getByTestId("EditableProfileCardHeader.CancelButton")
-  //   );
-
-  //   expect(screen.getByTestId("ProfileCard.Firstname")).toHaveValue("admin");
-  //   expect(screen.getByTestId("ProfileCard.Lastname")).toHaveValue("admin");
-  // });
 });

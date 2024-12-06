@@ -1,17 +1,7 @@
-import { login } from "./commands/login";
+import * as commonCommands from "./commands/common";
+import * as profileCommands from './commands/profile';
 
-Cypress.Commands.add('login', login);
+Cypress.Commands.addAll(commonCommands);
+Cypress.Commands.addAll(profileCommands);
 
-declare global {
-  // eslint-disable-next-line @typescript-eslint/no-namespace
-  namespace Cypress {
-    interface Chainable {
-      login(username?: string, password?: string): Chainable<void>
-    }
-  }
-}
-
-// Расширяем интерфейс Chainable через модульный подход
-export interface LoginCommands {
-  login(email: string, password: string): Cypress.Chainable<void>;
-}
+export {};

@@ -1165,8 +1165,8 @@
   "profile": [
     {
       "id": "1",
-      "firstname": "Сергейqwdqw",
-      "lastname": "Коноваловqwfqwf",
+      "firstname": "Сергейй",
+      "lastname": "Коноваловв",
       "age": 23,
       "currency": "EUR",
       "country": "Russia",
@@ -1205,6 +1205,36 @@
       "country": "Russia",
       "city": "Екатеринбург",
       "username": "Braker"
+    },
+    {
+      "id": "5",
+      "firstname": "юзертест",
+      "lastname": "юзертестин",
+      "age": 32,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Екатеринбург",
+      "username": "usertest"
+    },
+    {
+      "id": "6",
+      "firstname": "менеджертест",
+      "lastname": "менеджертестин",
+      "age": 32,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Екатеринбург",
+      "username": "managertest"
+    },
+    {
+      "id": "7",
+      "firstname": "админтест",
+      "lastname": "админтестин",
+      "age": 32,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Екатеринбург",
+      "username": "admintest"
     }
   ],
   "article-ratings": [
