@@ -46,6 +46,8 @@ export const StarRating: FC<StarRatingProps> = (props) => {
         width={size}
         height={size}
         key={star}
+        data-testid={`StarRating.${star}`}
+        data-selected={star <= hoveredStar}
       />
     ));
 

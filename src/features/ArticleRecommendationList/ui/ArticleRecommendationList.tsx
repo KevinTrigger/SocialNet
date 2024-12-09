@@ -20,7 +20,10 @@ export const ArticleRecommendationList: FC<ArticleRecommendationListProps> = (
   if (isLoading || error || !articles) return null;
 
   return (
-    <div className={classNames("", {}, [className])}>
+    <div
+      data-testid={"ArticleRecommendationList"}
+      className={classNames("", {}, [className])}
+    >
       <Text size={TextSize.L} title={t("Рекомендуем")} />
       <ArticleList
         className={cl.recommendList}

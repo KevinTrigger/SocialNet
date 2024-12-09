@@ -39,6 +39,7 @@ export const ArticleViewSelector: FC<ArticleViewSelectorProps> = (props) => {
           theme={ButtonTheme.CLEAR}
           className={cl.viewBtn}
           onClick={onClick(viewType.view)}
+          data-testid={`ArticleViewSelector.${viewType.view}`}
         >
           <Icon
             className={classNames(cl.icon, {

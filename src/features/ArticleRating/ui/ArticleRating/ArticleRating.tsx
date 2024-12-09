@@ -84,7 +84,7 @@ const ArticleRating: FC<ArticleRatingProps> = (props) => {
       onCancel={onCancel}
       hasFeedback={true}
       title={t("Оцените статью")}
-      feedbackTitle={t("Оставьте отзыв о статье, это поможет нам сделать ")}
+      feedbackTitle={t("Оставьте отзыв о статье, это поможет нам!")}
     />
   );
 };

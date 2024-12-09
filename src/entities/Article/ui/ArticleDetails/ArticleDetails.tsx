@@ -96,7 +96,10 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
         <VStack gap="4" className={cl.statistics}>
           <HStack align="center" className={cl.statistics__item}>
             <Icon className={cl.icon} Svg={EyeIcon} />
-            <Text text={String(articleData?.views)} />
+            <Text
+              text={String(articleData?.views)}
+              data-testid="ArticleDetails.Views"
+            />
           </HStack>
           <HStack className={cl.statistics__item}>
             <Icon className={cl.icon} Svg={CalendarIcon} />

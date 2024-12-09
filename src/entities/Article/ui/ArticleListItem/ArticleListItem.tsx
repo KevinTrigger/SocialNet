@@ -49,13 +49,14 @@ export const ArticleListItem: FC<ArticleListItemProps> = (props) => {
   if (view == ArticleViewMode.BIG) {
     return (
       <div
+        data-testid="ArticleListItem"
         className={classNames(cl.ArticleListItem, {}, [className, cl[view]])}
       >
         <Card className={cl.card}>
           <div className={cl.header}>
             <HStack gap="8">
-              <Avatar rounded size={40} src={article.user.avatar} />
-              <Text text={article.user.username} />
+              <Avatar rounded size={40} src={article.user?.avatar} />
+              <Text text={article.user?.username} />
               <Text className={cl.date} text={article.createdAt} />
             </HStack>
             <VStack gap="8" className={cl.titleAndType}>
@@ -93,6 +94,8 @@ export const ArticleListItem: FC<ArticleListItemProps> = (props) => {
       to={getRouteArticleDetails(article.id)}
       target={target}
       className={classNames(cl.ArticleListItem, {}, [className, cl[view]])}
+      data-testid="ArticleListItem"
+      data-view={`${view}`}
     >
       <Card onClick={onOpenArticleDetails} className={cl.card}>
         <div className={cl.imageWrap}>

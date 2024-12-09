@@ -24,7 +24,10 @@ export const CommentCard: FC<CommentCardProps> = (props) => {
 
   if (isLoading) {
     return (
-      <div className={classNames(cl.CommentCard, mods, [className])}>
+      <div
+        data-testid={"CommentCard.Loading"}
+        className={classNames(cl.CommentCard, mods, [className])}
+      >
         <HStack className={cl.header}>
           {comment?.user.avatar && (
             <Skeleton width={60} height={60} border={"50%"} />
@@ -41,7 +44,10 @@ export const CommentCard: FC<CommentCardProps> = (props) => {
   }
 
   return (
-    <div className={classNames(cl.CommentCard, mods, [className])}>
+    <div
+      className={classNames(cl.CommentCard, mods, [className])}
+      data-testid={"CommentCard.Content"}
+    >
       <AppLink className={cl.header} to={getRouteProfile(comment.user.id)}>
         {comment.user.avatar && (
           <Avatar src={comment.user.avatar} rounded size={60} />

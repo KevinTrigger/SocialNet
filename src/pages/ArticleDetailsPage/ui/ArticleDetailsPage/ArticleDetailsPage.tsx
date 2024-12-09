@@ -10,8 +10,8 @@ import { articleDetailsPageReducer } from "../../model/slice";
 import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 import { ArticleRecommendationList } from "features/ArticleRecommendationList";
 import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetailsComments";
-import cl from "./ArticleDetailsPage.module.scss";
 import { ArticleRating } from "features/ArticleRating";
+import cl from "./ArticleDetailsPage.module.scss";
 
 const reducers: ReducersList = {
   articleDetailsPage: articleDetailsPageReducer,

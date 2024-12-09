@@ -109,6 +109,7 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = (props) => {
           placeholder={"Поиск"}
           value={searchValue}
           onChange={onChangeSearch}
+          data-testid={'ArticlesPageFilters.Search'}
         />
       </Card>
       <ArticleTypeTabs

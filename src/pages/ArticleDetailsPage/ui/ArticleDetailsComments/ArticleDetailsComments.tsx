@@ -50,7 +50,10 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = (
   return (
     <div className={classNames("", {}, [className])}>
       <Text size={TextSize.L} title={t("Комментарии")} />
-      <CommentForm className={cl.commentForm} onSendComment={onSendComment} />
+      <CommentForm
+        className={cl.commentForm}
+        onSendComment={onSendComment}
+      />
       <CommentList comments={comments} isLoading={commentsIsLoading} />
     </div>
   );

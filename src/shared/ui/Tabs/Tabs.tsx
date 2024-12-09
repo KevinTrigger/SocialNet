@@ -31,6 +31,7 @@ export const Tabs: FC<TabsProps> = (props) => {
     <div className={classNames(cl.Tabs, {}, [className])}>
       {tabs.map((tab) => (
         <Card
+          data-testid={tab.content}
           className={cl.tab}
           theme={tab.value === value ? CardTheme.NORMAL : CardTheme.OUTLINE}
           onClick={clickHandle(tab)}

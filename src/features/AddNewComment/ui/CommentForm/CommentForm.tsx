@@ -43,17 +43,22 @@ const CommentForm: FC<CommentFormProps> = (props) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(cl.CommentForm, {}, [className])}>
+      <div
+        data-testid={"CommentForm"}
+        className={classNames(cl.CommentForm, {}, [className])}
+      >
         <Input
           value={text}
           onChange={onChangeText}
           className={cl.text}
           placeholder={">"}
+          data-testid={"CommentForm.Input"}
         />
         <Button
           onClick={onSendHandler}
           className={cl.btn}
           theme={ButtonTheme.OUTLINE}
+          data-testid={"CommentForm.SendButton"}
         >
           Отправить
         </Button>

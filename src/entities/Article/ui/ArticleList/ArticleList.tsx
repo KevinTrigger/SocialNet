@@ -42,14 +42,23 @@ export const ArticleList: FC<ArticleListProps> = (props) => {
 
   if (!isLoading && !articles.length) {
     return (
-      <HStack gap="32" className={classNames("", {}, [className])}>
+      <HStack
+        data-testid="ArticleList"
+        gap="32"
+        className={classNames("", {}, [className])}
+      >
         <Text size={TextSize.L} title={"Статьи не найдены"} />
       </HStack>
     );
   }
 
   return (
-    <HStack wrap="wrap" gap="32" className={classNames("", {}, [className])}>
+    <HStack
+      className={classNames("", {}, [className])}
+      wrap="wrap"
+      gap="32"
+      data-testid="ArticleList"
+    >
       {articles.length > 0 ? articles.map(renderArticle) : null}
       {isLoading && getSkeletons(view)}
     </HStack>
