@@ -3,13 +3,13 @@ import { Article } from '../../../src/entities/Article';
 const defaultArticle = {
   title: 'TESTING ARTICLE',
   subtitle: 'БиологиЯ',
-  img: 'https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200',
+  img: 'https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-1080x675.jpg',
   views: 412,
   createdAt: '21.02.2022',
   user: {
-    id: '3',
+    id: '2',
     username: 'kevin',
-    avatar: 'eggg.jpeg'
+    avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Felis_silvestris_silvestris_small_gradual_decrease_of_quality.png/200px-Felis_silvestris_silvestris_small_gradual_decrease_of_quality.png'
   },
   type: [
     'SCIENCE',

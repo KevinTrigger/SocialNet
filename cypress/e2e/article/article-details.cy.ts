@@ -18,6 +18,7 @@ describe('Пользователь заходит на страницу со с�
   })
 
   it('И видит систему рейтинга + может оценить статью', () => {
+    cy.intercept('GET', '**/articles/*', {fixture: 'article-details.json'});
     cy.getByTestId("ArticleDetails.Views.Paragraph").should('exist');
     cy.getByTestId("RatingCard").scrollIntoView();
     cy.setRate(4, 'Good job!');

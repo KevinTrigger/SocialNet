@@ -7,7 +7,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
-    "types": ["jest", "node"],    
+    "types": ["jest", "node", "cypress"],    
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -28,7 +28,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "./config/jest/setupTests.ts"],
+  "include": ["src", "./config/jest/setupTests.ts", "cypress.d.ts"],
   "exclude": [
     "node_modules",
     "dist",

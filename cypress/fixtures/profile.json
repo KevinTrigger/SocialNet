@@ -1,0 +1,11 @@
+{
+  "id": "3",
+  "firstname": "Алексей",
+  "lastname": "Иванов",
+  "age": 35,
+  "currency": "RUB",
+  "country": "Russia",
+  "city": "Екатеринбург",
+  "username": "quok",
+  "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHfd3PPulVSp4ZbuBFNkePoUR_fLJQe474Ag&s"
+}
