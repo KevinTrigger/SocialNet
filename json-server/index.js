@@ -12,7 +12,7 @@ const router = jsonServer.router(path.resolve(__dirname, "db.json"));
 server.use(jsonServer.defaults({}));
 server.use(jsonServer.bodyParser);
 
-// Нужно для небольшой задержки, чтобы запрос проходил не мгновенно, имитация реального апи
+// Задержка для имитации реального API
 server.use(async (req, res, next) => {
   await new Promise((res) => {
     setTimeout(res, 800);
@@ -42,6 +42,27 @@ server.post("/login", (req, res) => {
     console.log(e);
     return res.status(500).json({ message: e.message });
   }
+});
+
+// middleware для исключения пароля юзера из get-запроса
+server.use((req, res, next) => {
+  if (req.method === "GET" && req.url.includes("/users")) {
+    const originalSender = res.send;
+
+    res.send = function (body) {
+      let data = JSON.parse(body);
+
+      if (Array.isArray(data)) {
+        data = data.map(({ password, ...rest }) => rest);
+      } else if (data.password) {
+        const { password, ...rest } = data;
+        data = rest;
+      }
+
+      return originalSender.call(this, JSON.stringify(data));
+    };
+  }
+  next();
 });
 
 // проверяем, авторизован ли пользователь

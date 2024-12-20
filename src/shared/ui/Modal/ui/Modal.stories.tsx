@@ -5,14 +5,18 @@ import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from "shared/const/theme";
 
 const childElem = (
-  <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, soluta molestias, in ipsum eum aperiam sapiente architecto consequatur blanditiis rerum, quae omnis! Tenetur, eveniet rerum!</div>
+  <div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, soluta
+    molestias, in ipsum eum aperiam sapiente architecto consequatur blanditiis
+    rerum, quae omnis! Tenetur, eveniet rerum!
+  </div>
 );
 
 const meta: Meta<typeof Modal> = {
   title: "ui/Modal",
   component: Modal,
   argTypes: {},
-  decorators: [RouterDecorator]
+  decorators: [RouterDecorator],
 };
 
 export default meta;
@@ -31,5 +35,5 @@ export const Dark: Story = {
     children: childElem,
     isOpen: true,
   },
-  decorators: [ThemeDecorator(Theme.DARK)]
+  decorators: [ThemeDecorator(Theme.DARK)],
 };

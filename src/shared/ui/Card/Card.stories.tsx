@@ -24,8 +24,8 @@ export const LightNormal: Story = {};
 
 export const LightOutline: Story = {
   args: {
-    theme: CardTheme.OUTLINE
-  }
+    theme: CardTheme.OUTLINE,
+  },
 };
 
 export const DarkNormal: Story = {
@@ -34,7 +34,7 @@ export const DarkNormal: Story = {
 
 export const DarkOutline: Story = {
   args: {
-    theme: CardTheme.OUTLINE
+    theme: CardTheme.OUTLINE,
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 };

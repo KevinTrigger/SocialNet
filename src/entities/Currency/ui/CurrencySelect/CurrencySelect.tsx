@@ -37,7 +37,7 @@ export const CurrencySelect: FC<CurrencySelectProps> = (props) => {
       onChange={onChangeHandler}
       defaultValue={t("Укажите валюту")}
       label={t("Валюта")}
-      direction={'right'}
+      direction={"right"}
     />
   );
 };

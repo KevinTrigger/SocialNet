@@ -100,7 +100,11 @@ export const RatingCard: FC<RatingCardProps> = (props) => {
               >
                 {t("Отправить")}
               </Button>
-              <Button onClick={cancelHandle} theme={ButtonTheme.OUTLINE_RED} data-testid={"RatingCard.CloseButton"}>
+              <Button
+                onClick={cancelHandle}
+                theme={ButtonTheme.OUTLINE_RED}
+                data-testid={"RatingCard.CloseButton"}
+              >
                 {t("Отмена")}
               </Button>
             </HStack>

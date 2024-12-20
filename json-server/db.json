@@ -1,4 +1,34 @@
 {
+  "dialogs": [
+    {
+      "id": "1",
+      "users": [
+        {
+          "id": "1",
+          "username": "admin"
+        },
+        {
+          "id": "2",
+          "username": "kevin"
+        }
+      ],
+      "lastMessage": "Hi!"
+    }
+  ],
+  "messages": [
+    {
+      "id": "1",
+      "senderId": "1",
+      "content": "my first message",
+      "timestamp": "2024-12-12T12:31:00Z"
+    },
+    {
+      "id": "1",
+      "senderId": "2",
+      "content": "i'm happy to see u!",
+      "timestamp": "2024-12-12T12:31:00Z"
+    }
+  ],
   "notifications": [
     {
       "id": "0",
@@ -1148,7 +1178,10 @@
       "roles": [
         "ADMIN"
       ],
-      "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088"
+      "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088",
+      "features": {
+        "isArticleRatingEnabled": true
+      }
     },
     {
       "id": "2",
@@ -1157,7 +1190,10 @@
       "roles": [
         "USER"
       ],
-      "avatar": "https://sectricity.com/wp-content/uploads/2020/03/Ethical-Hacker-Sectricity.jpg"
+      "avatar": "https://sectricity.com/wp-content/uploads/2020/03/Ethical-Hacker-Sectricity.jpg",
+      "features": {
+        "isArticleRatingEnabled": false
+      }
     },
     {
       "id": "3",
@@ -1166,7 +1202,10 @@
       "roles": [
         "MANAGER"
       ],
-      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHfd3PPulVSp4ZbuBFNkePoUR_fLJQe474Ag&s"
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHfd3PPulVSp4ZbuBFNkePoUR_fLJQe474Ag&s",
+      "features": {
+        "isArticleRatingEnabled": true
+      }
     },
     {
       "id": "4",
@@ -1174,7 +1213,10 @@
       "password": "123",
       "roles": [
         "USER"
-      ]
+      ],
+      "features": {
+        "isArticleRatingEnabled": false
+      }
     },
     {
       "id": "5",

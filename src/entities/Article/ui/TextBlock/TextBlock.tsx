@@ -15,7 +15,7 @@ export const TextBlock: FC<TextBlockProps> = memo((props) => {
   return (
     <div className={classNames(cl.TextBlock, {}, [className])}>
       {block.title && <Text className={cl.title} title={block.title} />}
-      {block.paragraphs.map(paragraph => (
+      {block.paragraphs.map((paragraph) => (
         <Text key={paragraph} className={cl.paragraph} text={paragraph} />
       ))}
     </div>

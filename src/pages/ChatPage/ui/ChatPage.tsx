@@ -1,17 +1,19 @@
 import { memo } from "react";
-import cl from "./ChatPage.module.scss";
 import { Page } from "widgets/Page";
-import { ChatPageHeader } from "./ChatPageHeader/ChatPageHeader";
-import { ChatDialogsList } from "features/ChatWindow/ui/ChatDialogsList/ChatDialogsList";
-import { Card } from "shared/ui/Card";
+import { ChatWindow } from "features/ChatWindow";
+import { Text } from "shared/ui/Text";
+import { useTranslation } from "react-i18next";
+import { AppNotification } from "shared/ui/AppNotification";
+import cl from "./ChatPage.module.scss";
 
 const ChatPage = () => {
+  const { t } = useTranslation("chat");
+
   return (
     <Page data-testid="ChatPage" className={cl.ChatPage}>
-      <ChatPageHeader />
-      <Card className={cl.chatListCard}>
-        <ChatDialogsList />
-      </Card>
+      <Text title={t("Мессенджер")} />
+      <ChatWindow />
+      <AppNotification />
     </Page>
   );
 };

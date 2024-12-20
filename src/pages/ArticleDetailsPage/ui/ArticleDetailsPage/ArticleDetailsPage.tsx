@@ -12,6 +12,7 @@ import { ArticleRecommendationList } from "features/ArticleRecommendationList";
 import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetailsComments";
 import { ArticleRating } from "features/ArticleRating";
 import cl from "./ArticleDetailsPage.module.scss";
+import { getFeatureFlags } from "shared/lib/features";
 
 const reducers: ReducersList = {
   articleDetailsPage: articleDetailsPageReducer,
@@ -19,6 +20,7 @@ const reducers: ReducersList = {
 
 const ArticleDetailsPage = () => {
   const { id } = useParams<{ id: string }>();
+  const isArticleRatingEnabled = getFeatureFlags("isArticleRatingEnabled");
 
   if (!id) {
     return null;
@@ -29,7 +31,9 @@ const ArticleDetailsPage = () => {
       <Page>
         <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
-        <ArticleRating articleId={id} className={cl.recommendList} />
+        {isArticleRatingEnabled && (
+          <ArticleRating articleId={id} className={cl.recommendList} />
+        )}
         <ArticleRecommendationList className={cl.recommendList} />
         <ArticleDetailsComments className={cl.comments} id={id} />
       </Page>

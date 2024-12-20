@@ -6,6 +6,9 @@
     "types": ["cypress", "node"],
     "allowJs": true
   },
+  "ts-node": {
+    "esm": true
+  },
   "extends": "../tsconfig.json",
   "include": ["**/*.ts", "**/*.tsx"]
 }

@@ -31,14 +31,7 @@ export const AvatarDropdown = () => {
   }, [dispatch]);
 
   const dropDownAvatar = useMemo(
-    () => (
-      <Avatar
-        src={authData?.avatar}
-        rounded
-        size={40}
-        fallbackInverted
-      />
-    ),
+    () => <Avatar src={authData?.avatar} rounded size={40} fallbackInverted />,
     [authData?.avatar]
   );
 
