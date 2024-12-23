@@ -6,8 +6,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUserInited, userActions } from "entities/User";
 import { Sidebar } from "widgets/Sidebar";
 import { HStack } from "shared/ui/Stack";
+import { useTheme } from "./providers/ThemeProvider";
 
 const App = () => {
+  const { theme } = useTheme();
   const dispatch = useDispatch();
   const isInited = useSelector(getUserInited);
 
@@ -16,7 +18,7 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <div className={classNames("app", {}, [])}>
+    <div className={classNames("app", {}, [theme])}>
       <Suspense fallback="">
         <Navbar />
         <HStack>

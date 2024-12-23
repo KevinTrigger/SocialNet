@@ -1,2 +1,2 @@
 export { NotificationList } from "./ui/NotificationList/NotificationList";
-export { useNotifications } from "./model/services/notificationsApi";
+export { useNotifications } from "./api/notificationsApi";

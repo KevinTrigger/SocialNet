@@ -1181,6 +1181,11 @@
       "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088",
       "features": {
         "isArticleRatingEnabled": true
+      },
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false
       }
     },
     {
@@ -1193,6 +1198,11 @@
       "avatar": "https://sectricity.com/wp-content/uploads/2020/03/Ethical-Hacker-Sectricity.jpg",
       "features": {
         "isArticleRatingEnabled": false
+      },
+      "jsonSettings": {
+        "theme": "app_light_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false
       }
     },
     {
@@ -1205,6 +1215,11 @@
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHfd3PPulVSp4ZbuBFNkePoUR_fLJQe474Ag&s",
       "features": {
         "isArticleRatingEnabled": true
+      },
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false
       }
     },
     {

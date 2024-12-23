@@ -6,4 +6,6 @@ export { getUserRoles } from './model/selectors/getUserRoles/getUserRoles';
 export { getUserAuthData } from './model/selectors/getUserAuthData/getUserAuthData';
 export { getUserInited } from './model/selectors/getUserInited/getUserInited';
 export { isUserAdmin, isUserManager } from './model/selectors/getUserRoles/getUserRoles';
-export { useUsers } from './model/services/userApi';
+export { useUsers } from './api/userApi';
+export { useJsonSettings } from './model/selectors/jsonSettings/jsonSettings';
+export { saveJsonSettings } from './model/services/saveJsonSettings';
