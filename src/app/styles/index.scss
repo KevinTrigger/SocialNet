@@ -4,7 +4,7 @@
 @use "themes/orange";
 @use "themes/dark";
 
-body {
+.app, .app_modal, .app_drawer {
   font: var(--font-m);
   color: var(--primary-color);
 }
@@ -15,13 +15,20 @@ body {
   position: relative;
 }
 
+.app_redesigned {
+  min-height: 100vh;
+  background: var(--bg-redesigned);
+  font: var(--font-m-redesigned);
+  color: var(--text-redesigned);
+}
+
 *::-webkit-scrollbar {
-  width: 12px;               /* ширина всей полосы прокрутки */
+  width: 12px;
   height: 8px;
 }
 
 *::-webkit-scrollbar-track {
-  background: var(--card-bg);        /* цвет зоны отслеживания */
+  background: var(--card-bg);
 }
 
 *::-webkit-scrollbar-thumb {

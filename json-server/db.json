@@ -1180,12 +1180,14 @@
       ],
       "avatar": "https://static.sobaka.ru/images/image/00/80/54/85/_normal.jpg?v=1485945088",
       "features": {
-        "isArticleRatingEnabled": true
+        "isArticleRatingEnabled": true,
+        "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "app_dark_theme",
+        "theme": "app_orange_theme",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpen": false
+        "settingsPageHasBeenOpen": false,
+        "isArticlesPageHasOpened": true
       }
     },
     {
@@ -1202,7 +1204,8 @@
       "jsonSettings": {
         "theme": "app_light_theme",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpen": false
+        "settingsPageHasBeenOpen": false,
+        "isArticlesPageHasOpened": true
       }
     },
     {
@@ -1217,9 +1220,10 @@
         "isArticleRatingEnabled": true
       },
       "jsonSettings": {
-        "theme": "app_dark_theme",
+        "theme": "app_light_theme",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpen": false
+        "settingsPageHasBeenOpen": false,
+        "isArticlesPageHasOpened": true
       }
     },
     {
@@ -1401,6 +1405,13 @@
       "rate": 3,
       "userId": "1",
       "id": "4IKA60C"
+    },
+    {
+      "articleId": "1",
+      "rate": 5,
+      "userId": "1",
+      "feedback": "QEfqefqef",
+      "id": "nsHtliY"
     }
   ],
   "profile-ratings": [

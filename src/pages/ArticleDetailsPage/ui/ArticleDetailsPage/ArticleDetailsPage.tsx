@@ -11,7 +11,7 @@ import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDet
 import { ArticleRecommendationList } from "features/ArticleRecommendationList";
 import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetailsComments";
 import { ArticleRating } from "features/ArticleRating";
-import { toggleFeatures } from "shared/lib/features";
+import { ToggleFeatures } from "shared/lib/features";
 import { Card } from "shared/ui/Card";
 import { useTranslation } from "react-i18next";
 import cl from "./ArticleDetailsPage.module.scss";
@@ -24,12 +24,6 @@ const ArticleDetailsPage = () => {
   const { id } = useParams<{ id: string }>();
   const { t } = useTranslation("");
 
-  const articleRatingCard = toggleFeatures({
-    name: "isArticleRatingEnabled",
-    on: () => <ArticleRating articleId={id!} className={cl.recommendList} />,
-    off: () => <Card>{t("Оценка статей временно не работает")}</Card>,
-  });
-
   if (!id) {
     return null;
   }
@@ -39,7 +33,11 @@ const ArticleDetailsPage = () => {
       <Page>
         <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
-        {articleRatingCard}
+        <ToggleFeatures
+          feature="isArticlePageGreeting"
+          on={<ArticleRating articleId={id!} className={cl.recommendList} />}
+          off={<Card>{t("Оценка статей временно не работает")}</Card>}
+        />
         <ArticleRecommendationList className={cl.recommendList} />
         <ArticleDetailsComments className={cl.comments} id={id} />
       </Page>

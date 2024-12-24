@@ -3,7 +3,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { ChatDialogsList } from "../ChatDialogsList/ChatDialogsList";
 import { Card } from "shared/ui/Card";
 import { useSelector } from "react-redux";
-import { getUserAuthData, useUsers } from "entities/User";
+import { getUserAuthData, getUsersQuery } from "entities/User";
 import { Skeleton } from "shared/ui/Skeleton";
 import { Text, TextTheme } from "shared/ui/Text";
 import { useTranslation } from "react-i18next";
@@ -17,7 +17,7 @@ interface ChatWindowProps {
 export const ChatWindow: FC<ChatWindowProps> = (props) => {
   const { className } = props;
   const { t } = useTranslation("chat");
-  const { data, isLoading, error } = useUsers();
+  const { data, isLoading, error } = getUsersQuery();
   const authData = useSelector(getUserAuthData);
 
   const dialogs = data?.filter((user) => user.id !== authData?.id);

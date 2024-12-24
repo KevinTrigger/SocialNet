@@ -12,11 +12,11 @@ export default defineConfig({
     EnvironmentPlugin('all'), 
     tsconfigPaths(),
     visualizer({
-      template: "treemap", // or sunburst
+      template: "treemap",
       open: true,
       gzipSize: true,
       brotliSize: true,
-      filename: "analyse.html", // will be saved in project's root
+      filename: "analyse.html",
   }) as PluginOption],
   server: {
     port: 3000,
@@ -27,7 +27,7 @@ export default defineConfig({
         math: 'parens-division',
       },
       scss: {
-        api: 'modern-compiler', // or "modern", "legacy"
+        api: 'modern-compiler'
       },
     },
   },

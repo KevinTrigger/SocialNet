@@ -29,6 +29,7 @@ export const useTheme = (): UseThemeResult => {
     setTheme?.(newTheme);
 
     saveAction?.(newTheme);
+    console.log(newTheme, ' newTheme in useTheme')
   };
 
   return { 

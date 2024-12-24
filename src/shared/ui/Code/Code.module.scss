@@ -5,13 +5,14 @@
   padding: 20px;
 }
 
+.code {
+  color: var(--primary-color);
+  border-radius: 10px;
+  white-space: pre-wrap;
+}
+
 .btnCopy {
   position: absolute;
   top: 15px;
   right: 15px;
-}
-
-.code {
-  border-radius: 10px;
-  white-space: pre-wrap;
 }

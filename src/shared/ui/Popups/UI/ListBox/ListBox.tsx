@@ -43,7 +43,7 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
 
   return (
     <HStack gap="8">
-      {label && <span>{`${label}>`}</span>}
+      {label && <span className={cl.label}>{`${label}>`}</span>}
       <HListBox
         defaultValue={defaultValue}
         as={"div"}
