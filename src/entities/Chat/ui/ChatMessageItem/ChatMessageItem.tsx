@@ -2,10 +2,10 @@ import { FC } from "react";
 import { classNames, Mods } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import cl from "./ChatMessageItem.module.scss";
-import { AppLink } from "shared/ui/AppLink";
-import { Text, TextTheme } from "shared/ui/Text";
-import { Card } from "shared/ui/Card";
-import { Avatar } from "shared/ui/Avatar";
+import { AppLink } from "shared/ui/deprecated/AppLink";
+import { Text, TextTheme } from "shared/ui/deprecated/Text";
+import { Card } from "shared/ui/deprecated/Card";
+import { Avatar } from "shared/ui/deprecated/Avatar";
 
 interface ChatMessageItemProps {
   className?: string;

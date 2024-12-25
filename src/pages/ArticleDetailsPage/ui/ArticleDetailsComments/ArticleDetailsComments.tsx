@@ -11,7 +11,7 @@ import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticle";
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import cl from "./ArticleDetailsComments.module.scss";
-import { Text, TextSize, TextTheme } from "shared/ui/Text";
+import { Text, TextSize, TextTheme } from "shared/ui/deprecated/Text";
 
 interface ArticleDetailsCommentsProps {
   className?: string;

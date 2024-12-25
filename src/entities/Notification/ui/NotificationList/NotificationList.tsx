@@ -4,10 +4,10 @@ import { useNotifications } from "entities/Notification";
 import { NotificationItem } from "../NotificationItem/NotificationItem";
 import { useTranslation } from "react-i18next";
 import cl from "./NotificationList.module.scss";
-import { Text } from "shared/ui/Text";
-import { Card } from "shared/ui/Card";
-import { VStack } from "shared/ui/Stack";
-import { Skeleton } from "shared/ui/Skeleton";
+import { Text } from "shared/ui/deprecated/Text";
+import { Card } from "shared/ui/deprecated/Card";
+import { VStack } from "shared/ui/deprecated/Stack";
+import { Skeleton } from "shared/ui/deprecated/Skeleton";
 
 interface NotificationListProps {
   className?: string;

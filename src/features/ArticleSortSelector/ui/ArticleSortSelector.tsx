@@ -3,8 +3,8 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { ArticlesSortField } from "entities/Article";
 import { SortOrder } from "shared/types/sort";
 import cl from "./ArticleSortSelector.module.scss";
-import { Select, SelectOptions } from "shared/ui/Select";
-import { HStack } from "shared/ui/Stack";
+import { Select, SelectOptions } from "shared/ui/deprecated/Select";
+import { HStack } from "shared/ui/deprecated/Stack";
 
 interface ArticleSortSelectorProps {
   className?: string;

@@ -3,7 +3,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import cl from "./CommentList.module.scss";
 import { CommentCard } from "../CommentCard/CommentCard";
 import { Comment } from "../../model/types/comment";
-import { Text } from "shared/ui/Text";
+import { Text } from "shared/ui/deprecated/Text";
 
 interface CommentListProps {
   className?: string;

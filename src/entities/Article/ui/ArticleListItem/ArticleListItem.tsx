@@ -11,16 +11,16 @@ import { useNavigate } from "react-router-dom";
 import { ArticleListItemSkeleton } from "./ArticleListItemSkeleton";
 import EyeIcon from "shared/assets/icons/eye.svg?react";
 import cl from "./ArticleListItem.module.scss";
-import { Text, TextAlign, TextSize } from "shared/ui/Text";
-import { Card } from "shared/ui/Card";
-import { HStack, VStack } from "shared/ui/Stack";
-import { Avatar } from "shared/ui/Avatar";
-import { Button, ButtonTheme } from "shared/ui/Button";
-import { Icon } from "shared/ui/Icon";
-import { AppLink } from "shared/ui/AppLink";
+import { Text, TextAlign, TextSize } from "shared/ui/deprecated/Text";
+import { Card } from "shared/ui/deprecated/Card";
+import { HStack, VStack } from "shared/ui/deprecated/Stack";
+import { Avatar } from "shared/ui/deprecated/Avatar";
+import { Button, ButtonTheme } from "shared/ui/deprecated/Button";
+import { Icon } from "shared/ui/deprecated/Icon";
+import { AppLink } from "shared/ui/deprecated/AppLink";
 import { getRouteArticleDetails } from "shared/const/router";
-import { AppImage } from "shared/ui/AppImage";
-import { Skeleton } from "shared/ui/Skeleton";
+import { AppImage } from "shared/ui/deprecated/AppImage";
+import { Skeleton } from "shared/ui/deprecated/Skeleton";
 
 interface ArticleListItemProps {
   className?: string;

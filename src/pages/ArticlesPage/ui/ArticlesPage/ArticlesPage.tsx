@@ -11,8 +11,8 @@ import { initArticlesPage } from "../../model/services/initArticlesPage/initArti
 import { ArticlesPageFilters } from "../ArticlesPageFilters/ArticlesPageFilters";
 import { useSearchParams } from "react-router-dom";
 import { ArticleInfiniteList } from "../ArticleInfiniteList/ArticleInfiniteList";
-import cl from "./ArticlesPage.module.scss";
 import { ArticlePageGreeting } from "features/ArticlePageGreeting";
+import cl from "./ArticlesPage.module.scss";
 
 const reducers: ReducersList = {
   articlesPage: articlesPageReducer,

@@ -7,9 +7,9 @@ import {
   useGetProfileRating,
   useRateProfileRating,
 } from "../api/profileRatingApi";
-import { Skeleton } from "shared/ui/Skeleton";
-import { Card } from "shared/ui/Card";
-import { Text, TextTheme } from "shared/ui/Text";
+import { Skeleton } from "shared/ui/deprecated/Skeleton";
+import { Card } from "shared/ui/deprecated/Card";
+import { Text, TextTheme } from "shared/ui/deprecated/Text";
 
 export interface ProfileRatingProps {
   className?: string;

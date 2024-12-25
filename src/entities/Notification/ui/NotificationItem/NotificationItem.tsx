@@ -3,9 +3,9 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { Notification } from "../../model/types/notification";
 import cl from "./NotificationItem.module.scss";
-import { Text } from "shared/ui/Text";
-import { HStack, VStack } from "shared/ui/Stack";
-import { AppLink, AppLinkTheme } from "shared/ui/AppLink";
+import { Text } from "shared/ui/deprecated/Text";
+import { HStack, VStack } from "shared/ui/deprecated/Stack";
+import { AppLink, AppLinkTheme } from "shared/ui/deprecated/AppLink";
 
 interface NotificationItemProps {
   className?: string;

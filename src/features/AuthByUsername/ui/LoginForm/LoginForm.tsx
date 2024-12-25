@@ -13,10 +13,10 @@ import {
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import cl from "./LoginForm.module.scss";
-import { VStack } from "shared/ui/Stack";
-import { Text, TextTheme } from "shared/ui/Text";
-import { Input } from "shared/ui/Input";
-import { Button, ButtonTheme } from "shared/ui/Button";
+import { VStack } from "shared/ui/deprecated/Stack";
+import { Text, TextTheme } from "shared/ui/deprecated/Text";
+import { Input } from "shared/ui/deprecated/Input";
+import { Button, ButtonTheme } from "shared/ui/deprecated/Button";
 
 export interface LoginFormProps {
   className?: string;

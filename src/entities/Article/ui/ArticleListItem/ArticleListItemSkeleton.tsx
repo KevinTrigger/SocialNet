@@ -2,9 +2,9 @@ import { FC } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { ArticleViewMode } from "entities/Article/model/types/article";
 import cl from "./ArticleListItem.module.scss";
-import { Card } from "shared/ui/Card";
-import { HStack, VStack } from "shared/ui/Stack";
-import { Skeleton } from "shared/ui/Skeleton";
+import { Card } from "shared/ui/deprecated/Card";
+import { HStack, VStack } from "shared/ui/deprecated/Stack";
+import { Skeleton } from "shared/ui/deprecated/Skeleton";
 
 interface ArticleListItemSkeletonProps {
   view?: ArticleViewMode;

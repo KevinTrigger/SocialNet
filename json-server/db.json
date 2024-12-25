@@ -151,7 +151,7 @@
       "id": "2",
       "title": "React news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://repository-images.githubusercontent.com/181327815/cba87a00-62f0-11e9-9842-5336945a96f6",
+      "img": "https://repository-images.githubusercontent.com/181d327815/cba87a00-62f0-11e9-9842-5336945a96f6",
       "user": {
         "id": "2",
         "username": "kevin",
@@ -1168,6 +1168,12 @@
       "userId": "1",
       "text": "testtastast",
       "id": "eGEDUz_"
+    },
+    {
+      "articleId": "20",
+      "userId": "1",
+      "text": "test",
+      "id": "cSStRMi"
     }
   ],
   "users": [
@@ -1184,7 +1190,7 @@
         "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "app_orange_theme",
+        "theme": "app_dark_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpen": false,
         "isArticlesPageHasOpened": true

@@ -12,7 +12,7 @@ import { ArticleRecommendationList } from "features/ArticleRecommendationList";
 import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetailsComments";
 import { ArticleRating } from "features/ArticleRating";
 import { ToggleFeatures } from "shared/lib/features";
-import { Card } from "shared/ui/Card";
+import { Card } from "shared/ui/deprecated/Card";
 import { useTranslation } from "react-i18next";
 import cl from "./ArticleDetailsPage.module.scss";
 

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
-import { Avatar } from "shared/ui/Avatar";
-import { Text } from "shared/ui/Text";
+import { Avatar } from "shared/ui/deprecated/Avatar";
+import { Text } from "shared/ui/deprecated/Text";
 import { User } from "entities/User";
 import cl from "./ChatDialogsItem.module.scss";
 

@@ -8,11 +8,12 @@ import { useLocation } from "react-router-dom";
 import { AvatarDropdown } from "features/AvatarDropdown";
 import { NotificationButton } from "features/NotificationButton";
 import cl from "./Navbar.module.scss";
-import { Text, TextTheme } from "shared/ui/Text";
-import { AppLink, AppLinkTheme } from "shared/ui/AppLink";
-import { HStack } from "shared/ui/Stack";
-import { Button, ButtonTheme } from "shared/ui/Button";
+import { Text, TextTheme } from "shared/ui/deprecated/Text";
+import { AppLink, AppLinkTheme } from "shared/ui/deprecated/AppLink";
+import { HStack } from "shared/ui/deprecated/Stack";
+import { Button, ButtonTheme } from "shared/ui/deprecated/Button";
 import { getRouteArticleCreate, getRouteArticles } from "shared/const/router";
+import { ToggleFeatures } from "shared/lib/features";
 
 interface NavbarProps {
   className?: string;
@@ -36,26 +37,39 @@ const Navbar: FC = ({ className }: NavbarProps) => {
 
   if (authData) {
     return (
-      <nav className={classNames(cl.Navbar, {}, [className])}>
-        <Text
-          theme={TextTheme.INVERTED}
-          className={cl.authUser}
-          title={authData.username}
-        />
-        {isArticlesPath && (
-          <AppLink
-            className={cl.createLink}
-            theme={AppLinkTheme.SECONDARY}
-            to={getRouteArticleCreate()}
-          >
-            {t("Создать статью")}
-          </AppLink>
-        )}
-        <HStack gap="24" className={cl.btnsWrap}>
-          <NotificationButton />
-          <AvatarDropdown />
-        </HStack>
-      </nav>
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={
+          <nav className={classNames(cl.NavbarRedesigned, {}, [className])}>
+            <HStack gap="16" className={cl.btnsWrap}>
+              <NotificationButton />
+              <AvatarDropdown />
+            </HStack>
+          </nav>
+        }
+        off={
+          <nav className={classNames(cl.Navbar, {}, [className])}>
+            <Text
+              theme={TextTheme.INVERTED}
+              className={cl.authUser}
+              title={authData.username}
+            />
+            {isArticlesPath && (
+              <AppLink
+                className={cl.createLink}
+                theme={AppLinkTheme.SECONDARY}
+                to={getRouteArticleCreate()}
+              >
+                {t("Создать статью")}
+              </AppLink>
+            )}
+            <HStack gap="24" className={cl.btnsWrap}>
+              <NotificationButton />
+              <AvatarDropdown />
+            </HStack>
+          </nav>
+        }
+      />
     );
   }
 

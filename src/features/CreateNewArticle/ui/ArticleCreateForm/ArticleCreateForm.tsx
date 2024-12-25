@@ -3,10 +3,10 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import cl from "./ArticleCreateForm.module.scss";
 import { ArticleType } from "entities/Article";
-import { VStack } from "shared/ui/Stack";
-import { Avatar } from "shared/ui/Avatar";
-import { Input } from "shared/ui/Input";
-import { Select } from "shared/ui/Select";
+import { VStack } from "shared/ui/deprecated/Stack";
+import { Avatar } from "shared/ui/deprecated/Avatar";
+import { Input } from "shared/ui/deprecated/Input";
+import { Select } from "shared/ui/deprecated/Select";
 
 interface ArticleCreateFormProps {
   className?: string;

@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from "react";
-import { Button, ButtonTheme } from "shared/ui/Button";
+import { Button, ButtonTheme } from "shared/ui/deprecated/Button";
 
 // КОМПОНЕНТ ДЛЯ ТЕСТИРОВАНИЯ ErrorBoundary
 

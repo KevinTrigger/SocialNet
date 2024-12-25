@@ -4,8 +4,8 @@ import { ArticleViewMode } from "entities/Article/model/types/article";
 import TiledIcon from "shared/assets/icons/tiled.svg?react";
 import ListIcon from "shared/assets/icons/list.svg?react";
 import cl from "./ArticleViewSelector.module.scss";
-import { Button, ButtonTheme } from "shared/ui/Button";
-import { Icon } from "shared/ui/Icon";
+import { Button, ButtonTheme } from "shared/ui/deprecated/Button";
+import { Icon } from "shared/ui/deprecated/Icon";
 
 interface ArticleViewSelectorProps {
   className?: string;

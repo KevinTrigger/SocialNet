@@ -5,11 +5,11 @@ import { Country, CountrySelect } from "entities/Country";
 import { useTranslation } from "react-i18next";
 import { Profile } from "../../model/types/profile";
 import cl from "./ProfileCard.module.scss";
-import { HStack, VStack } from "shared/ui/Stack";
-import { Skeleton } from "shared/ui/Skeleton";
-import { Text, TextAlign, TextTheme } from "shared/ui/Text";
-import { Avatar } from "shared/ui/Avatar";
-import { Input } from "shared/ui/Input";
+import { HStack, VStack } from "shared/ui/deprecated/Stack";
+import { Skeleton } from "shared/ui/deprecated/Skeleton";
+import { Text, TextAlign, TextTheme } from "shared/ui/deprecated/Text";
+import { Avatar } from "shared/ui/deprecated/Avatar";
+import { Input } from "shared/ui/deprecated/Input";
 
 interface ProfileCardProps {
   className?: string;

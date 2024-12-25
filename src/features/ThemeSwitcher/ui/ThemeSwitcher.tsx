@@ -2,7 +2,7 @@ import { FC, memo, useCallback } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTheme } from "app/providers/ThemeProvider";
 import { Theme } from "shared/const/theme";
-import { Button, ButtonTheme } from "shared/ui/Button";
+import { Button, ButtonTheme } from "shared/ui/deprecated/Button";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { saveJsonSettings } from "entities/User";
 import DarkThemeIcon from "shared/assets/icons/theme-dark.svg?react";

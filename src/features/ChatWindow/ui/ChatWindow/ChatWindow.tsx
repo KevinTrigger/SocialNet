@@ -1,13 +1,13 @@
 import { FC } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { ChatDialogsList } from "../ChatDialogsList/ChatDialogsList";
-import { Card } from "shared/ui/Card";
+import { Card } from "shared/ui/deprecated/Card";
 import { useSelector } from "react-redux";
 import { getUserAuthData, getUsersQuery } from "entities/User";
-import { Skeleton } from "shared/ui/Skeleton";
-import { Text, TextTheme } from "shared/ui/Text";
+import { Skeleton } from "shared/ui/deprecated/Skeleton";
+import { Text, TextTheme } from "shared/ui/deprecated/Text";
 import { useTranslation } from "react-i18next";
-import { HStack, VStack } from "shared/ui/Stack";
+import { HStack, VStack } from "shared/ui/deprecated/Stack";
 import cl from "./ChatWindow.module.scss";
 
 interface ChatWindowProps {

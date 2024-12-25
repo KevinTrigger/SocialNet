@@ -1,9 +1,9 @@
 import { memo } from "react";
 import { Page } from "widgets/Page";
 import { ChatWindow } from "features/ChatWindow";
-import { Text } from "shared/ui/Text";
+import { Text } from "shared/ui/deprecated/Text";
 import { useTranslation } from "react-i18next";
-import { AppNotification } from "shared/ui/AppNotification";
+import { AppNotification } from "shared/ui/deprecated/AppNotification";
 import cl from "./ChatPage.module.scss";
 
 const ChatPage = () => {

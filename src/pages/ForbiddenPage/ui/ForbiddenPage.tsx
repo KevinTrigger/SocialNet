@@ -1,9 +1,9 @@
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { Button } from "shared/ui/Button";
-import { VStack } from "shared/ui/Stack";
-import { Text } from "shared/ui/Text";
+import { Button } from "shared/ui/deprecated/Button";
+import { VStack } from "shared/ui/deprecated/Stack";
+import { Text } from "shared/ui/deprecated/Text";
 import { Page } from "widgets/Page";
 
 const ForbiddenPage = () => {

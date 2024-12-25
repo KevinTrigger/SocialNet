@@ -16,6 +16,7 @@ import { useSelector } from "react-redux";
 import { StateSchema } from "app/providers/StoreProvider";
 import { useThrottle } from "shared/lib/hooks/useThrottle/useThrottle";
 import { TestProps } from "shared/types/tests";
+import { toggleFeatures } from "shared/lib/features";
 
 interface PageProps extends TestProps {
   className?: string;
@@ -56,10 +57,18 @@ export const Page: FC<PageProps> = (props) => {
 
   return (
     <main
-      data-testid={props["data-testid"] ?? 'Page'}
+      data-testid={props["data-testid"] ?? "Page"}
       {...(isSaveScroll ? { onScroll } : {})}
       ref={wrapperRef}
-      className={classNames(cl.Page, {}, [className])}
+      className={classNames(
+        toggleFeatures({
+          name: "isAppRedesigned",
+          on: () => cl.PageRedesigned,
+          off: () => cl.Page,
+        }),
+        {},
+        [className]
+      )}
     >
       {children}
       {onScrollEnd ? <div className={cl.trigger} ref={triggerRef} /> : null}

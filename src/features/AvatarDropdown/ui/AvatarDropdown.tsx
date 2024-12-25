@@ -11,8 +11,8 @@ import {
   userActions,
 } from "entities/User";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Avatar } from "shared/ui/Avatar";
-import { Dropdown, DropdownItem } from "shared/ui/Popups";
+import { Avatar } from "shared/ui/deprecated/Avatar";
+import { Dropdown, DropdownItem } from "shared/ui/deprecated/Popups";
 import { getRouteAdminPanel, getRouteProfile } from "shared/const/router";
 
 export const AvatarDropdown = () => {

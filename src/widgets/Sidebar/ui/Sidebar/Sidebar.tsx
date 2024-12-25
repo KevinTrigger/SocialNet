@@ -5,8 +5,10 @@ import { getSidebarItems } from "../../model/selectors/getSidebarItems";
 import { useSelector } from "react-redux";
 import { ThemeSwitcher } from "features/ThemeSwitcher";
 import { LangSwitcher } from "features/LangSwitcher";
-import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button";
-import { VStack } from "shared/ui/Stack";
+import { Button, ButtonSize, ButtonTheme } from "shared/ui/deprecated/Button";
+import { VStack } from "shared/ui/deprecated/Stack";
+import { ToggleFeatures } from "shared/lib/features";
+import { AppLogo } from "shared/ui/deprecated/AppLogo";
 import cl from "./Sidebar.module.scss";
 
 interface SidebarProps {
@@ -17,19 +19,7 @@ export const Sidebar: FC = memo(({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(true);
   const sidebarItemsList = useSelector(getSidebarItems);
 
-  const onToggle = () => {
-    setCollapsed((prev) => !prev);
-  };
-
-  const itemsList = useMemo(
-    () =>
-      sidebarItemsList.map((item) => (
-        <SidebarItem item={item} collapsed={collapsed} key={item.path} />
-      )),
-    [collapsed, sidebarItemsList]
-  );
-
-  return (
+  const DeprecatedSidebar = () => (
     <aside
       data-testid="sidebar"
       className={classNames(cl.Sidebar, { [cl.collapsed]: collapsed }, [
@@ -54,5 +44,37 @@ export const Sidebar: FC = memo(({ className }: SidebarProps) => {
         <LangSwitcher className={cl.lang} isShort={collapsed} />
       </VStack>
     </aside>
+  );
+
+  const onToggle = () => {
+    setCollapsed((prev) => !prev);
+  };
+
+  const itemsList = useMemo(
+    () =>
+      sidebarItemsList.map((item) => (
+        <SidebarItem item={item} collapsed={collapsed} key={item.path} />
+      )),
+    [collapsed, sidebarItemsList]
+  );
+
+  return (
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <aside
+          data-testid="sidebar"
+          className={classNames(
+            cl.SidebarRedesign,
+            { [cl.collapsed]: collapsed },
+            [className]
+          )}
+        >
+          <AppLogo className={cl.appLogo} />
+          <ThemeSwitcher />
+        </aside>
+      }
+      off={<DeprecatedSidebar />}
+    />
   );
 });

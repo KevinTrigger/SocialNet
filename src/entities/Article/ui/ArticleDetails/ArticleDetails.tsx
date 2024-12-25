@@ -21,11 +21,11 @@ import { CodeBlock } from "../CodeBlock/CodeBlock";
 import { TextBlock } from "../TextBlock/TextBlock";
 import { ImageBlock } from "../ImageBlock/ImageBlock";
 import cl from "./ArticleDetails.module.scss";
-import { Skeleton } from "shared/ui/Skeleton";
-import { Text, TextAlign, TextSize, TextTheme } from "shared/ui/Text";
-import { Avatar } from "shared/ui/Avatar";
-import { HStack, VStack } from "shared/ui/Stack";
-import { Icon } from "shared/ui/Icon";
+import { Skeleton } from "shared/ui/deprecated/Skeleton";
+import { Text, TextAlign, TextSize, TextTheme } from "shared/ui/deprecated/Text";
+import { Avatar } from "shared/ui/deprecated/Avatar";
+import { HStack, VStack } from "shared/ui/deprecated/Stack";
+import { Icon } from "shared/ui/deprecated/Icon";
 
 interface ArticleDetailsProps {
   className?: string;
@@ -63,7 +63,12 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
   if (isLoading) {
     content = (
       <div className={cl.skeleton}>
-        <Skeleton className={cl.image} width={170} height={170} />
+        <Skeleton
+          className={cl.image}
+          border={"100%"}
+          width={170}
+          height={170}
+        />
         <Skeleton className={cl.skeleton_title} width={300} height={32} />
         <Skeleton className={cl.skeleton} width={600} height={24} />
         <Skeleton className={cl.skeleton} width={"100%"} height={200} />
