@@ -27,6 +27,7 @@ export const Icon: FC<IconProps> = (props) => {
     size = 24,
     theme = IconTheme.PRIMARY,
     Svg,
+    inverted,
     ...otherProps
   } = props;
 
@@ -38,7 +39,9 @@ export const Icon: FC<IconProps> = (props) => {
     <Svg
       {...otherProps}
       style={{ width: size, height: size }}
-      className={classNames(cl.Icon, mods, [className])}
+      className={classNames(inverted ? cl.inverted : cl.Icon, mods, [
+        className,
+      ])}
     />
   );
 };

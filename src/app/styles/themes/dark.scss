@@ -6,18 +6,6 @@
   --inverted-primary-color: #0232c2;
   --inverted-secondary-color: #0452ff;
 
-  // redesigned
-  --dark-bg-redesigned: #090F11;
-  --bg-redesigned: #0C1214;
-  --light-bg-redesigned: #151C1F;
-  --text-redesigned: #DBDBDB;
-  --hint-redesigned: #555;
-  --cancel-redesigned: #D95757;
-  --save-redesigned: #6CD98B;
-  --icon-redesigned: #74A2B2;
-  --accent-redesigned: #5ED3F3;
-
-
   // skeleton
   --skeleton-color: #1515ad;
   --skeleton-shadow: #2b2be8;
@@ -33,4 +21,16 @@
 
   // dropdown 
   --dropdown-bg: #0d0d6b;
+
+  // REDESIGNED STYLES
+  --dark-bg-redesigned: #090F11;
+  --bg-redesigned: #0C1214;
+  --light-bg-redesigned: #151C1F;
+  --text-redesigned: #DBDBDB;
+  --hint-redesigned: #555;
+  --cancel-redesigned: #D95757;
+  --save-redesigned: #6CD98B;
+  --icon-redesigned: #74A2B2;
+  --accent-redesigned: #5ED3F3;
+  --linear-bg-active: linear-gradient(89.97deg, rgba(29, 89, 255, 30%) 1.15%, rgba(94, 211, 243, 0%) 99.97%);
 }

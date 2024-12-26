@@ -2,12 +2,19 @@ import { FC, memo, useCallback } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTheme } from "app/providers/ThemeProvider";
 import { Theme } from "shared/const/theme";
-import { Button, ButtonTheme } from "shared/ui/deprecated/Button";
+import {
+  Button as ButtonDeprecated,
+  ButtonTheme,
+} from "shared/ui/deprecated/Button";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { saveJsonSettings } from "entities/User";
-import DarkThemeIcon from "shared/assets/icons/theme-dark.svg?react";
-import LightThemeIcon from "shared/assets/icons/theme-light.svg?react";
-import OrangeThemeIcon from "shared/assets/icons/theme-orange.svg?react";
+import { ToggleFeatures } from "shared/lib/features";
+import { Icon } from "shared/ui/redesigned/Icon";
+import LightThemeIconDeprecated from "shared/assets/icons/theme-light.svg?react";
+import OrangeThemeIconDeprecated from "shared/assets/icons/theme-orange.svg?react";
+import DarkThemeIconDeprecated from "shared/assets/icons/theme-dark.svg?react";
+import ThemeIcon from "shared/assets/icons/theme.svg?react";
+import cl from "./ThemeSwitcher.module.scss";
 
 interface ThemeSwitcherProps {
   className?: string;
@@ -18,14 +25,24 @@ const ThemeSwitcher: FC = (props: ThemeSwitcherProps) => {
   const { theme, toggleTheme } = useTheme();
   const dispatch = useAppDispatch();
 
+  const ThemeSwitcherDeprecated = () => (
+    <ButtonDeprecated
+      className={classNames("", {}, [className])}
+      onClick={onToggleHandler}
+      theme={ButtonTheme.CLEAR}
+    >
+      {getIcon()}
+    </ButtonDeprecated>
+  );
+
   const getIcon = () => {
     switch (theme) {
       case Theme.DARK:
-        return <DarkThemeIcon />;
+        return <DarkThemeIconDeprecated />;
       case Theme.LIGHT:
-        return <LightThemeIcon />;
+        return <LightThemeIconDeprecated />;
       case Theme.ORANGE:
-        return <OrangeThemeIcon />;
+        return <OrangeThemeIconDeprecated />;
     }
   };
 
@@ -40,13 +57,18 @@ const ThemeSwitcher: FC = (props: ThemeSwitcherProps) => {
   }, [dispatch, toggleTheme]);
 
   return (
-    <Button
-      className={classNames("", {}, [className])}
-      onClick={onToggleHandler}
-      theme={ButtonTheme.CLEAR}
-    >
-      {getIcon()}
-    </Button>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      off={<ThemeSwitcherDeprecated />}
+      on={
+        <Icon
+          Svg={ThemeIcon}
+          clickable
+          onClick={onToggleHandler}
+          className={cl.themeSwitcher}
+        />
+      }
+    />
   );
 };
 

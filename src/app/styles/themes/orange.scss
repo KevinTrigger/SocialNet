@@ -6,22 +6,11 @@
   --inverted-primary-color: #dbd5dc;
   --inverted-secondary-color: #faf4fb;
 
-  // redesigned
-  --dark-bg-redesigned: #FFF3D6;
-  --bg-redesigned: #F0C048;
-  --light-bg-redesigned: #F2D791;
-  --text-redesigned: #1B1311;
-  --hint-redesigned: #B8B2A2;
-  --cancel-redesigned: #FF5E5E;
-  --save-redesigned: #52FA81;
-  --icon-redesigned: #4875F0;
-  --accent-redesigned: #1D59FF;
-
   // skeleton
   --skeleton-color: #fff;
   --skeleton-shadow: rgba(0 0 0 / 20%);
 
-    // code
+  // code
   --code-bg: #fff;
 
   // card 
@@ -32,4 +21,17 @@
 
   // dropdown 
   --dropdown-bg: #d5d5e7;
+
+
+  // REDESIGNED STYLES
+  --dark-bg-redesigned: #FFF3D6;
+  --bg-redesigned: #F0C048;
+  --light-bg-redesigned: #F2D791;
+  --text-redesigned: #1B1311;
+  --hint-redesigned: #B8B2A2;
+  --cancel-redesigned: #FF5E5E;
+  --save-redesigned: #52FA81;
+  --icon-redesigned: #4875F0;
+  --accent-redesigned: #1D59FF;
+  --linear-bg-active: linear-gradient(89.97deg, rgba(94, 211, 243, 30%) 1.15%, rgba(94, 211, 243, 0%) 99.97%);
 } 

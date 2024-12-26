@@ -6,9 +6,11 @@ import { useSelector } from "react-redux";
 import { ThemeSwitcher } from "features/ThemeSwitcher";
 import { LangSwitcher } from "features/LangSwitcher";
 import { Button, ButtonSize, ButtonTheme } from "shared/ui/deprecated/Button";
-import { VStack } from "shared/ui/deprecated/Stack";
+import { HStack, VStack } from "shared/ui/deprecated/Stack";
 import { ToggleFeatures } from "shared/lib/features";
-import { AppLogo } from "shared/ui/deprecated/AppLogo";
+import { AppLogo } from "shared/ui/redesigned/AppLogo";
+import { Icon } from "shared/ui/redesigned/Icon";
+import ArrowIcon from "shared/assets/icons/arrow-bottom.svg?react";
 import cl from "./Sidebar.module.scss";
 
 interface SidebarProps {
@@ -16,7 +18,7 @@ interface SidebarProps {
 }
 
 export const Sidebar: FC = memo(({ className }: SidebarProps) => {
-  const [collapsed, setCollapsed] = useState(true);
+  const [collapsed, setCollapsed] = useState(false);
   const sidebarItemsList = useSelector(getSidebarItems);
 
   const DeprecatedSidebar = () => (
@@ -66,12 +68,25 @@ export const Sidebar: FC = memo(({ className }: SidebarProps) => {
           data-testid="sidebar"
           className={classNames(
             cl.SidebarRedesign,
-            { [cl.collapsed]: collapsed },
+            { [cl.collapsedRedesign]: collapsed },
             [className]
           )}
         >
-          <AppLogo className={cl.appLogo} />
-          <ThemeSwitcher />
+          <AppLogo size={collapsed ? 30 : 50} className={cl.appLogo} />
+          <VStack gap="8" role="navigation" className={cl.items}>
+            {itemsList}
+          </VStack>
+          <HStack gap="16" className={cl.switchers}>
+            <ThemeSwitcher />
+            <LangSwitcher isShort={collapsed} />
+          </HStack>
+          <Icon
+            Svg={ArrowIcon}
+            clickable
+            data-testid="sidebar-toggle"
+            onClick={onToggle}
+            className={cl.collapseBtn}
+          />
         </aside>
       }
       off={<DeprecatedSidebar />}

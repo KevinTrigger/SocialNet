@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { ArticleViewMode } from "entities/Article/model/types/article";
-import TiledIcon from "shared/assets/icons/tiled.svg?react";
-import ListIcon from "shared/assets/icons/list.svg?react";
+import TiledIcon from "shared/assets/icons/tiled-24-24.svg?react";
+import ListIcon from "shared/assets/icons/list-24-24.svg?react";
 import cl from "./ArticleViewSelector.module.scss";
 import { Button, ButtonTheme } from "shared/ui/deprecated/Button";
 import { Icon } from "shared/ui/deprecated/Icon";

@@ -63,7 +63,7 @@ const Navbar: FC = ({ className }: NavbarProps) => {
                 {t("Создать статью")}
               </AppLink>
             )}
-            <HStack gap="24" className={cl.btnsWrap}>
+            <HStack gap="16" className={cl.btnsWrap}>
               <NotificationButton />
               <AvatarDropdown />
             </HStack>

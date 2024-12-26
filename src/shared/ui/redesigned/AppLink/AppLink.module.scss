@@ -1,0 +1,21 @@
+.primary {
+  color: var(--text-redesigned);
+  
+  &:hover {
+    color: var(--accent-redesigned);
+  }
+}
+
+.red {
+  color: var(--cancel-redesigned);
+  
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.AppLinkActive {
+  background: var(--linear-bg-active);
+  padding-left: 14px;
+  border-left: 2px solid var(--accent-redesigned);
+}

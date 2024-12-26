@@ -10,7 +10,7 @@
 }
 
 .icon {
-  fill: var(--inverted-primary-color);
+  fill: var(--inverted-primary-color)
 }
 
 .collapsed {
@@ -18,5 +18,23 @@
       display: none;
       transition: 0.2s opacity;
       width: 0;
+  }
+}
+
+// REDESIGN STYLES
+
+.itemRedesign {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  width: 100%;
+}
+
+.collapsedRedesign {
+  .link {
+    display: none;
+    width: 0;
+    transition: 0.2s opacity;
   }
 }

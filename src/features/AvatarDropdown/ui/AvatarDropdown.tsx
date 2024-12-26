@@ -1,7 +1,7 @@
 import { useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import LogoutIcon from "shared/assets/icons/logout.svg?react";
-import ProfileIcon from "shared/assets/icons/profile.svg?react";
+import ProfileIcon from "shared/assets/icons/profile-20-20.svg?react";
 import AdminPanelIcon from "shared/assets/icons/admin-panel.svg?react";
 import { useSelector } from "react-redux";
 import {

@@ -5,17 +5,6 @@
   --secondary-color: #0449e0;
   --inverted-primary-color: #04ff04;
   --inverted-secondary-color: #049604;
-
-  // redesigned
-  --dark-bg-redesigned: #FFF;
-  --bg-redesigned: #EFF5F6;
-  --light-bg-redesigned: #E2EEF1;
-  --text-redesigned: #141C1F;
-  --hint-redesigned: #ADBCC0;
-  --cancel-redesigned: #F77;
-  --save-redesigned: #62DE85;
-  --icon-redesigned: #5ED3F3;
-  --accent-redesigned: #00C8FF;
   
   // skeleton
   --skeleton-color: #fff;
@@ -35,4 +24,16 @@
 
   // opacity effect for text
   --opacity-primary-color: #0232c200;
+
+  // REDESIGNED STYLES
+  --dark-bg-redesigned: #FFF;
+  --bg-redesigned: #EFF5F6;
+  --light-bg-redesigned: #E2EEF1;
+  --text-redesigned: #141C1F;
+  --hint-redesigned: #ADBCC0;
+  --cancel-redesigned: #F77;
+  --save-redesigned: #62DE85;
+  --icon-redesigned: #5ED3F3;
+  --accent-redesigned: #00C8FF;
+  --linear-bg-active: linear-gradient(89.97deg, rgba(83, 218, 255, 30%) 1.15%, rgba(94, 211, 243, 0%) 99.97%);
 } 

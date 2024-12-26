@@ -14,7 +14,7 @@ import {
   getArticleDetailsError,
   getArticleDetailsIsLoading,
 } from "entities/Article/model/selectors/articleDetails";
-import CalendarIcon from "shared/assets/icons/calendar.svg?react";
+import CalendarIcon from "shared/assets/icons/calendar-20-20.svg?react";
 import EyeIcon from "shared/assets/icons/eye.svg?react";
 import { ArticleBlock, ArticleBlockType } from "../../model/types/article";
 import { CodeBlock } from "../CodeBlock/CodeBlock";
@@ -22,7 +22,12 @@ import { TextBlock } from "../TextBlock/TextBlock";
 import { ImageBlock } from "../ImageBlock/ImageBlock";
 import cl from "./ArticleDetails.module.scss";
 import { Skeleton } from "shared/ui/deprecated/Skeleton";
-import { Text, TextAlign, TextSize, TextTheme } from "shared/ui/deprecated/Text";
+import {
+  Text,
+  TextAlign,
+  TextSize,
+  TextTheme,
+} from "shared/ui/deprecated/Text";
 import { Avatar } from "shared/ui/deprecated/Avatar";
 import { HStack, VStack } from "shared/ui/deprecated/Stack";
 import { Icon } from "shared/ui/deprecated/Icon";
